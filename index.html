@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#11434a" />
+    <title>Danang, at your pace</title>
+    <meta name="description" content="以渡假村為中心的峴港旅遊規劃工具" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Noto+Sans+TC:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <section class="hero">
+        <nav><span class="brand">DANANG <i>slow</i></span><span class="status"><b></b> 你的私人行程本</span></nav>
+        <div class="hero-copy"><p class="eyebrow">RESORT-CENTRIC TRAVEL PLANNER</p><h1>讓峴港的日子<br /><em>留一點空白。</em></h1><p class="intro">先選一個舒服的渡假村，把探索、休息與驚喜，慢慢排進去。</p></div>
+        <div class="hero-card"><p>這趟旅行的節奏</p><strong id="paceLabel">悠閒渡假</strong><div class="pace-buttons"><button class="pace active" data-pace="悠閒渡假">慢慢來</button><button class="pace" data-pace="平衡探索">剛剛好</button><button class="pace" data-pace="熱情出走">多走一點</button></div></div>
+      </section>
+
+      <section class="setup wrap">
+        <div class="section-title"><p class="eyebrow">01 / YOUR BASE</p><h2>先安放你的渡假基地</h2></div>
+        <div class="setup-grid">
+          <label>入住日期<input type="date" id="startDate" /></label>
+          <label>退房日期<input type="date" id="endDate" /></label>
+          <label class="wide">渡假村 / 飯店<input type="text" id="resort" placeholder="例如：InterContinental Danang" /></label>
+          <label>所在海灘<select id="area"><option>山茶半島 Son Tra</option><option>美溪海灘 My Khe</option><option>農水海灘 Non Nuoc</option><option>會安 Hoi An</option></select></label>
+          <label>這趟最想要<select id="priority"><option>放鬆與好好吃飯</option><option>海灘與自然</option><option>文化與攝影</option><option>全部都想要</option></select></label>
+        </div>
+        <button id="saveSetup" class="save">儲存這趟旅行 <span>→</span></button>
+      </section>
+
+      <section class="inspiration wrap">
+        <div class="section-title"><p class="eyebrow">02 / GENTLE IDEAS</p><h2>從渡假村出發的靈感</h2><p>不用全部都去。挑 1–2 個最讓你心動的，其他留給臨時起意。</p></div>
+        <div class="idea-grid">
+          <article class="idea sea"><span>20–40 分鐘</span><h3>把上午留給海</h3><p>美溪海灘散步、咖啡與市場。午後回飯店泳池，讓太陽下山前的光線成為節奏。</p><button class="add-idea" data-title="美溪海灘的慢上午">加入願望清單</button></article>
+          <article class="idea green"><span>半日</span><h3>半島上的風景</h3><p>山茶半島環線、靈應寺與山海視野。最適合安排在不趕行程的早晨。</p><button class="add-idea" data-title="山茶半島半日風景">加入願望清單</button></article>
+          <article class="idea amber"><span>傍晚至夜晚</span><h3>會安的燈火</h3><p>把白天留給渡假村，傍晚出發前往古鎮，晚餐後才在燈籠與河邊慢慢走。</p><button class="add-idea" data-title="會安古鎮的燈火夜">加入願望清單</button></article>
+          <article class="idea coral"><span>彈性安排</span><h3>什麼都不做的一天</h3><p>SPA、長午餐、海灘躺椅或房內閱讀。這不是空檔，是這趟旅程的重點。</p><button class="add-idea" data-title="渡假村的完全放空日">加入願望清單</button></article>
+        </div>
+      </section>
+
+      <section class="planner wrap">
+        <div class="section-title"><p class="eyebrow">03 / MAKE IT YOURS</p><h2>把想法放進日子裡</h2><p>先寫個大方向即可；行程最迷人的部分，常常是沒有預先排好的那一段。</p></div>
+        <div class="planner-layout">
+          <div id="days" class="days"></div>
+          <aside class="wishlist"><div class="wishlist-head"><h3>願望清單</h3><button id="clearWish" aria-label="清空願望清單">清空</button></div><ul id="wishList"><li class="empty">從上方的靈感卡開始收藏吧。</li></ul><form id="wishForm"><input id="wishInput" aria-label="新增願望" placeholder="加一個想去的地方…" /><button>＋</button></form></aside>
+        </div>
+      </section>
+    </main>
+    <footer><span>DANANG SLOW</span><p>為舒服、好奇與臨時起意留下位置。</p><button id="reset">重新開始</button></footer>
+    <template id="dayTemplate"><article class="day-card"><div class="day-heading"><span class="day-number"></span><div><h3></h3><p></p></div></div><div class="slots"><label>早晨<textarea placeholder="海邊早餐、散步、放空…"></textarea></label><label>午後<textarea placeholder="一個想去的地方，或回飯店休息…"></textarea></label><label>夜晚<textarea placeholder="晚餐、夜市、或早點回房間…"></textarea></label></div></article></template>
+    <script src="app.js"></script>
+  </body>
+</html>
