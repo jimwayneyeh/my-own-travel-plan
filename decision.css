@@ -1,0 +1,8 @@
+.resort-card { min-height: 330px; }
+.resort-card > span { font-size: 10px; letter-spacing: .1em; color: #6a797b; }
+.resort-card > p { font-size: 12px; line-height: 1.6; color: #586869; margin: 0; }
+.card-compare { margin-top: 15px; padding-top: 12px; border-top: 1px solid #e6ded1; display: grid; gap: 4px; }
+.card-compare b { font-size: 10px; color: #c75f49; letter-spacing: .05em; margin-top: 3px; }
+.card-compare span { font-size: 11px; line-height: 1.4; color: #526365; }
+.resort-card button { padding-top: 16px; }
+@media (max-width: 600px) { .resort-card { min-height: 310px; } }
