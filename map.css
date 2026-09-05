@@ -1,4 +1,0 @@
-.map-marker { background: transparent; border: 0; }
-.map-marker span { display: block; width: 16px; height: 16px; border: 3px solid #fff; border-radius: 50%; box-shadow: 0 2px 5px #2448; }
-.map-marker.resort span { background: #d96d54; }
-.map-marker.place span { background: #24768a; }

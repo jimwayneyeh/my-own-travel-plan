@@ -1,30 +1,66 @@
 <!doctype html>
 <html lang="zh-Hant">
   <head>
-    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#123f45" /><title>Danang Slow — 找到你的渡假基地</title>
-    <meta name="description" content="以地圖探索峴港與會安的渡假村、景點與旅行靈感。" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Noto+Sans+TC:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="map.css" />
-    <link rel="stylesheet" href="mode.css" />
-    <link rel="stylesheet" href="decision.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#173f47" />
+    <meta name="description" content="2026 峴港・會安慢旅行程：已確認住宿、航班、景點、地圖與活動追蹤。" />
+    <title>峴港慢旅行｜2026.10.03 - 10.09</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="site.css" />
   </head>
   <body>
-    <header><a class="brand" href="#top">DANANG <i>slow</i></a><nav><a href="#explore">探索地圖</a><a href="#guides">文章靈感</a><a href="#shortlist">我的候選</a></nav></header>
+    <header class="topbar">
+      <a class="brand" href="#top">DANANG <em>slow</em></a>
+      <nav aria-label="主要導覽">
+        <a href="#schedule">行程</a><a href="#stays">住宿</a><a href="#events">活動</a><a href="#notes">討論筆記</a>
+      </nav>
+    </header>
+
     <main id="top">
-      <section class="hero"><p class="eyebrow">RESORT-FIRST TRIP PLANNER</p><h1>先找到一個<br /><em>想賴著不走的地方。</em></h1><p>由你的渡假村決定這趟旅程的半徑。在地圖上比較基地、周邊景點與值得出發的理由。</p><a class="primary" href="#explore">從地圖開始探索 <span>↓</span></a><div class="hero-note"><b>5</b><span>個渡假基地<br />＋ 5 個周邊靈感</span></div></section>
-      <section id="explore" class="explore"><div class="section-head"><div><p class="eyebrow">01 / EXPLORE THE COAST</p><h2>在地圖上，找旅行的重心</h2><p>先選「住哪裡」，再看看距離內有什麼值得安排。點地圖標記或下方卡片，都能查看細節。</p></div><div class="filters" aria-label="地圖篩選"><button class="filter active" data-filter="all">全部</button><button class="filter" data-filter="resort">渡假村</button><button class="filter" data-filter="place">景點</button></div></div>
-        <div class="map-layout"><div id="map" aria-label="峴港與會安旅遊地圖"></div><aside id="placeDetail" class="place-detail"><span class="detail-kicker">點選地圖上的一個標記</span><h3>從海岸開始想像</h3><p>每個地點都有推薦重點、Google Maps 與延伸閱讀。</p></aside></div>
-        <div class="map-key"><span><i class="dot resort-dot"></i> 渡假村</span><span><i class="dot place-dot"></i> 景點／體驗</span><span>地圖資料 © OpenStreetMap contributors</span></div>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">A RELAXED COUPLE ESCAPE · 2026</p>
+          <h1>峴港・會安<br /><em>慢慢渡假一週</em></h1>
+          <p class="lead">不是打卡清單，而是一段有海、有山、有燈籠河岸，也有大量留白的旅行。</p>
+          <div class="hero-pills"><span>10/3 - 10/9</span><span>2 位旅客</span><span>3 間已訂住宿</span></div>
+          <a class="button" href="#schedule">查看第一版行程 <span>↓</span></a>
+        </div>
+        <figure class="hero-image"><img src="https://izitour.com/media/ckeditor/hoi-an-vietnam-1.webp" alt="會安河畔夜晚燈籠" /><figcaption><a href="https://izitour.com/en/blog/hoi-an-ancient-town" target="_blank" rel="noopener">照片來源：IZITOUR</a></figcaption></figure>
       </section>
-      <section class="recommendations wrap"><div class="section-head"><div><p class="eyebrow">02 / WHERE TO STAY</p><h2>五種不同的渡假基地</h2></div><p>這不是排名，而是不同旅行個性的起點。選一間後，放大它附近最適合你的景點。</p></div><div id="resortCards" class="resort-grid"></div></section>
-      <section id="guides" class="guides"><div class="wrap"><div class="section-head light"><div><p class="eyebrow">03 / READ BEFORE YOU GO</p><h2>把攻略讀成自己的想法</h2></div><p>從官方旅遊指南與渡假村資訊開始，再依自己的喜好決定該去多遠。</p></div><div class="guide-grid"><a href="https://www.vietnamtourism.com/en/visiting-da-nang-your-complete-travel-guide-to-vietnam-s-coastal-city" target="_blank" rel="noopener"><span>全面規劃</span><h3>Da Nang 海岸城市完整旅遊指南</h3><p>住宿區域、交通、預算與峴港／會安的行程脈絡。</p><b>閱讀文章 ↗</b></a><a href="https://www.vietnam.travel/things-to-do/must-visit-places-in-da-nang" target="_blank" rel="noopener"><span>景點清單</span><h3>峴港必訪地點：從山到海</h3><p>美溪、五行山、海雲關與山茶半島的取捨起點。</p><b>閱讀文章 ↗</b></a><a href="https://www.vietnam.travel/things-to-do/must-do-da-nang-an-insider-list" target="_blank" rel="noopener"><span>在地節奏</span><h3>峴港的必做小事</h3><p>適合在「不要排太滿」時，拿來補足一天的靈感。</p><b>閱讀文章 ↗</b></a></div></div></section>
-      <section id="shortlist" class="shortlist wrap"><div class="section-head"><div><p class="eyebrow">04 / YOUR SHORTLIST</p><h2>先收藏，再決定</h2><p>把有感覺的基地與景點收在這裡。資料只儲存在這台裝置的瀏覽器中。</p></div><button id="clearSaved" class="text-button">清空清單</button></div><div id="savedList" class="saved-list"><p class="empty">還沒有候選地點。從地圖或渡假村卡開始收藏吧。</p></div></section>
+
+      <section class="trip-strip wrap" aria-label="已確認交通">
+        <div><span>去程</span><strong>10/3 · IT551</strong><p>桃園 T1 16:30 → 峴港 18:10</p></div>
+        <div><span>回程</span><strong>10/9 · IT552</strong><p>峴港 19:45 → 桃園 T1 23:25</p></div>
+        <div><span>旅行主軸</span><strong>少一點移動，多一點感受</strong><p>每天最多一個主題，午後保留自由時間。</p></div>
+      </section>
+
+      <section id="schedule" class="section wrap">
+        <div class="section-heading"><p class="eyebrow">01 / FIRST DRAFT</p><h2>第一版慢旅行程</h2><p>這是可調整的底稿：早上安排核心體驗，下午留給飯店、海邊與臨時的好天氣。</p></div>
+        <div id="schedule-grid" class="schedule-grid"></div>
+      </section>
+
+      <section id="stays" class="section stays-section">
+        <div class="wrap"><div class="section-heading light"><p class="eyebrow">02 / CONFIRMED STAYS</p><h2>住宿決定好了，接下來好好享受</h2><p>已依 Agoda 確認信整理。沒有再放比較或選飯店功能。</p></div><div id="stay-grid" class="stay-grid"></div></div>
+      </section>
+
+      <section id="events" class="section wrap">
+        <div class="section-heading"><p class="eyebrow">03 / WHAT'S ON</p><h2>這趟剛好遇到的活動</h2><p>只列出已查到、且值得納入決策的項目；仍會在出發前再確認當日公告。</p></div>
+        <div id="event-grid" class="event-grid"></div>
+      </section>
+
+      <section class="section place-section">
+        <div class="wrap"><div class="section-heading"><p class="eyebrow">04 / PLACES, NOT CHECKLISTS</p><h2>行程裡的幾個停靠點</h2><p>每一站都附 Google Maps；看到喜歡的點可存成待討論項目。</p></div><div id="place-grid" class="place-grid"></div></div>
+      </section>
+
+      <section id="notes" class="section wrap notes-section">
+        <div class="section-heading"><p class="eyebrow">05 / TALK IT THROUGH</p><h2>我們下一輪可以從這裡改</h2><p>把你想保留、刪掉或加進去的想法寫下來；筆記會暫存在這台裝置的瀏覽器。</p></div>
+        <div class="note-panel"><textarea id="trip-notes" rows="7" placeholder="例如：10/8 想改成 SPA 日；會安想吃特定餐廳；不想去五行山⋯⋯"></textarea><div><span id="save-status" aria-live="polite">尚未儲存</span><button id="save-notes" class="button dark">儲存討論筆記</button></div></div>
+      </section>
     </main>
-    <footer><span>DANANG SLOW</span><p>不是把峴港塞滿，而是找到最想停留的地方。</p><small>地點與連結為規劃靈感，出發前請以業者與 Google Maps 的最新資訊為準。</small></footer>
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script><script src="app.js"></script>
+    <footer><span>DANANG <em>slow</em></span><p>行程資料整理於 2026/09/05。活動、天氣、營業時間與交通仍應在出發前再次確認。</p></footer>
+    <script src="site.js"></script>
   </body>
 </html>
