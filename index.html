@@ -10,12 +10,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="site.css" />
+    <link rel="stylesheet" href="bana.css" />
   </head>
   <body>
     <header class="topbar">
       <a class="brand" href="#top">DANANG <em>slow</em></a>
       <nav aria-label="主要導覽">
-        <a href="#schedule">行程</a><a href="#stays">住宿</a><a href="#events">活動</a><a href="#notes">討論筆記</a>
+        <a href="#schedule">行程</a><a href="#bana">巴拿山</a><a href="#stays">住宿</a><a href="#events">活動</a><a href="#notes">討論筆記</a>
       </nav>
     </header>
 
@@ -42,25 +43,37 @@
         <div id="schedule-grid" class="schedule-grid"></div>
       </section>
 
+      <section id="bana" class="section bana-section">
+        <div class="wrap">
+          <div class="section-heading light"><p class="eyebrow">02 / BÀ NÀ, TWO WEATHER WINDOWS</p><h2>巴拿山兩天一夜：不追景點，追好天氣</h2><p>10/5 下午與 10/6 早上都保留金橋機會；看不到景時就先去法國村與室內設施，不為一場霧打亂渡假節奏。</p></div>
+          <div class="bana-alert"><strong>10 月的現實：</strong><span>峴港官方氣候資料把 10–11 月列為雨量最高的月份；巴拿山海拔約 1,487 公尺，氣溫更低、雲霧變化也更快。現在還不能可靠預報 10/5–10/6 的逐時天氣，請在出發前 3 天與當天早上再確認。</span></div>
+          <div id="bana-plan" class="bana-plan"></div>
+          <div class="bana-decision" aria-label="巴拿山天氣決策"><div><span>能見度佳</span><strong>金橋優先</strong><p>不要等「更好的光」；先完成金橋、花園與靈應寺，再回山頂慢逛。</p></div><div><span>霧濃／飄雨</span><strong>室內優先</strong><p>先去 Fantasy Park、月亮城堡、咖啡或飯店休息；每 60–90 分鐘再看一次雲況。</p></div><div><span>雷雨／強風</span><strong>以營運公告為準</strong><p>纜車與戶外設施可能調整或暫停。留在法國村核心，不跨區追景。</p></div></div>
+          <div id="bana-zones" class="bana-zones"></div>
+          <div class="bana-practical"><article><h3>上山前先做</h3><ul><li>10/4 請 Mercure 再確認：房客報到入口、7 號線是否運行、門票是否另購、行李交接方式。</li><li>10/5 抵達山腳後，先拍最新園區圖與各線末班時間；路線會因維修或天候輪替。</li><li>鞋子選防滑好走款；小包放輕薄防水外套、摺傘／雨衣與防水袋。</li></ul></article><article><h3>現場最重要的判斷</h3><ul><li>用「看得見金橋」取代固定鐘點：一旦雲開就先拍，不把希望全押在隔天。</li><li>山下晴不代表山上晴；請看巴拿山現場鏡頭、雷達與山頂能見度，而不只看峴港市區圖示。</li><li>下山後不可假設可憑同一張一般票再次入園；任何跨日權益以你購買的票種與官方說明為準。</li></ul></article></div>
+          <div class="source-row"><span>本段參考與核對：</span><a href="https://kimiyo.tw/ba-na-hills/" target="_blank" rel="noopener">喵爸喵媽兩日動線 ↗</a><a href="https://www.bring-you.info/zh-tw/ba-na-hills" target="_blank" rel="noopener">BringYou 分區攻略 ↗</a><a href="https://sunworld.vn/banahills/tin-tuc-sunworld/thong-bao-lich-van-hanh-hang-ngay-tai-sun-world-ba-na-hillshtml" target="_blank" rel="noopener">Sun World 營運公告 ↗</a><a href="https://cttdt.danangportal.gov.vn/web/eng-dng/w/location-and-natural-conditions" target="_blank" rel="noopener">峴港官方氣候資料 ↗</a></div>
+        </div>
+      </section>
+
       <section id="stays" class="section stays-section">
-        <div class="wrap"><div class="section-heading light"><p class="eyebrow">02 / CONFIRMED STAYS</p><h2>住宿決定好了，接下來好好享受</h2><p>已依 Agoda 確認信整理。沒有再放比較或選飯店功能。</p></div><div id="stay-grid" class="stay-grid"></div></div>
+        <div class="wrap"><div class="section-heading light"><p class="eyebrow">03 / CONFIRMED STAYS</p><h2>住宿決定好了，接下來好好享受</h2><p>已依 Agoda 確認信整理。沒有再放比較或選飯店功能。</p></div><div id="stay-grid" class="stay-grid"></div></div>
       </section>
 
       <section id="events" class="section wrap">
-        <div class="section-heading"><p class="eyebrow">03 / WHAT'S ON</p><h2>這趟剛好遇到的活動</h2><p>只列出已查到、且值得納入決策的項目；仍會在出發前再確認當日公告。</p></div>
+        <div class="section-heading"><p class="eyebrow">04 / WHAT'S ON</p><h2>這趟剛好遇到的活動</h2><p>只列出已查到、且值得納入決策的項目；仍會在出發前再確認當日公告。</p></div>
         <div id="event-grid" class="event-grid"></div>
       </section>
 
       <section class="section place-section">
-        <div class="wrap"><div class="section-heading"><p class="eyebrow">04 / PLACES, NOT CHECKLISTS</p><h2>行程裡的幾個停靠點</h2><p>每一站都附 Google Maps；看到喜歡的點可存成待討論項目。</p></div><div id="place-grid" class="place-grid"></div></div>
+        <div class="wrap"><div class="section-heading"><p class="eyebrow">05 / PLACES, NOT CHECKLISTS</p><h2>行程裡的幾個停靠點</h2><p>每一站都附 Google Maps；看到喜歡的點可存成待討論項目。</p></div><div id="place-grid" class="place-grid"></div></div>
       </section>
 
       <section id="notes" class="section wrap notes-section">
-        <div class="section-heading"><p class="eyebrow">05 / TALK IT THROUGH</p><h2>我們下一輪可以從這裡改</h2><p>把你想保留、刪掉或加進去的想法寫下來；筆記會暫存在這台裝置的瀏覽器。</p></div>
+        <div class="section-heading"><p class="eyebrow">06 / TALK IT THROUGH</p><h2>我們下一輪可以從這裡改</h2><p>把你想保留、刪掉或加進去的想法寫下來；筆記會暫存在這台裝置的瀏覽器。</p></div>
         <div class="note-panel"><textarea id="trip-notes" rows="7" placeholder="例如：10/8 想改成 SPA 日；會安想吃特定餐廳；不想去五行山⋯⋯"></textarea><div><span id="save-status" aria-live="polite">尚未儲存</span><button id="save-notes" class="button dark">儲存討論筆記</button></div></div>
       </section>
     </main>
-    <footer><span>DANANG <em>slow</em></span><p>行程資料整理於 2026/09/05。活動、天氣、營業時間與交通仍應在出發前再次確認。</p></footer>
+    <footer><span>DANANG <em>slow</em></span><p>行程資料更新於 2026/09/12。10/5–10/6 的逐時天氣、纜車路線與營運時間仍應在出發前再次確認。</p></footer>
     <script src="site.js"></script>
   </body>
 </html>
