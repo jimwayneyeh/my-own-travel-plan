@@ -4,10 +4,10 @@ const days = [
   { date: '10/3（六）', place: '會安', title: '抵達後，只試探性地看一眼燈籠', image: 'https://izitour.com/media/ckeditor/hoi-an-vietnam-1.webp', alt: '會安河岸燈籠', focus: '峴港機場 → Hotel Royal Hoi An', plan: ['18:10 - 19:30｜落地、入境、提領行李；保留排隊與延誤緩衝。', '約 19:40 - 21:00｜包車或 Grab 直接到會安飯店，途中不繞峴港市區。', '21:15 後｜先辦入住與找近距離餐食；還有精神才去安會橋／河岸散步 20–30 分鐘。'], fallback: 'Red Bean 最後點餐雖到 21:45，但抵達日變數太多，不建議訂今晚。', map: 'Hotel Royal Hoi An Danang, The Legacy Riverfront Resort & Spa', tag: '抵達日留白' },
   { date: '10/4（日）', place: '會安', title: '睡飽逛古城，下午順路挑絲巾', image: 'https://bvhttdl.mediacdn.vn/2019/12/4/22-1575444930391357177624-1575454914343-15754549150641583342735.jpg', alt: '會安日本橋', focus: '古城 + Metiseko + Red Bean + 選配 Memories', plan: ['09:00 - 10:15｜起床、慢慢吃飯店早餐與準備；不設早場景點。', '10:45 - 13:30｜從日本橋往東逛陳富街，中途吃午餐，只選一間會館。', '13:30 - 15:10｜續走古城核心，14:25 左右抵達 Metiseko 挑絲巾；這是順路停點，不需折返。', '15:15 後｜先回飯店休息；想看秀則 16:45 Red Bean→18:35 Memories Land→20:00 主秀，不看秀則 18:30 再吃晚餐。'], fallback: 'Memories Show 通常雨中照演；若雷雨、積水或交通不穩，仍以當日官方與飯店判斷為準。', map: 'Metiseko Hoi An 140 Tran Phu', tag: '下午購物最順路' },
   { date: '10/5（一）', place: '巴拿山', title: '睡飽再上山，用午後與翌日看兩次天氣', image: 'https://mediaen.vietnamplus.vn/images/cc571c067c64d4f85fb35f04673bf2968c14e8b40b6bd340d8146a8023dc5221ece1bcdfc256efeeae6dd06768e18dfb/7_1.jpg', alt: '巴拿山金橋', focus: '會安 → Mercure Bà Nà Hills', plan: ['09:00 - 10:15｜起床、早餐與退房；確認山頂即時天氣和 Mercure 房客入口。', '10:30 - 12:30｜包車前往巴拿山，山腳辦票、交接行李並拍下當日纜車圖。', '12:30 - 14:30｜上山、午餐與寄放行李；不再把第一站硬排成金橋。', '15:00 - 晚餐｜依能見度選金橋或法國村／室內區；金橋另保留 10/6 上午的第二次機會。'], fallback: '晚出發會放棄上午第一個天氣窗口，但換來符合你們作息的節奏；住宿一晚仍有兩個觀察雲況的時段。', map: 'Mercure Danang French Village Bana Hills', tag: '午後＋翌日上午看雲' },
-  { date: '10/6（二）', place: '巴拿山 → 峴港', title: '早餐後看雲，下午再換成海', image: 'https://vcdn1-dulich.vnecdn.net/2023/03/01/bai-mykhe-jpeg-167763815-6011-1898-1677638252.jpg?dpr=1&fit=crop&h=0&q=100&s=NeyKbOipMzANDXNICpGlRA&w=1200', alt: '美溪海灘', focus: 'Mercure Bà Nà Hills → M Hotel Danang', plan: ['09:00 - 10:15｜起床、早餐、確認能見度與跨區纜車；先辦退房並寄放行李。', '10:30 - 12:00｜天晴走金橋與花園；霧雨就留法國村或室內區，不追景點。', '12:00 - 14:30｜午餐、取行李、搭纜車下山；接車時間保留天候緩衝。', '14:30 - 16:00｜包車前往峴港，入住後只留飯店休息與海邊晚餐。'], fallback: '若上午仍是濃霧，就接受「雲中巴拿山」版本；不為等待雲開犧牲後續住宿時間。', map: 'Golden Bridge Ba Na Hills', tag: '晚起版山海切換' },
-  { date: '10/7（三）', place: '山茶半島', title: '晚一點出門，去看山與海', image: 'https://vcdn1-dulich.vnecdn.net/2023/03/01/bai-mykhe-jpeg-167763815-6011-1898-1677638252.jpg?dpr=1&fit=crop&h=0&q=100&s=NeyKbOipMzANDXNICpGlRA&w=1200', alt: '峴港海岸與山景', focus: 'M Hotel 渡假日 + 靈應寺', plan: ['09:30 - 13:30｜不設鬧鐘的飯店上午：早餐、房間、泳池或沙灘任選。', '14:00 - 15:30｜回房整理、下午茶或午睡，把出門留給較舒服的光線。', '15:30 - 18:00｜包車到靈應寺與山茶海景；只停寺院與一處觀景點，不環半島。', '18:30 後｜回市區或海邊晚餐，選離飯店順路的地點。'], fallback: '下雨就改成 M Hotel 下午茶＋SPA／咖啡館，完全不需補課。', map: 'Linh Ung Pagoda Son Tra', tag: '景色半日' },
-  { date: '10/8（四）', place: '自由選擇', title: '留給天氣，也留給當下的心情', image: 'https://media.mia.vn/uploads/blog-du-lich/bai-bien-my-khe-da-nang-lang-nguoi-ngam-nhin-1-trong-6-bai-bien-dep-nhat-hanh-tinh-01-1636298582.jpeg', alt: '峴港海灘', focus: 'SPA / 五行山 / 海邊，三選一', plan: ['09:00 - 10:30｜早餐、換裝與看天氣；不在早餐前塞活動。', '10:30 - 13:00｜晴天選五行山；雨天或想完全放空就預約 SPA。五行山有石階，穿好走的鞋。', '13:00 - 16:30｜回飯店午餐與休息，再用一次下午茶；這是最後一個完整渡假下午。', '17:30 - 晚上｜韓江河畔晚餐或海邊日落二選一；伴手禮最多保留一小段時間。'], fallback: '前三天若有因下雨取消的景點，才移到今天；否則保持 SPA 日。', map: 'Marble Mountains Da Nang', tag: '彈性保留日' },
-  { date: '10/9（五）', place: '回程', title: '把最後半天留給舒服的收尾', image: 'https://hopjourneys.com/wp-content/uploads/2024/05/My-Khe-Beach.png', alt: '美溪海灘晨景', focus: '海邊早餐 → DAD 19:45', plan: ['09:00 - 10:30｜早餐、整理行李與證件；不設鬧鐘追日出。', '10:30 - 15:30｜依退房時間寄放行李，海邊散步、午餐、按摩或咖啡擇二。', '16:30 - 16:45｜由飯店出發往機場，對應 IT552 19:45 起飛。'], fallback: '下雨就把散步換成飯店附近咖啡，行程仍然完整。', map: 'Da Nang International Airport', tag: '從容返程' }
+  { date: '10/6（二）', place: '巴拿山 → 峴港', title: '早餐後看雲，傍晚只和海見面', image: 'https://danangfantasticity.com/wp-content/uploads/2024/03/chiem-nguong-bien-my-khe-1-trong-10-bai-bien-dep-nhat-chau-a-05.jpg', alt: '美溪海灘', focus: 'Mercure Bà Nà Hills → M Hotel Danang', plan: ['09:00 - 10:15｜早餐、退房與最後一次確認金橋能見度。', '10:30 - 14:30｜依天氣走金橋或室內區，午餐後取行李、搭纜車下山。', '14:30 - 16:00｜包車前往峴港並入住 M Hotel。', '16:00 後｜下午茶、房間與美溪沙灘；晚餐只選飯店周邊，不去市中心。'], fallback: '若巴拿山因天候延誤，就取消海邊散步；今晚沒有預約型活動。', map: 'M Hotel Danang My Khe Beach', tag: '移動日不加景點' },
+  { date: '10/7（三）', place: '峴港北線', title: '飯店待到下午，再去山茶半島看海', image: 'https://danangfantasticity.com/wp-content/uploads/2022/01/linh-ung-pagoda-must-see-destination-for-tourists-to-da-nang-3.png', alt: '山茶半島靈應寺', focus: 'M Hotel 渡假上午 + 靈應寺', plan: ['09:00 - 10:30｜早餐；上午繼續使用房間、泳池、海灘或下午茶權益。', '15:30 - 16:00｜包車沿海岸往北，不安排棋盤頂或繞完整座半島。', '16:00 - 17:20｜靈應寺、觀音像與海景；寺院慢走約一小時。', '17:20 後｜沿海返回，晚餐選美溪或山茶區；龍橋只作順路夜景選配。'], fallback: '山區雨大或視線差就整段取消，改成 SPA、咖啡與飯店晚餐。', map: 'Linh Ung Pagoda Son Tra Da Nang', tag: '北線景色半日' },
+  { date: '10/8（四）', place: '峴港南線＋河岸', title: '五行山是唯一大景點，晚上才進市區', image: 'https://danangfantasticity.com/wp-content/uploads/2025/08/danh-thang-ngu-hanh-son-da-nang-002.jpg', alt: '五行山玄空洞', focus: '五行山 + 飯店午休 + APEC 公園／龍橋', plan: ['09:00 - 10:30｜早餐、看雨勢與地面狀況；10:45 左右搭車南下。', '11:05 - 13:30｜五行山只走水山、玄空洞與一處觀景台；可搭電梯上山。', '13:45 - 17:00｜午餐後回 M Hotel，午睡、下午茶或泳池。', '17:30 後｜APEC 公園、韓江河岸與龍橋夜景，再在市區吃晚餐。'], fallback: '下雨改占婆雕刻博物館＋漢市場；五行山直接刪除，不挪到隔天補課。', map: 'The Marble Mountains Da Nang', tag: '一個大景點就夠' },
+  { date: '10/9（五）', place: '峴港市中心 → 回程', title: '伴手禮最後買，留足機場緩衝', image: 'https://danangfantasticity.com/wp-content/uploads/2023/10/nhung-khu-cho-noi-tieng-tai-da-nang-khong-the-bo-qua-scaled.jpg', alt: '峴港漢市場', focus: '漢市場 → 午餐／按摩 → DAD 19:45', plan: ['09:00 - 10:30｜早餐、整理行李與證件；依飯店時間退房並寄放行李。', '11:15 - 12:45｜漢市場買咖啡、零食與乾貨；先列清單，不逛服飾樓層。', '13:00 - 15:30｜市中心午餐，再選按摩或咖啡；雨天也不受影響。', '15:30 - 16:30｜回飯店取行李，最晚約 16:30–16:45 前往機場。'], fallback: '若前一天雨天已去漢市場，今天整段改成飯店附近午餐與 SPA，不新增遠點。', map: 'Han Market Da Nang 119 Tran Phu', tag: '市中心順路收尾' }
 ];
 
 const hoiAnPlan = [
@@ -69,6 +69,43 @@ const banaZones = [
   { name: 'Fantasy Park・月亮城堡', label: '雨天保底｜室內為主', image: 'https://sun-ecommerce-cdn.azureedge.net/ecommerce/service-sites/asset/SunWorldBaNaHill/google-doc/post_id_5560/AD_4nXei4aLd6DTvJ9O-T4IPzY4G-f9hHJLgkf-a7Ig7OeUli09H27gkvl-gEu--gqNBnqkHMA9CuSi__zx5XP9R6_d4bgBlv4AsVmpCUA1vrEnnRFnbjSUyXDuj87bVqHSiLIILjpbqJsPzqtPrqdypFIEsmkUZ1XneGN_mRwrSmb_c8xk9=s2048.webp', text: 'Fantasy Park 與月亮城堡可接住霧雨時段；部分遊戲、蠟像館或酒窖需另付費，現場再決定即可。', map: 'Fantasy Park Ba Na Hills' }
 ];
 
+const danangPlan = [
+  { day: '10/6 · 入住日', title: '把移動疲勞留在飯店裡', note: '今天沒有市區清單', steps: [
+    ['16:00–17:30', '入住、下午茶、休息', '先使用 M Hotel 已含的下午茶與房間設施；巴拿山若延誤，這段自然縮短。'],
+    ['17:30–18:30', '美溪沙灘短走', '看當天風浪與警示旗；只沿飯店正前方散步，不特地叫車追日落。'],
+    ['19:00 後', '海邊晚餐', '選步行或短程叫車可到的餐廳，今晚不過橋進市中心。']
+  ]},
+  { day: '10/7 · 北線', title: '下午才出發的山茶半島', note: '唯一主角：靈應寺', steps: [
+    ['09:00–15:15', '早餐＋完整飯店上午', '房間、泳池、海灘、午餐與午睡自由組合；不要為了「半日遊」提早起床。'],
+    ['15:30–16:00', '沿海岸北上', '建議包車往返並請司機等候；不騎機車挑戰山路。'],
+    ['16:00–17:20', '山茶靈應寺', '看 67 公尺觀音像、寺院與回望峴港海岸；衣著遮肩過膝、降低音量。'],
+    ['17:20–18:10', '沿海返回', '視天候停一處安全觀景點即可，不追猴、不餵食，也不再上棋盤頂。'],
+    ['18:30 後', '美溪／山茶區晚餐', '若精神好，才順路到龍橋河岸看夜景；週三沒有必要久候噴火秀。']
+  ]},
+  { day: '10/8 · 南線＋河岸', title: '一個大景點，搭配一個城市夜晚', note: '晴天版／雨天可整段替換', steps: [
+    ['09:00–10:30', '早餐與天氣決定', '地面乾、雨勢小才選五行山；連續降雨就直接啟動博物館版本。'],
+    ['10:45–13:30', '五行山・水山精華', '搭車約 15–20 分鐘；電梯上山後走玄空洞、寺院與一處觀景台，不加走全部洞窟。'],
+    ['13:45–17:00', '午餐＋M Hotel 午休', '回海邊吃午餐、午睡或下午茶，傍晚才再次出門。'],
+    ['17:30–18:15', 'APEC 公園', '在韓江南岸散步看建築與河景；下雨可直接略過。'],
+    ['18:15 後', '龍橋／白藤街＋晚餐', '把龍橋當夜景而非必看表演；週四官方例行時段沒有 21:00 噴火秀。']
+  ]},
+  { day: '10/9 · 回程日', title: '中心區一次完成，然後去機場', note: '最晚 16:30–16:45 離開飯店', steps: [
+    ['09:00–10:45', '早餐、收拾、寄放行李', '退房時間依飯店當日規定；護照、票券與易碎品留隨身。'],
+    ['11:15–12:45', '漢市場伴手禮', '主攻咖啡、腰果、餅乾與包裝乾貨；確認保存期限、密封與入境規範。'],
+    ['13:00–15:30', '午餐＋按摩或咖啡', '活動留在海州中心區，不再跨去山茶半島或五行山。'],
+    ['15:30–16:30', '取行李、前往機場', 'IT552 19:45 起飛；保留市區車流、報到與安檢緩衝。']
+  ]}
+];
+
+const danangPlaces = [
+  { name: '美溪沙灘・M Hotel', label: '基地｜10/6–10/9', image: 'https://danangfantasticity.com/wp-content/uploads/2024/03/chiem-nguong-bien-my-khe-1-trong-10-bai-bien-dep-nhat-chau-a-05.jpg', text: '三晚都以海邊飯店為主場。10/6 只短走、10/7 上午完整留白；十月海況變化快，游泳以現場旗幟與飯店建議為準。', map: 'M Hotel Danang My Khe Beach', site: 'https://danangfantasticity.com/en/discovery/my-khe-beach-one-of-the-ten-most-beautiful-beaches-in-asia', siteText: '峴港官方介紹' },
+  { name: '山茶半島靈應寺', label: '10/7｜北線唯一主角', image: 'https://danangfantasticity.com/wp-content/uploads/2022/01/linh-ung-pagoda-must-see-destination-for-tourists-to-da-nang-3.png', text: '距市中心約 10 公里，寺院面海，可看 67 公尺觀音像與整段城市海岸。官方建議停留約一小時；這次不再追加棋盤頂。', map: 'Linh Ung Pagoda Son Tra Da Nang', site: 'https://danangfantasticity.com/en/linh-ung-pagoda-must-see-destination-for-tourists-to-da-nang', siteText: '峴港官方介紹' },
+  { name: '五行山・水山', label: '10/8｜晴天大景點', image: 'https://danangfantasticity.com/wp-content/uploads/2025/08/danh-thang-ngu-hanh-son-da-nang-002.jpg', text: '文章建議抓 3–4 小時；你們採晚起精華版，只走水山、玄空洞、寺院與一處觀景台。即使搭電梯仍有石階，雨天不去。', map: 'The Marble Mountains Da Nang Gate 2', site: 'https://danangfantasticity.com/en/the-marble-mountains', siteText: '峴港官方資訊' },
+  { name: 'APEC 公園・龍橋河岸', label: '10/8｜城市夜色', image: 'https://danangfantasticity.com/wp-content/uploads/2024/05/cau-rong-phun-nuoc-phun-lua-trong-cac-dem-dien-ra-dai-hoi-the-thao-hoc-sinh-dong-nam-a-lan-thu-13-1.jpg', text: '兩處同在韓江南側，適合五行山午休後再出門。官方目前列龍橋噴火為週五、六、日 21:00；10/8 週四只看橋景即可。', map: 'APEC Park Da Nang', site: 'https://danangfantasticity.com/en/key-times-to-save-for-your-da-nang-travel-itinerary', siteText: '查看官方時刻' },
+  { name: '漢市場', label: '10/9｜最後採買', image: 'https://danangfantasticity.com/wp-content/uploads/2023/10/nhung-khu-cho-noi-tieng-tai-da-nang-khong-the-bo-qua-scaled.jpg', text: '位於 119 Trần Phú，官方資料列每日 06:00–19:00。把咖啡、乾貨與零食留到回程日購買，較好整理行李；不安排大宗生鮮。', map: 'Han Market Da Nang 119 Tran Phu', site: 'https://danangfantasticity.com/en/discovery/famous-local-markets-in-danang', siteText: '峴港官方市場資訊' },
+  { name: '占婆雕刻博物館', label: '10/8｜雨天替換', image: 'https://danangfantasticity.com/wp-content/uploads/2020/07/tong-quan-bao-tang-dieu-khac-cham-da-nang-01.jpg', text: '若五行山濕滑，改來這裡看占婆砂岩雕刻約一小時，再接漢市場。2026 官方資料列 07:30–17:00、一般票 60,000 越南盾；出發前仍需重查。', map: 'Da Nang Museum of Cham Sculpture', site: 'https://danangfantasticity.com/en/news/plan-your-da-nang-journey-2026-updated-admission-prices-for-attractions-and-tourist-sites', siteText: '查看 2026 官方資訊' }
+];
+
 const stays = [
   { dates: '10/3 - 10/5', name: 'Hotel Royal Hoi An Danang', room: '豪華大床房 · 2 位', notes: '含早餐、停車、Wi‑Fi、健身中心。此訂單不可退款。', map: 'Hotel Royal Hoi An Danang, The Legacy Riverfront Resort & Spa' },
   { dates: '10/5 - 10/6', name: 'Mercure Danang French Village Bana Hills', room: 'Superior King Room · 2 位', notes: '含早餐、Wi‑Fi。此訂單不可退款；憑證未列園區與纜車門票，需另確認。', map: 'Mercure Danang French Village Bana Hills' },
@@ -96,6 +133,8 @@ function render() {
   document.querySelector('#hoian-places').innerHTML = hoiAnPlaces.map(place => `<article class="hoian-place"><img src="${place.image}" alt="${place.name}" loading="lazy" /><div><span>${place.label}</span><h3>${place.name}</h3><p>${place.text}</p><div class="place-links"><a href="${maps(place.map)}" target="_blank" rel="noopener">Google Maps ↗</a><a href="${place.site}" target="_blank" rel="noopener">${place.siteText} ↗</a></div></div></article>`).join('');
   document.querySelector('#bana-plan').innerHTML = banaPlan.map(block => `<article class="bana-day"><p>${block.day}</p><h3>${block.title}</h3><ol>${block.steps.map(step => `<li><time>${step[0]}</time><div><strong>${step[1]}</strong><p>${step[2]}</p></div></li>`).join('')}</ol></article>`).join('');
   document.querySelector('#bana-zones').innerHTML = banaZones.map(zone => `<article class="bana-zone"><img src="${zone.image}" alt="${zone.name}" loading="lazy" /><div><span>${zone.label}</span><h3>${zone.name}</h3><p>${zone.text}</p><a href="${maps(zone.map)}" target="_blank" rel="noopener">Google Maps ↗</a></div></article>`).join('');
+  document.querySelector('#danang-plan').innerHTML = danangPlan.map(block => `<article class="danang-day"><div class="danang-day-head"><p>${block.day}</p><span>${block.note}</span></div><h3>${block.title}</h3><ol>${block.steps.map(step => `<li><time>${step[0]}</time><div><strong>${step[1]}</strong><p>${step[2]}</p></div></li>`).join('')}</ol></article>`).join('');
+  document.querySelector('#danang-places').innerHTML = danangPlaces.map(place => `<article class="danang-place"><img src="${place.image}" alt="${place.name}" loading="lazy" /><div><span>${place.label}</span><h3>${place.name}</h3><p>${place.text}</p><div class="place-links"><a href="${maps(place.map)}" target="_blank" rel="noopener">Google Maps ↗</a><a href="${place.site}" target="_blank" rel="noopener">${place.siteText} ↗</a></div></div></article>`).join('');
   document.querySelector('#stay-grid').innerHTML = stays.map(stay => `<article class="stay-card"><p>${stay.dates}</p><h3>${stay.name}</h3><strong>${stay.room}</strong><p class="stay-notes">${stay.notes}</p><a href="${maps(stay.map)}" target="_blank" rel="noopener">在 Google Maps 開啟 ↗</a></article>`).join('');
   document.querySelector('#event-grid').innerHTML = events.map(event => `<article class="event-card"><span class="event-status">${event.status}</span><h3>${event.title}</h3><p>${event.body}</p><a href="${event.link}" target="_blank" rel="noopener">${event.linkText} ↗</a></article>`).join('');
   document.querySelector('#place-grid').innerHTML = places.map(place => `<article class="place-card"><img src="${place.image}" alt="${place.name}" loading="lazy" /><div><span>${place.type}</span><h3>${place.name}</h3><p>${place.text}</p><a href="${maps(place.map)}" target="_blank" rel="noopener">Google Maps ↗</a></div></article>`).join('');
