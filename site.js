@@ -1,13 +1,43 @@
 const maps = name => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(name)}`;
 
 const days = [
-  { date: '10/3（六）', place: '會安', title: '抵達後，只做一件浪漫的小事', image: 'https://izitour.com/media/ckeditor/hoi-an-vietnam-1.webp', alt: '會安河岸燈籠', focus: '峴港機場 → Hotel Royal Hoi An', plan: ['18:10 - 19:30｜落地、入境、提領行李。接送不要約太早，預留排隊與延誤緩衝。', '約 19:40 - 21:00｜包車或 Grab 直接到會安飯店；今晚不進峴港市區。', '21:15 後｜飯店周邊或河岸晚餐，精神好才散步到安會橋看燈籠。'], fallback: '班機延誤就改飯店晚餐或外送；河岸散步可直接取消。', map: 'Hotel Royal Hoi An Danang, The Legacy Riverfront Resort & Spa', tag: '抵達日留白' },
-  { date: '10/4（日）', place: '會安', title: '古城慢走，午後回飯店休息', image: 'https://bvhttdl.mediacdn.vn/2019/12/4/22-1575444930391357177624-1575454914343-15754549150641583342735.jpg', alt: '會安日本橋', focus: '古城 + 河岸夜色', plan: ['09:30 - 10:30｜慢早餐後步行進古城，先買票；日本橋、福建會館與一間老屋就夠。', '12:15 - 15:30｜午餐後回飯店游泳、午睡或河景咖啡，這段不安排任何必去景點。', '16:30 - 18:00｜黃昏二訪古城；河岸慢走，喜歡才坐約 20 分鐘的短程河船。', '18:30 後｜會安晚餐與自由逛街，飯後步行回飯店。'], fallback: '午後下雨就把古城集中在上午，晚上只保留近距離晚餐。', map: 'Hoi An Ancient Town', tag: '一天一主題' },
+  { date: '10/3（六）', place: '會安', title: '抵達後，只試探性地看一眼燈籠', image: 'https://izitour.com/media/ckeditor/hoi-an-vietnam-1.webp', alt: '會安河岸燈籠', focus: '峴港機場 → Hotel Royal Hoi An', plan: ['18:10 - 19:30｜落地、入境、提領行李；保留排隊與延誤緩衝。', '約 19:40 - 21:00｜包車或 Grab 直接到會安飯店，途中不繞峴港市區。', '21:15 後｜先辦入住與找近距離餐食；還有精神才去安會橋／河岸散步 20–30 分鐘。'], fallback: 'Red Bean 最後點餐雖到 21:45，但抵達日變數太多，不建議訂今晚。', map: 'Hotel Royal Hoi An Danang, The Legacy Riverfront Resort & Spa', tag: '抵達日留白' },
+  { date: '10/4（日）', place: '會安', title: '古城與絲巾，晚上再決定要不要看大秀', image: 'https://bvhttdl.mediacdn.vn/2019/12/4/22-1575444930391357177624-1575454914343-15754549150641583342735.jpg', alt: '會安日本橋', focus: '古城 + Metiseko + Red Bean + 選配 Memories', plan: ['09:30 - 11:15｜慢早餐後走日本橋、老街與一間會館；不追求把古城走完。', '11:15 - 12:00｜到 Metiseko 專心挑天然桑蠶絲絲巾；時間夠再比較附近備選店。', '12:15 - 16:00｜午餐後回飯店游泳、午睡或咖啡，保留完整休息段。', '16:30 後｜想看秀：Red Bean 16:45 提早晚餐→18:35 Memories Land→20:00 主秀；不看秀則黃昏古城→18:30 Red Bean。'], fallback: 'Memories Show 通常雨中照演；若雷雨、積水或交通不穩，仍以當日官方與飯店判斷為準。', map: 'Metiseko Hoi An 140 Tran Phu', tag: '購物與夜間二選一' },
   { date: '10/5（一）', place: '巴拿山', title: '住進雲裡，先看天氣再決定動線', image: 'https://mediaen.vietnamplus.vn/images/cc571c067c64d4f85fb35f04673bf2968c14e8b40b6bd340d8146a8023dc5221ece1bcdfc256efeeae6dd06768e18dfb/7_1.jpg', alt: '巴拿山金橋', focus: '會安 → Mercure Bà Nà Hills', plan: ['08:00 - 09:00｜早餐、退房；確認山頂即時天氣與 Mercure 房客入口。', '09:00 - 10:30｜包車前往巴拿山；山腳辦票、交接行李並拍下當日纜車圖。', '11:00 - 14:30｜能見度好就先金橋；霧濃就直上法國村吃午餐、寄放行李。', '15:00 - 晚餐｜法國村、月亮城堡或 Fantasy Park；傍晚若雲開再回金橋。'], fallback: '完整的逐時版、天氣決策與各區地圖，請看下方「巴拿山兩天一夜」。', map: 'Mercure Danang French Village Bana Hills', tag: '兩次看天機會' },
   { date: '10/6（二）', place: '巴拿山 → 峴港', title: '清晨看雲，午後再換成海', image: 'https://vcdn1-dulich.vnecdn.net/2023/03/01/bai-mykhe-jpeg-167763815-6011-1898-1677638252.jpg?dpr=1&fit=crop&h=0&q=100&s=NeyKbOipMzANDXNICpGlRA&w=1200', alt: '美溪海灘', focus: 'Mercure Bà Nà Hills → M Hotel Danang', plan: ['06:45 - 08:00｜法國村無人散步、早餐；先向櫃檯確認跨區纜車開放。', '08:00 - 10:15｜天晴走金橋、花園、靈應寺；霧雨則延後並留在室內。', '10:30 - 13:30｜回飯店取行李、退房、纜車下山，包車前往峴港。', '14:30 後｜M Hotel 下午茶、浴缸或泳池，晚餐只留飯店周邊。'], fallback: '若上午仍是濃霧，就接受「雲中巴拿山」版本，不延誤下山與飯店午後。', map: 'Golden Bridge Ba Na Hills', tag: '山海切換日' },
   { date: '10/7（三）', place: '山茶半島', title: '晚一點出門，去看山與海', image: 'https://vcdn1-dulich.vnecdn.net/2023/03/01/bai-mykhe-jpeg-167763815-6011-1898-1677638252.jpg?dpr=1&fit=crop&h=0&q=100&s=NeyKbOipMzANDXNICpGlRA&w=1200', alt: '峴港海岸與山景', focus: 'M Hotel 渡假日 + 靈應寺', plan: ['09:30 - 13:30｜不設鬧鐘的飯店上午：早餐、房間、泳池或沙灘任選。', '14:00 - 15:30｜回房整理、下午茶或午睡，把出門留給較舒服的光線。', '15:30 - 18:00｜包車到靈應寺與山茶海景；只停寺院與一處觀景點，不環半島。', '18:30 後｜回市區或海邊晚餐，選離飯店順路的地點。'], fallback: '下雨就改成 M Hotel 下午茶＋SPA／咖啡館，完全不需補課。', map: 'Linh Ung Pagoda Son Tra', tag: '景色半日' },
   { date: '10/8（四）', place: '自由選擇', title: '留給天氣，也留給當下的心情', image: 'https://media.mia.vn/uploads/blog-du-lich/bai-bien-my-khe-da-nang-lang-nguoi-ngam-nhin-1-trong-6-bai-bien-dep-nhat-hanh-tinh-01-1636298582.jpeg', alt: '峴港海灘', focus: 'SPA / 五行山 / 海邊，三選一', plan: ['09:00 - 12:00｜晴天選五行山；雨天或想完全放空就預約 SPA。五行山有石階，穿好走的鞋。', '12:30 - 16:30｜回飯店午餐與休息，再用一次下午茶；這是最後一個完整渡假下午。', '17:30 - 晚上｜韓江河畔晚餐或海邊日落二選一；伴手禮最多保留一小段時間。'], fallback: '前三天若有因下雨取消的景點，才移到今天；否則保持 SPA 日。', map: 'Marble Mountains Da Nang', tag: '彈性保留日' },
   { date: '10/9（五）', place: '回程', title: '把最後半天留給舒服的收尾', image: 'https://hopjourneys.com/wp-content/uploads/2024/05/My-Khe-Beach.png', alt: '美溪海灘晨景', focus: '海邊早餐 → DAD 19:45', plan: ['08:30 - 10:30｜早餐、最後一次海邊散步；先把行李與證件收好。', '11:00 - 15:30｜退房寄放行李，午餐、按摩、咖啡三選一，別再安排長途景點。', '16:30 - 16:45｜由飯店出發往機場，對應 IT552 19:45 起飛。'], fallback: '下雨就把散步換成飯店附近咖啡，行程仍然完整。', map: 'Da Nang International Airport', tag: '從容返程' }
+];
+
+const hoiAnPlan = [
+  { day: '10/3 · 抵達夜', title: '不預約，用體力決定', steps: [
+    ['18:10–19:30', '入境與行李', '接送預留延誤；不在機場排任何非必要行程。'],
+    ['19:40–21:00', '直接前往 Hotel Royal', '抵達會安後先入住，若餓就以飯店或附近餐食為主。'],
+    ['21:15–21:45', '選配河岸短走', '班機準時且精神好，才去安會橋看燈籠；最晚半小時就回飯店。']
+  ]},
+  { day: '10/4 · 完整日', title: '古城、絲巾與舒服的晚間選擇', steps: [
+    ['08:30–09:30', '飯店早餐', '慢慢開始，不設一早集合點。'],
+    ['09:45–11:15', '日本橋 → 古城西段', '由飯店步行進古城，只選日本橋、街巷與一間會館。'],
+    ['11:15–12:00', 'Metiseko 絲巾購物', '主攻 140 Trần Phú；直接說只看 mulberry silk scarves，不做衣服。'],
+    ['12:00–13:15', '古城午餐／咖啡', '選購物店附近即可，不跨城追名店。'],
+    ['13:30–16:00', '回飯店休息', '游泳、午睡或河景放空，讓晚上仍有精神。'],
+    ['16:30–18:10', 'Red Bean 提早晚餐', '若要看秀，建議訂 16:45；也能利用 16:30–18:30 的飲品 Happy Hour。'],
+    ['18:15–19:40', '前往 Memories Land', '叫車前往，先逛園區與小型演出；19:40 前往主舞台。'],
+    ['20:00–21:00', 'Hoi An Memories Show', '目前官方時刻為 20:00–21:00。雨季優先選 HIGH／VIP 遮蔽座位。'],
+    ['21:15 後', '回飯店', '今晚不再加河船或宵夜行程。']
+  ]},
+  { day: '10/5 · 離開會安', title: '準時保住巴拿山天氣窗口', steps: [
+    ['08:00–09:00', '早餐、退房', '確認山頂天氣、車輛與 Mercure 房客入口。'],
+    ['09:00', '出發前往巴拿山', '不再安排絲綢村或補買；若前一天沒買到，可先線上記下款式，避免延誤。']
+  ]}
+];
+
+const hoiAnPlaces = [
+  { name: 'Metiseko Hoi An', label: '首選｜真正以絲巾為目標', image: 'https://metiseko.com/cdn/shop/files/banner-2_370x230%402x.jpg?v=1613739097', text: '官方有獨立桑蠶絲絲巾系列，越南製絲料與手工網版印花；旗艦店在古城 140 Trần Phú，每日 08:30–21:30。設計感、材質資訊與口碑最完整。', map: 'Metiseko 140 Tran Phu Hoi An', site: 'https://metiseko.com/collections/the-scarf-collection', siteText: '先看絲巾款式' },
+  { name: 'Hoi An Silk Village', label: '選配｜想理解真絲工藝', image: 'https://statics.vinpearl.com/Hoi-An-Silk-Village-2_1693229081.jpg', text: '在 28 Nguyễn Tất Thành 展示養蠶、抽絲與織造，也有商品區。適合把購物變成約 60 分鐘文化體驗；不同來源所列時段不一致，去前應先電話確認。', map: 'Hoi An Silk Village 28 Nguyen Tat Thanh', site: 'https://dltm.vnptit3.vn/en/langluahoian', siteText: '查看旅遊單位介紹' },
+  { name: 'Red Bean Hoi An', label: '已指定｜建議提早晚餐', image: 'https://lasiestaresorts.com/wp-content/uploads/2025/12/smallRed-Bean-Restaurant_5083.jpg', text: '位於 132 Hùng Vương，午餐至晚餐 11:30 開始、最後點餐 21:45；若搭配主秀，16:45–18:10 最順，也正好碰上 16:30–18:30 Happy Hour。', map: 'Red Bean Hoi An 132 Hung Vuong', site: 'https://hoian.redbeanrestaurants.com/story', siteText: '查看官方餐廳資訊' },
+  { name: 'Hoi An Memories Land', label: '選配｜10/4 晚上', image: 'https://hoianmemoriesland.com/public/media/bigshow_kuha_m1.webp', text: '園區小型演出約 17:00–20:00，主秀 20:00–21:00。主秀為戶外大型舞台；官方稱一般下雨仍演出，HIGH／VIP 為遮蔽席，ECO 通常提供雨衣。', map: 'Hoi An Memories Land 88 Tran Quang Khai', site: 'https://hoianmemoriesland.com/en/performance-schedule', siteText: '查看官方表演時刻' }
 ];
 
 const banaPlan = [
@@ -62,6 +92,8 @@ const places = [
 
 function render() {
   document.querySelector('#schedule-grid').innerHTML = days.map(day => `<article class="day-card"><img src="${day.image}" alt="${day.alt}" loading="lazy" /><div class="day-content"><div class="day-meta"><span>${day.date}</span><span>${day.place}</span></div><h3>${day.title}</h3><p class="focus">${day.focus}</p><ol>${day.plan.map(item => `<li>${item}</li>`).join('')}</ol><p class="weather-plan"><b>雨天／彈性：</b>${day.fallback}</p><div class="card-bottom"><span>${day.tag}</span><a href="${maps(day.map)}" target="_blank" rel="noopener">Google Maps ↗</a></div></div></article>`).join('');
+  document.querySelector('#hoian-plan').innerHTML = hoiAnPlan.map(block => `<article class="hoian-day"><p>${block.day}</p><h3>${block.title}</h3><ol>${block.steps.map(step => `<li><time>${step[0]}</time><div><strong>${step[1]}</strong><p>${step[2]}</p></div></li>`).join('')}</ol></article>`).join('');
+  document.querySelector('#hoian-places').innerHTML = hoiAnPlaces.map(place => `<article class="hoian-place"><img src="${place.image}" alt="${place.name}" loading="lazy" /><div><span>${place.label}</span><h3>${place.name}</h3><p>${place.text}</p><div class="place-links"><a href="${maps(place.map)}" target="_blank" rel="noopener">Google Maps ↗</a><a href="${place.site}" target="_blank" rel="noopener">${place.siteText} ↗</a></div></div></article>`).join('');
   document.querySelector('#bana-plan').innerHTML = banaPlan.map(block => `<article class="bana-day"><p>${block.day}</p><h3>${block.title}</h3><ol>${block.steps.map(step => `<li><time>${step[0]}</time><div><strong>${step[1]}</strong><p>${step[2]}</p></div></li>`).join('')}</ol></article>`).join('');
   document.querySelector('#bana-zones').innerHTML = banaZones.map(zone => `<article class="bana-zone"><img src="${zone.image}" alt="${zone.name}" loading="lazy" /><div><span>${zone.label}</span><h3>${zone.name}</h3><p>${zone.text}</p><a href="${maps(zone.map)}" target="_blank" rel="noopener">Google Maps ↗</a></div></article>`).join('');
   document.querySelector('#stay-grid').innerHTML = stays.map(stay => `<article class="stay-card"><p>${stay.dates}</p><h3>${stay.name}</h3><strong>${stay.room}</strong><p class="stay-notes">${stay.notes}</p><a href="${maps(stay.map)}" target="_blank" rel="noopener">在 Google Maps 開啟 ↗</a></article>`).join('');

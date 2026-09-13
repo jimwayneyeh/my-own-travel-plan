@@ -1,0 +1,79 @@
+.hoian-section {
+  background: #efe6d7;
+  color: var(--ink);
+}
+
+.hoian-summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid #cfc4b3;
+  background: #fffaf2;
+  margin-bottom: 22px;
+}
+
+.hoian-summary > div {
+  padding: 22px;
+  border-right: 1px solid #cfc4b3;
+}
+
+.hoian-summary > div:last-child { border-right: 0; }
+.hoian-summary span, .hoian-options span, .hoian-place span {
+  display: block;
+  color: var(--coral);
+  font-size: 0.73rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+.hoian-summary strong { display: block; margin: 4px 0; }
+.hoian-summary p { margin: 0; color: #5c706f; font-size: 0.84rem; }
+
+.hoian-plan {
+  display: grid;
+  grid-template-columns: 0.78fr 1.45fr 0.72fr;
+  gap: 15px;
+}
+
+.hoian-day { background: var(--paper); border-top: 4px solid var(--coral); padding: 24px; }
+.hoian-day > p { color: var(--coral); font-size: 0.75rem; font-weight: 700; margin: 0; letter-spacing: 0.1em; }
+.hoian-day > h3 { font: 700 1.22rem/1.3 "Noto Sans TC", sans-serif; margin: 6px 0 16px; }
+.hoian-day ol { list-style: none; padding: 0; margin: 0; }
+.hoian-day li { padding: 11px 0; border-top: 1px solid var(--line); }
+.hoian-day time { display: block; color: var(--coral); font-size: 0.75rem; font-weight: 700; }
+.hoian-day li strong { font-size: 0.87rem; }
+.hoian-day li p { font-size: 0.81rem; color: #587077; margin: 2px 0 0; }
+
+.hoian-options { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 18px 0 72px; }
+.hoian-options article { background: #173f47; color: white; padding: 24px; }
+.hoian-options h3 { font-size: 1.08rem; margin: 7px 0; }
+.hoian-options p { color: #dce7e3; font-size: 0.85rem; margin: 0; }
+.shop-heading { margin-bottom: 25px; }
+
+.hoian-places { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.hoian-place { display: grid; grid-template-columns: 180px 1fr; background: var(--paper); min-height: 235px; }
+.hoian-place img { width: 100%; height: 100%; object-fit: cover; }
+.hoian-place > div { padding: 20px; }
+.hoian-place h3 { font: 700 1.2rem/1.25 "Noto Sans TC", sans-serif; margin: 7px 0; }
+.hoian-place p { color: #526a6c; font-size: 0.84rem; }
+.place-links { display: flex; flex-wrap: wrap; gap: 8px 15px; }
+.place-links a { color: var(--ink); font-size: 0.78rem; font-weight: 700; text-underline-offset: 3px; }
+
+.silk-check { display: grid; grid-template-columns: 190px 1fr; gap: 20px; margin-top: 18px; padding: 22px; border: 1px solid #cfc4b3; background: #e4d5bd; }
+.silk-check strong { color: #8d472f; }
+.silk-check ul { margin: 0; padding-left: 1.1em; font-size: 0.85rem; }
+.silk-check li { margin: 5px 0; }
+.hoian-sources { color: #657674; }
+.hoian-sources a { color: var(--ink); }
+
+@media (max-width: 900px) {
+  .hoian-plan { grid-template-columns: 1fr; }
+  .hoian-places { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 650px) {
+  .hoian-summary, .hoian-options { grid-template-columns: 1fr; }
+  .hoian-summary > div { border-right: 0; border-bottom: 1px solid #cfc4b3; }
+  .hoian-summary > div:last-child { border-bottom: 0; }
+  .hoian-place { grid-template-columns: 1fr; }
+  .hoian-place img { height: 190px; }
+  .silk-check { grid-template-columns: 1fr; gap: 8px; }
+}
