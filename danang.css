@@ -66,6 +66,47 @@
 .danang-weather article { padding: 22px; border: 1px solid #a9c2c0; background: #cae1df; }
 .danang-weather h3 { margin: 6px 0; font-size: 1rem; }
 .danang-weather p { margin: 0; color: #496463; font-size: 0.82rem; }
+.restaurant-heading { margin: 68px 0 24px; }
+.restaurant-route {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid #a9c2c0;
+  background: #f4faf8;
+}
+.restaurant-route > div { padding: 20px; border-right: 1px solid #a9c2c0; }
+.restaurant-route > div:last-child { border-right: 0; }
+.restaurant-route span,
+.restaurant-card-head span:first-child {
+  color: #167a80;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+}
+.restaurant-route strong { display: block; margin: 5px 0; font-size: 0.9rem; }
+.restaurant-route p { margin: 0; color: #587171; font-size: 0.79rem; }
+.restaurant-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-top: 16px;
+}
+.restaurant-card {
+  padding: 22px;
+  border: 1px solid #b8cdca;
+  border-top: 4px solid #7fa7a5;
+  background: var(--paper);
+}
+.restaurant-card.must { border-top-color: #d4774b; }
+.restaurant-card.primary { border-top-color: #167a80; }
+.restaurant-card.backup,
+.restaurant-card.hold { background: #edf4f2; }
+.restaurant-card-head { display: flex; justify-content: space-between; gap: 14px; }
+.restaurant-card-head span:last-child { color: #657b79; font-size: 0.7rem; text-align: right; }
+.restaurant-card h3 { margin: 8px 0 3px; font: 700 1.08rem/1.3 "Noto Sans TC", sans-serif; }
+.restaurant-card > p { color: #526a6c; font-size: 0.82rem; }
+.restaurant-card .restaurant-address { margin: 0 0 12px; color: #167a80; font-weight: 600; }
+.restaurant-verdict { margin: 16px 0 70px; padding: 20px 22px; background: #173f47; color: #f4faf8; }
+.restaurant-verdict p { display: inline; margin: 0 0 0 6px; color: #dcebea; font-size: 0.84rem; }
 .danang-place-heading { margin-bottom: 24px; }
 
 .danang-places {
@@ -86,10 +127,13 @@
   .danang-rhythm > div:nth-child(2) { border-right: 0; }
   .danang-rhythm > div:nth-child(-n+2) { border-bottom: 1px solid #a9c2c0; }
   .danang-places { grid-template-columns: repeat(2, 1fr); }
+  .restaurant-route { grid-template-columns: repeat(2, 1fr); }
+  .restaurant-route > div:nth-child(2) { border-right: 0; }
+  .restaurant-route > div:nth-child(-n+2) { border-bottom: 1px solid #a9c2c0; }
 }
 
 @media (max-width: 720px) {
-  .danang-plan, .danang-weather, .danang-places { grid-template-columns: 1fr; }
+  .danang-plan, .danang-weather, .danang-places, .restaurant-grid { grid-template-columns: 1fr; }
   .danang-day li { grid-template-columns: 1fr; gap: 3px; }
 }
 
@@ -98,4 +142,10 @@
   .danang-rhythm > div { border-right: 0; border-bottom: 1px solid #a9c2c0; }
   .danang-rhythm > div:last-child { border-bottom: 0; }
   .danang-place img { height: 190px; }
+  .restaurant-route { grid-template-columns: 1fr; }
+  .restaurant-route > div { border-right: 0; border-bottom: 1px solid #a9c2c0; }
+  .restaurant-route > div:last-child { border-bottom: 0; }
+  .restaurant-card-head { display: block; }
+  .restaurant-card-head span { display: block; margin-bottom: 5px; text-align: left !important; }
+  .restaurant-verdict p { display: block; margin: 7px 0 0; }
 }
