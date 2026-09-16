@@ -1,0 +1,13 @@
+.day-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 7px 14px;
+}
+
+.day-links a:first-child { color: var(--coral); }
+
+@media (max-width: 560px) {
+  .card-bottom { align-items: flex-start; gap: 12px; }
+  .day-links { display: grid; text-align: right; }
+}
