@@ -21,8 +21,8 @@ const tripDayData = {
   '2026-10-04': {
     date: '10/4（日）', place: '會安古城', eyebrow: 'HOI AN · ONE FULL DAY',
     title: '由西向東慢走，下午順路挑絲巾',
-    summary: '09:00 起床吃早餐，約 10:45 才離開飯店。白天沿古城由日本橋往福建會館與 Metiseko 前進；購物後先回房休息，晚上再依是否看秀選擇 Red Bean 的用餐時間。',
-    decision: '推薦版保留 Memories Show；若不想受場次約束，就把 Red Bean 改為 18:30 正常晚餐，餐後只逛河岸。',
+    summary: '09:00 起床吃早餐，約 10:45 才離開飯店。白天沿古城由日本橋往福建會館與 Metiseko 前進；購物後先回房休息。晚上三選一：留在會安看 Memories Show、正常吃晚餐逛河岸，或為 21:00 龍橋噴火專程往返峴港。',
+    decision: '推薦仍留在會安；若龍橋噴火是高優先願望，10/4 是全程唯一合理場次，但必須取代 Memories Show，不能兩場都看。',
     places: {
       royal: { name: 'Hotel Royal Hoi An Danang', coords: [15.8817, 108.3266], note: '早餐、午休與住宿' },
       bridge: { name: '日本橋', coords: [15.8772, 108.3262], note: '古城西側起點' },
@@ -31,10 +31,14 @@ const tripDayData = {
       metiseko: { name: 'Metiseko Hoi An', coords: [15.8765, 108.3336], note: '桑蠶絲絲巾購物' },
       redbean: { name: 'Red Bean Hoi An', coords: [15.8862, 108.3243], note: '指定餐廳' },
       memories: { name: 'Hoi An Memories Land', coords: [15.8724, 108.3425], note: '選配園區與 20:00 主秀' },
-      river: { name: '會安河岸', coords: [15.8760, 108.3287], note: '不看秀時的輕鬆替代' }
+      river: { name: '會安河岸', coords: [15.8760, 108.3287], note: '不看秀時的輕鬆替代' },
+      dragon: { name: '峴港龍橋', coords: [16.0610, 108.2270], note: '10/4 21:00 噴火；取代 Memories Show' }
     },
     mainRoute: ['royal', 'bridge', 'canton', 'fujian', 'metiseko', 'royal', 'redbean', 'memories', 'royal'],
-    alternatives: [{ label: '不看秀：Red Bean → 河岸散步 → 飯店', ids: ['redbean', 'river', 'royal'] }],
+    alternatives: [
+      { label: '不看秀：Red Bean → 河岸散步 → 飯店', ids: ['redbean', 'river', 'royal'] },
+      { label: '想看噴火：Red Bean → 峴港龍橋 → 飯店（取代 Memories Show）', ids: ['redbean', 'dragon', 'royal'] }
+    ],
     timeline: [
       { time: '09:00–10:15', title: '飯店早餐與準備', placeId: 'royal', text: '照平常作息慢慢吃，不設任何早場預約。', highlights: ['隨身帶雨具、防水袋和可裝絲巾的乾燥袋'], warnings: ['午後可能陣雨，鞋子以防滑好走為優先'] },
       { time: '10:45–12:15', title: '日本橋 → 古城西段', placeId: 'bridge', text: '由飯店步行進古城，從日本橋沿陳富街向東慢走。', highlights: ['日本橋看木構、屋頂與橋寺一體的空間', '廣肇會館看入口石雕、天井與會館格局'], warnings: ['古城票券與開放房舍依現場公告；不用每間會館都進'] },
@@ -42,8 +46,9 @@ const tripDayData = {
       { time: '13:30–14:25', title: '福建會館', placeId: 'fujian', text: '下午只選一間代表性會館，保留購物和休息時間。', highlights: ['看三進空間、媽祖信仰、天井採光與屋脊裝飾'], warnings: ['尊重祭祀空間；香爐與供桌前避免久站拍攝'] },
       { time: '14:25–15:10', title: 'Metiseko 絲巾購物', placeId: 'metiseko', text: '直接說只看 mulberry silk scarves，不做衣服。', highlights: ['確認 100% mulberry silk、尺寸、印花正反面和收邊', '保留材質清楚的收據與洗滌方式'], warnings: ['不要只憑光澤判斷真絲；預留 30–45 分鐘就足夠'] },
       { time: '15:10–16:30', title: '回飯店休息', placeId: 'royal', text: '放好絲巾、午睡或換裝，至少保留 75 分鐘。', highlights: ['這段是整天不疲累的關鍵留白'], warnings: ['若午間已淋雨，先更換乾衣鞋再出門'] },
-      { time: '16:45–18:10', title: 'Red Bean 提早晚餐', placeId: 'redbean', text: '看秀版建議 16:45 入座；不看秀則可改 18:30 正常晚餐。', highlights: ['提早用餐可避開趕場，也能慢慢吃'], warnings: ['訂位時說明 18:15 左右要離開前往 Memories Land'] },
-      { time: '18:35–21:00', title: '選配：Memories Land', placeId: 'memories', optional: true, text: '先看園區小型演出，19:40 前進主舞台，主秀預計 20:00–21:00。', highlights: ['主舞台看服裝、燈光與大型群舞，不需要再加河船'], warnings: ['戶外演出遇雨以官方當日公告為準；雨季優先 HIGH／VIP 遮蔽席'] }
+      { time: '16:45–18:10', title: 'Red Bean 提早晚餐', placeId: 'redbean', text: '選 Memories Show 建議 16:45 入座；選龍橋則最晚 17:15 左右入座並在 19:30 前離開；不看表演可改 18:30 正常晚餐。', highlights: ['先決定夜間方案，再依離席時間訂位'], warnings: ['訂位時說明後續場次；若用餐延誤，不要冒險趕車或趕秀'] },
+      { time: '18:35–21:00', title: '選配 A：Memories Land', placeId: 'memories', optional: true, text: '先看園區小型演出，19:40 前進主舞台，主秀預計 20:00–21:00。', highlights: ['主舞台看服裝、燈光與大型群舞，不需要再加河船'], warnings: ['戶外演出遇雨以官方當日公告為準；雨季優先 HIGH／VIP 遮蔽席'] },
+      { time: '19:30–22:20', title: '選配 B：龍橋 21:00 噴火', placeId: 'dragon', optional: true, text: '提早吃完 Red Bean，19:30 由會安搭預約車前往峴港，20:20 前抵達龍橋東岸／南岸找位置；看完即返回 Hotel Royal。', highlights: ['例行表演為週五、六、日 21:00，10/4（日）是這趟唯一合理場次', '站河岸看全橋比站橋面更完整，也較容易避開噴水'], warnings: ['這會取代 Memories Show，不能兩場都看', '單程通常約 45–55 分鐘，週末與散場可能更久；建議預約往返車並提早 30–40 分鐘到場', '大雨、交通管制或官方臨時調整時直接取消'] }
     ]
   },
   '2026-10-05': {

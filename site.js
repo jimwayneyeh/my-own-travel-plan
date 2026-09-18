@@ -2,7 +2,7 @@ const maps = name => `https://www.google.com/maps/search/?api=1&query=${encodeUR
 
 const days = [
   { date: '10/3（六）', place: '會安', title: '抵達後，只試探性地看一眼燈籠', image: 'https://izitour.com/media/ckeditor/hoi-an-vietnam-1.webp', alt: '會安河岸燈籠', focus: '峴港機場 → Hotel Royal Hoi An', plan: ['18:10 - 19:30｜落地、入境、提領行李；保留排隊與延誤緩衝。', '約 19:40 - 21:00｜包車或 Grab 直接到會安飯店，途中不繞峴港市區。', '21:15 後｜先辦入住與找近距離餐食；還有精神才去安會橋／河岸散步 20–30 分鐘。'], fallback: 'Red Bean 最後點餐雖到 21:45，但抵達日變數太多，不建議訂今晚。', map: 'Hotel Royal Hoi An Danang, The Legacy Riverfront Resort & Spa', tag: '抵達日留白' },
-  { date: '10/4（日）', place: '會安', title: '睡飽逛古城，下午順路挑絲巾', image: 'https://bvhttdl.mediacdn.vn/2019/12/4/22-1575444930391357177624-1575454914343-15754549150641583342735.jpg', alt: '會安日本橋', focus: '古城 + Metiseko + Red Bean + 選配 Memories', plan: ['09:00 - 10:15｜起床、慢慢吃飯店早餐與準備；不設早場景點。', '10:45 - 13:30｜從日本橋往東逛陳富街，中途吃午餐，只選一間會館。', '13:30 - 15:10｜續走古城核心，14:25 左右抵達 Metiseko 挑絲巾；這是順路停點，不需折返。', '15:15 後｜先回飯店休息；想看秀則 16:45 Red Bean→18:35 Memories Land→20:00 主秀，不看秀則 18:30 再吃晚餐。'], fallback: 'Memories Show 通常雨中照演；若雷雨、積水或交通不穩，仍以當日官方與飯店判斷為準。', map: 'Metiseko Hoi An 140 Tran Phu', tag: '下午購物最順路' },
+  { date: '10/4（日）', place: '會安', title: '睡飽逛古城，下午順路挑絲巾', image: 'https://bvhttdl.mediacdn.vn/2019/12/4/22-1575444930391357177624-1575454914343-15754549150641583342735.jpg', alt: '會安日本橋', focus: '古城 + Metiseko + Red Bean + 夜間三選一', plan: ['09:00 - 10:15｜起床、慢慢吃飯店早餐與準備；不設早場景點。', '10:45 - 13:30｜從日本橋往東逛陳富街，中途吃午餐，只選一間會館。', '13:30 - 15:10｜續走古城核心，14:25 左右抵達 Metiseko 挑絲巾；這是順路停點，不需折返。', '15:15 後｜先回飯店休息；夜間可選 Memories Show、河岸散步，或 19:30 搭車去看 21:00 龍橋噴火。'], fallback: '龍橋與 Memories Show 必須二選一；若下大雨、塞車或不想增加約 1.5–2 小時往返，就留在會安。', map: 'Metiseko Hoi An 140 Tran Phu', tag: '夜間三選一' },
   { date: '10/5（一）', place: '巴拿山', title: '睡飽再上山，用午後與翌日看兩次天氣', image: 'https://mediaen.vietnamplus.vn/images/cc571c067c64d4f85fb35f04673bf2968c14e8b40b6bd340d8146a8023dc5221ece1bcdfc256efeeae6dd06768e18dfb/7_1.jpg', alt: '巴拿山金橋', focus: '會安 → Mercure Bà Nà Hills', plan: ['09:00 - 10:15｜起床、早餐與退房；確認山頂即時天氣和 Mercure 房客入口。', '10:30 - 12:30｜包車前往巴拿山，山腳辦票、交接行李並拍下當日纜車圖。', '12:30 - 14:30｜上山、午餐與寄放行李；不再把第一站硬排成金橋。', '15:00 - 晚餐｜依能見度選金橋或法國村／室內區；金橋另保留 10/6 上午的第二次機會。'], fallback: '晚出發會放棄上午第一個天氣窗口，但換來符合你們作息的節奏；住宿一晚仍有兩個觀察雲況的時段。', map: 'Mercure Danang French Village Bana Hills', tag: '午後＋翌日上午看雲' },
   { date: '10/6（二）', place: '巴拿山 → 峴港', title: '早餐後看雲，入住後去吃東林', image: 'https://danangfantasticity.com/wp-content/uploads/2024/03/chiem-nguong-bien-my-khe-1-trong-10-bai-bien-dep-nhat-chau-a-05.jpg', alt: '美溪海灘', focus: 'Mercure Bà Nà Hills → M Hotel → ★ Đông Lâm', plan: ['09:00 - 10:15｜早餐、退房與最後一次確認金橋能見度。', '10:30 - 14:30｜依天氣走金橋或室內區，午餐後取行李、搭纜車下山。', '14:30 - 17:30｜包車前往峴港、入住並使用下午茶。', '19:00 - 20:30｜前往 55 Trần Bạch Đằng 的東林晚餐；訂位時確認烤鴨是否需預訂。'], fallback: '若巴拿山延誤到無法準時用餐，改吃飯店旁 4SEAs，東林與 10/7 晚餐對調。', map: 'Dong Lam Restaurant 55 Tran Bach Dang Da Nang', tag: '★ 餐廳優先' },
   { date: '10/7（三）', place: '峴港北線', title: '飯店待到下午，再去山茶半島看海', image: 'https://danangfantasticity.com/wp-content/uploads/2022/01/linh-ung-pagoda-must-see-destination-for-tourists-to-da-nang-3.png', alt: '山茶半島靈應寺', focus: 'M Hotel 渡假上午 + 靈應寺 + 海鮮／越南菜', plan: ['09:00 - 10:30｜早餐；上午繼續使用房間、泳池、海灘或下午茶權益。', '15:30 - 16:00｜包車沿海岸往北，不安排棋盤頂或繞完整座半島。', '16:00 - 17:20｜靈應寺、觀音像與海景；寺院慢走約一小時。', '18:30 後｜Ăn Thôi 越南菜正選；若更想吃海鮮 buffet，改訂回程順路的 Poseidon。'], fallback: '山區雨大就取消寺院；4SEAs 與 Galina 都在飯店旁，可臨時改成近距離晚餐。', map: 'An Thoi Restaurant 114 Bach Dang Da Nang', tag: '晚餐二選一' },
@@ -26,7 +26,8 @@ const hoiAnPlan = [
     ['16:30–18:10', 'Red Bean 提早晚餐', '若要看秀，建議訂 16:45；也能利用 16:30–18:30 的飲品 Happy Hour。'],
     ['18:15–19:40', '前往 Memories Land', '叫車前往，先逛園區與小型演出；19:40 前往主舞台。'],
     ['20:00–21:00', 'Hoi An Memories Show', '目前官方時刻為 20:00–21:00。雨季優先選 HIGH／VIP 遮蔽座位。'],
-    ['21:15 後', '回飯店', '今晚不再加河船或宵夜行程。']
+    ['19:30–22:20', '替換選項：龍橋噴火', '若這是高優先願望，提早吃完 Red Bean、預約往返車，20:20 前抵達峴港河岸等 21:00 表演；此選項取代 Memories Show。'],
+    ['表演後', '各自回飯店', 'Memories 約 21:15 回 Hotel Royal；龍橋看完則約 22:20–22:40 回到會安。今晚不再加河船或宵夜。']
   ]},
   { day: '10/5 · 離開會安', title: '照平常節奏退房，不補塞購物', steps: [
     ['09:00–10:15', '起床、早餐、退房', '確認山頂天氣、車輛與 Mercure 房客入口。'],
@@ -124,6 +125,8 @@ const stays = [
 ];
 
 const events = [
+  { status: '唯一合理場次｜10/4', title: '龍橋 21:00 噴火：作為會安夜的替換方案', body: '官方 2026 資訊列例行表演為週五、六、日 21:00。10/3 落地後繞去會拖延入住、10/9 表演時已起飛，因此只建議 10/4（日）提早吃完 Red Bean 後專車往返；它會取代 Memories Show。', link: 'https://danangfantasticity.com/en/key-times-to-save-for-your-da-nang-travel-itinerary', linkText: '查看峴港官方 2026 時刻' },
+  { status: '目前不能排', title: '亞洲樂園／Da Nang Downtown 已停業改造', body: '原 Asia Park 已更名為 Da Nang Downtown，但當地官方媒體公告自 2025/9/3 起停止營運、準備新計畫；截至目前沒有足以把它排進 2026/10 行程的重開公告。出發前若有正式重開消息再評估。', link: 'https://dnrt.vn/chi_tiet-159566', linkText: '查看峴港廣播電視台公告' },
   { status: '推薦納入', title: '10/3 會安燈籠河岸夜色', body: '抵達第一晚住在古城附近，適合用燈籠、河岸和晚餐作最輕盈的開場；會安古城官方說明門票可在停留期間使用最多 3 天。', link: 'https://hoianheritage.danang.gov.vn/en/news/news-events/announcement-of-the-visiting-in-hoi-an-ancient-town-125.html', linkText: '查看會安古城官方資訊' },
   { status: '適合當日查看', title: '10/5 - 10/6 巴拿山現場演出與夜間氛圍', body: '你們住在山上，適合把園區演出、金橋拍照與法國村夜景當作加分體驗。官方公告目前列園區與纜車約 08:00 - 22:00，但節目與路線可能調整。', link: 'https://sunworld.vn/en/banahills/sunworld-news/announcement-daily-operation-schedule-at-sun-world-ba-na-hillshtml', linkText: '查看巴拿山官方營運公告' },
   { status: '不列入既定行程', title: '10 月初的公開大型活動仍有資訊落差', body: '峴港官方年度清單曾列 10/2 - 10/8 的 Global Heritage Beauty 2026，但未找到可靠的旅客節目、場地或售票資訊。因此只列為出發前再確認，不放進主行程。', link: 'https://danangfantasticity.com/en/kham-pha/danh-muc-su-kien-va-le-hoi-da-nang-nam-2026', linkText: '查看峴港官方年度活動清單' },
