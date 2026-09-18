@@ -21,8 +21,8 @@ const tripDayData = {
   '2026-10-04': {
     date: '10/4（日）', place: '會安古城', eyebrow: 'HOI AN · ONE FULL DAY',
     title: '由西向東慢走，下午順路挑絲巾',
-    summary: '09:00 起床吃早餐，約 10:45 才離開飯店。白天沿古城由日本橋往福建會館與 Metiseko 前進；購物後先回房休息。晚上三選一：留在會安看 Memories Show、正常吃晚餐逛河岸，或為 21:00 龍橋噴火專程往返峴港。',
-    decision: '推薦仍留在會安；若龍橋噴火是高優先願望，10/4 是全程唯一合理場次，但必須取代 Memories Show，不能兩場都看。',
+    summary: '09:00 起床吃早餐，約 10:45 才離開飯店。白天沿古城由日本橋往福建會館與 Metiseko 前進；購物後先回房休息。晚上留在會安，在 Memories Show 與 Red Bean 後的河岸散步之間二選一。',
+    decision: '今晚只留在會安，在演出與自由散步之間二選一，保住晚餐、古城夜色與休息品質。',
     places: {
       royal: { name: 'Hotel Royal Hoi An Danang', coords: [15.8817, 108.3266], note: '早餐、午休與住宿' },
       bridge: { name: '日本橋', coords: [15.8772, 108.3262], note: '古城西側起點' },
@@ -31,14 +31,10 @@ const tripDayData = {
       metiseko: { name: 'Metiseko Hoi An', coords: [15.8765, 108.3336], note: '桑蠶絲絲巾購物' },
       redbean: { name: 'Red Bean Hoi An', coords: [15.8862, 108.3243], note: '指定餐廳' },
       memories: { name: 'Hoi An Memories Land', coords: [15.8724, 108.3425], note: '選配園區與 20:00 主秀' },
-      river: { name: '會安河岸', coords: [15.8760, 108.3287], note: '不看秀時的輕鬆替代' },
-      dragon: { name: '峴港龍橋', coords: [16.0610, 108.2270], note: '10/4 21:00 噴火；取代 Memories Show' }
+      river: { name: '會安河岸', coords: [15.8760, 108.3287], note: '不看秀時的輕鬆替代' }
     },
     mainRoute: ['royal', 'bridge', 'canton', 'fujian', 'metiseko', 'royal', 'redbean', 'memories', 'royal'],
-    alternatives: [
-      { label: '不看秀：Red Bean → 河岸散步 → 飯店', ids: ['redbean', 'river', 'royal'] },
-      { label: '想看噴火：Red Bean → 峴港龍橋 → 飯店（取代 Memories Show）', ids: ['redbean', 'dragon', 'royal'] }
-    ],
+    alternatives: [{ label: '不看秀：Red Bean → 河岸散步 → 飯店', ids: ['redbean', 'river', 'royal'] }],
     timeline: [
       { time: '09:00–10:15', title: '飯店早餐與準備', placeId: 'royal', text: '照平常作息慢慢吃，不設任何早場預約。', highlights: ['隨身帶雨具、防水袋和可裝絲巾的乾燥袋'], warnings: ['午後可能陣雨，鞋子以防滑好走為優先'] },
       { time: '10:45–12:15', title: '日本橋 → 古城西段', placeId: 'bridge', text: '由飯店步行進古城，從日本橋沿陳富街向東慢走。', highlights: ['日本橋看木構、屋頂與橋寺一體的空間', '廣肇會館看入口石雕、天井與會館格局'], warnings: ['古城票券與開放房舍依現場公告；不用每間會館都進'] },
@@ -46,9 +42,8 @@ const tripDayData = {
       { time: '13:30–14:25', title: '福建會館', placeId: 'fujian', text: '下午只選一間代表性會館，保留購物和休息時間。', highlights: ['看三進空間、媽祖信仰、天井採光與屋脊裝飾'], warnings: ['尊重祭祀空間；香爐與供桌前避免久站拍攝'] },
       { time: '14:25–15:10', title: 'Metiseko 絲巾購物', placeId: 'metiseko', text: '直接說只看 mulberry silk scarves，不做衣服。', highlights: ['確認 100% mulberry silk、尺寸、印花正反面和收邊', '保留材質清楚的收據與洗滌方式'], warnings: ['不要只憑光澤判斷真絲；預留 30–45 分鐘就足夠'] },
       { time: '15:10–16:30', title: '回飯店休息', placeId: 'royal', text: '放好絲巾、午睡或換裝，至少保留 75 分鐘。', highlights: ['這段是整天不疲累的關鍵留白'], warnings: ['若午間已淋雨，先更換乾衣鞋再出門'] },
-      { time: '16:45–18:10', title: 'Red Bean 提早晚餐', placeId: 'redbean', text: '選 Memories Show 建議 16:45 入座；選龍橋則最晚 17:15 左右入座並在 19:30 前離開；不看表演可改 18:30 正常晚餐。', highlights: ['先決定夜間方案，再依離席時間訂位'], warnings: ['訂位時說明後續場次；若用餐延誤，不要冒險趕車或趕秀'] },
-      { time: '18:35–21:00', title: '選配 A：Memories Land', placeId: 'memories', optional: true, text: '先看園區小型演出，19:40 前進主舞台，主秀預計 20:00–21:00。', highlights: ['主舞台看服裝、燈光與大型群舞，不需要再加河船'], warnings: ['戶外演出遇雨以官方當日公告為準；雨季優先 HIGH／VIP 遮蔽席'] },
-      { time: '19:30–22:20', title: '選配 B：龍橋 21:00 噴火', placeId: 'dragon', optional: true, text: '提早吃完 Red Bean，19:30 由會安搭預約車前往峴港，20:20 前抵達龍橋東岸／南岸找位置；看完即返回 Hotel Royal。', highlights: ['例行表演為週五、六、日 21:00，10/4（日）是這趟唯一合理場次', '站河岸看全橋比站橋面更完整，也較容易避開噴水'], warnings: ['這會取代 Memories Show，不能兩場都看', '單程通常約 45–55 分鐘，週末與散場可能更久；建議預約往返車並提早 30–40 分鐘到場', '大雨、交通管制或官方臨時調整時直接取消'] }
+      { time: '16:45–18:10', title: 'Red Bean 提早晚餐', placeId: 'redbean', text: '選 Memories Show 建議 16:45 入座；不看表演可改 18:30 正常晚餐。', highlights: ['先決定夜間方案，再依離席時間訂位'], warnings: ['若用餐延誤，不要冒險趕秀；改成河岸散步即可'] },
+      { time: '18:35–21:00', title: '選配：Memories Land', placeId: 'memories', optional: true, text: '先看園區小型演出，19:40 前進主舞台，主秀預計 20:00–21:00。', highlights: ['主舞台看服裝、燈光與大型群舞，不需要再加河船'], warnings: ['戶外演出遇雨以官方當日公告為準；雨季優先 HIGH／VIP 遮蔽席'] }
     ]
   },
   '2026-10-05': {
@@ -113,27 +108,37 @@ const tripDayData = {
   '2026-10-07': {
     date: '10/7（三）', place: '峴港北線', eyebrow: 'DA NANG · RESORT MORNING',
     title: '把上午留給飯店，下午只看山茶半島',
-    summary: '早餐後不急著出門，房間、泳池、海灘與午睡自由組合。15:30 才沿海岸北上靈應寺；晚餐在 Ăn Thôi 與 Poseidon 海鮮 buffet 中二選一。',
-    decision: '正選 Ăn Thôi，讓這幾天的餐型更有變化；若你們更重視海鮮 buffet，再改 Poseidon。',
+    summary: '正選仍是早餐後留在 M Hotel，15:30 才沿海岸北上靈應寺；但若上午已開始無聊，可以整段換成 Mikazuki、博物館＋表演，或 AEON Timezone，不需要勉強躺到下午。',
+    decision: '先保留飯店版，不預購選配；10/6 晚上或 10/7 早餐時，再依天氣與「今天想動多少」決定是否替換。',
     places: {
       mhotel: { name: 'M Hotel Danang', coords: [16.0534, 108.2466], note: '完整渡假上午' },
       linhung: { name: '山茶靈應寺', coords: [16.1004, 108.2775], note: '今日唯一主景點' },
       anthoi: { name: 'Ăn Thôi', coords: [16.0680, 108.2242], note: '18:30 越南菜正選' },
       poseidon: { name: 'Poseidon Premium・Vincom', coords: [16.0712, 108.2292], note: '海鮮 buffet 替代' },
       fourseas: { name: 'Buffet Hải Sản 4SEAs', coords: [16.0519, 108.2472], note: '雨天近飯店備案' },
-      galina: { name: 'Galina Restaurant', coords: [16.0513, 108.2474], note: '需先確認散客供餐形式' }
+      galina: { name: 'Galina Restaurant', coords: [16.0513, 108.2474], note: '需先確認散客供餐形式' },
+      mikazuki: { name: 'Mikazuki Water Park 365', coords: [16.0935, 108.1485], note: '想玩漂漂河時的半日替換' },
+      museum: { name: '峴港博物館', coords: [16.0709, 108.2242], note: '雨天文化選配' },
+      heritage: { name: 'The Heritage Show', coords: [16.0738, 108.2380], note: '17:00 場後再吃晚餐' },
+      aeon: { name: 'AEON Mall Thanh Khê・Timezone', coords: [16.0665, 108.2043], note: '保齡球、街機、VR 與電影' }
     },
     mainRoute: ['mhotel', 'linhung', 'anthoi', 'mhotel'],
     alternatives: [
       { label: '海鮮 buffet：靈應寺 → Poseidon → 飯店', ids: ['linhung', 'poseidon', 'mhotel'] },
-      { label: '大雨近距離：M Hotel → 4SEAs／Galina', ids: ['mhotel', 'fourseas', 'galina', 'mhotel'] }
+      { label: '大雨近距離：M Hotel → 4SEAs／Galina', ids: ['mhotel', 'fourseas', 'galina', 'mhotel'] },
+      { label: '想玩水：M Hotel → Mikazuki → 市區晚餐', ids: ['mhotel', 'mikazuki', 'anthoi', 'mhotel'] },
+      { label: '雨天文化：博物館 → 17:00 Heritage Show → 晚餐', ids: ['mhotel', 'museum', 'heritage', 'anthoi', 'mhotel'] },
+      { label: '無聊救援：M Hotel → AEON Timezone → 飯店', ids: ['mhotel', 'aeon', 'mhotel'] }
     ],
     timeline: [
       { time: '09:00–15:15', title: '早餐＋完整飯店上午', placeId: 'mhotel', text: '房間、泳池、海灘、午餐與午睡自由組合，不為半日遊提早起床。', highlights: ['優先用已含的飯店權益', '午餐保持適量，晚餐才有胃口'], warnings: ['先確認泳池與下午茶的實際時段'] },
       { time: '15:30–16:00', title: '沿海岸北上', placeId: 'linhung', text: '建議包車往返並請司機等候，不騎機車挑戰濕滑山路。', highlights: ['沿途安全位置看峴港海岸線即可'], warnings: ['不追猴、不餵食，也不把棋盤頂加進今天'] },
       { time: '16:00–17:20', title: '山茶靈應寺', placeId: 'linhung', text: '寺院慢走約一小時，主看觀音像、寺院軸線與回望城市海岸。', highlights: ['看 67 公尺觀音像與殿前視野', '留意庭園羅漢像與海天背景'], warnings: ['衣著遮肩過膝、降低音量；地濕時避開邊坡與陡階'] },
       { time: '17:20–18:10', title: '沿海返回', placeId: 'mhotel', text: '視天候停一處安全觀景點，不繞完整座半島。', highlights: ['把夕色當加分，不追固定拍照點'], warnings: ['雨勢或視線轉差就直接回市區'] },
-      { time: '18:30–20:00', title: 'Ăn Thôi 越南菜', placeId: 'anthoi', text: '正選是 114 Bạch Đằng 的越南餐廳；若更想吃 buffet，改去回程順路的 Poseidon。', highlights: ['這餐補充越南菜，避免連續大型 buffet'], warnings: ['兩間只選一間；Poseidon 建議事先訂位'] }
+      { time: '18:30–20:00', title: 'Ăn Thôi 越南菜', placeId: 'anthoi', text: '正選是 114 Bạch Đằng 的越南餐廳；若更想吃 buffet，改去回程順路的 Poseidon。', highlights: ['這餐補充越南菜，避免連續大型 buffet'], warnings: ['兩間只選一間；Poseidon 建議事先訂位'] },
+      { time: '11:00–17:00', title: '選配：Mikazuki 漂漂河半日', placeId: 'mikazuki', optional: true, text: '若早上已覺得飯店太無聊，就把整段飯店上午與靈應寺換成水上樂園；抵達後先玩室內漂漂河、造浪池，再看天候決定戶外 Fuji River。', highlights: ['室內水溫較不受十月天氣影響', '只挑漂漂河與溫和設施，不必勉強玩高速滑道'], warnings: ['前一晚確認戶外區營運與票價；這是半日替換，不和靈應寺疊加'] },
+      { time: '13:30–18:00', title: '選配：博物館＋The Heritage Show', placeId: 'museum', optional: true, text: '雨天可先看峴港博物館，再選 45 分鐘三輪車短遊；16:30 左右前往 17:00 的 The Heritage Show，18:00 結束後吃晚餐。', highlights: ['文化內容、城市移動與舞台表演都有，不會只是一直逛展櫃'], warnings: ['若 10/4 已看 Memories Show，可刪除 Heritage Show，只保留博物館與咖啡體驗'] },
+      { time: '隨時 1–4 小時', title: '選配：AEON Timezone', placeId: 'aeon', optional: true, text: '最不需要計畫的救援方案：想走就去玩保齡球、街機或 VR，也可臨時看電影。', highlights: ['適合雨天與「現在就很無聊」的時刻'], warnings: ['電影語言與字幕看當日場次；不要為商場刪掉已訂的星號餐廳'] }
     ]
   },
   '2026-10-08': {

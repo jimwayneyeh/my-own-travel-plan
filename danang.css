@@ -66,6 +66,17 @@
 .danang-weather article { padding: 22px; border: 1px solid #a9c2c0; background: #cae1df; }
 .danang-weather h3 { margin: 6px 0; font-size: 1rem; }
 .danang-weather p { margin: 0; color: #496463; font-size: 0.82rem; }
+.activity-heading { margin: 72px 0 24px; }
+.activity-options { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 72px; }
+.activity-option { background: #fffdf9; border: 1px solid #b9cbc5; padding: 24px; display: flex; flex-direction: column; }
+.activity-option-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; }
+.activity-option-head span { color: #167a80; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.05em; }
+.activity-option-head small { color: #6b7e7d; font-size: 0.72rem; text-align: right; }
+.activity-option h3 { margin: 10px 0 7px; font-size: 1.18rem; }
+.activity-option > p { margin: 0 0 16px; color: #4e6868; font-size: 0.86rem; }
+.activity-plan { background: #eef5f2; padding: 13px 15px; margin: auto 0 15px; }
+.activity-plan strong { font-size: 0.76rem; color: #167a80; }
+.activity-plan p { margin: 3px 0 0; color: #4e6868; font-size: 0.8rem; }
 .restaurant-heading { margin: 68px 0 24px; }
 .restaurant-route {
   display: grid;
@@ -133,7 +144,7 @@
 }
 
 @media (max-width: 720px) {
-  .danang-plan, .danang-weather, .danang-places, .restaurant-grid { grid-template-columns: 1fr; }
+  .danang-plan, .danang-weather, .danang-places, .restaurant-grid, .activity-options { grid-template-columns: 1fr; }
   .danang-day li { grid-template-columns: 1fr; gap: 3px; }
 }
 
