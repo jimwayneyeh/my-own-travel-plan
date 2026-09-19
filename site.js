@@ -3,7 +3,7 @@ const maps = name => `https://www.google.com/maps/search/?api=1&query=${encodeUR
 const days = [
   { date: '10/3（六）', place: '會安', title: '抵達後，只試探性地看一眼燈籠', image: 'https://izitour.com/media/ckeditor/hoi-an-vietnam-1.webp', alt: '會安河岸燈籠', focus: '峴港機場 → Hotel Royal Hoi An', plan: ['18:10 - 19:30｜落地、入境、提領行李；保留排隊與延誤緩衝。', '約 19:40 - 21:00｜包車或 Grab 直接到會安飯店，途中不繞峴港市區。', '21:15 後｜先辦入住與找近距離餐食；還有精神才去安會橋／河岸散步 20–30 分鐘。'], fallback: 'Red Bean 最後點餐雖到 21:45，但抵達日變數太多，不建議訂今晚。', map: 'Hotel Royal Hoi An Danang, The Legacy Riverfront Resort & Spa', tag: '抵達日留白' },
   { date: '10/4（日）', place: '會安', title: '睡飽逛古城，下午順路挑絲巾', image: 'https://bvhttdl.mediacdn.vn/2019/12/4/22-1575444930391357177624-1575454914343-15754549150641583342735.jpg', alt: '會安日本橋', focus: '古城 + Metiseko + Red Bean + 會安夜', plan: ['09:00 - 10:15｜起床、慢慢吃飯店早餐與準備；不設早場景點。', '10:45 - 13:30｜從日本橋往東逛陳富街，中途吃午餐，只選一間會館。', '13:30 - 15:10｜續走古城核心，14:25 左右抵達 Metiseko 挑絲巾；這是順路停點，不需折返。', '15:15 後｜先回飯店休息；夜間在 Memories Show 與 Red Bean 後的河岸散步之間二選一。'], fallback: '若下大雨或不想受票券約束，就正常吃晚餐後回飯店。', map: 'Metiseko Hoi An 140 Tran Phu', tag: '整晚留在會安' },
-  { date: '10/5（一）', place: '巴拿山', title: '睡飽再上山，用午後與翌日看兩次天氣', image: 'https://mediaen.vietnamplus.vn/images/cc571c067c64d4f85fb35f04673bf2968c14e8b40b6bd340d8146a8023dc5221ece1bcdfc256efeeae6dd06768e18dfb/7_1.jpg', alt: '巴拿山金橋', focus: '會安 → Mercure Bà Nà Hills', plan: ['09:00 - 10:15｜起床、早餐與退房；確認山頂即時天氣和 Mercure 房客入口。', '10:30 - 12:30｜包車前往巴拿山，山腳辦票、交接行李並拍下當日纜車圖。', '12:30 - 14:30｜上山、午餐與寄放行李；不再把第一站硬排成金橋。', '15:00 - 晚餐｜依能見度選金橋或法國村／室內區；金橋另保留 10/6 上午的第二次機會。'], fallback: '晚出發會放棄上午第一個天氣窗口，但換來符合你們作息的節奏；住宿一晚仍有兩個觀察雲況的時段。', map: 'Mercure Danang French Village Bana Hills', tag: '午後＋翌日上午看雲' },
+  { date: '10/5（一）', place: '巴拿山', title: '10:30 準時離開會安，先到房客櫃檯再上山', image: 'https://mediaen.vietnamplus.vn/images/cc571c067c64d4f85fb35f04673bf2968c14e8b40b6bd340d8146a8023dc5221ece1bcdfc256efeeae6dd06768e18dfb/7_1.jpg', alt: '巴拿山金橋', focus: '會安 → Thác Tóc Tiên 山下櫃檯 → Mercure', plan: ['09:00 - 10:15｜早餐、最後收拾與退房；向 Mercure 確認當日上山纜車狀態。', '10:30 - 12:00｜預約包車直達 Thác Tóc Tiên Station，不在途中加景點。', '12:00 - 13:00｜到山下 Front Desk 核對訂房、處理房客纜車票並交接行李。', '13:00 - 15:00｜依當日指定路線搭纜車到法國村，午餐後 14:00 起入住休息。'], fallback: '飯店目前列上山纜車 08:00–16:30；10:30 出發有足夠緩衝，但不建議拖到中午後才離開會安。', map: 'Thac Toc Tien Station Ba Na Hills', tag: '10:30 準時出發' },
   { date: '10/6（二）', place: '巴拿山 → 峴港', title: '早餐後看雲，入住後去吃東林', image: 'https://danangfantasticity.com/wp-content/uploads/2024/03/chiem-nguong-bien-my-khe-1-trong-10-bai-bien-dep-nhat-chau-a-05.jpg', alt: '美溪海灘', focus: 'Mercure Bà Nà Hills → M Hotel → ★ Đông Lâm', plan: ['09:00 - 10:15｜早餐、退房與最後一次確認金橋能見度。', '10:30 - 14:30｜依天氣走金橋或室內區，午餐後取行李、搭纜車下山。', '14:30 - 17:30｜包車前往峴港、入住並使用下午茶。', '19:00 - 20:30｜前往 55 Trần Bạch Đằng 的東林晚餐；訂位時確認烤鴨是否需預訂。'], fallback: '若巴拿山延誤到無法準時用餐，改吃飯店旁 4SEAs，東林與 10/7 晚餐對調。', map: 'Dong Lam Restaurant 55 Tran Bach Dang Da Nang', tag: '★ 餐廳優先' },
   { date: '10/7（三）', place: '峴港北線', title: '飯店待到下午，再去山茶半島看海', image: 'https://danangfantasticity.com/wp-content/uploads/2022/01/linh-ung-pagoda-must-see-destination-for-tourists-to-da-nang-3.png', alt: '山茶半島靈應寺', focus: 'M Hotel 渡假上午 + 靈應寺 + 海鮮／越南菜', plan: ['09:00 - 10:30｜早餐；上午繼續使用房間、泳池、海灘或下午茶權益。', '15:30 - 16:00｜包車沿海岸往北，不安排棋盤頂或繞完整座半島。', '16:00 - 17:20｜靈應寺、觀音像與海景；寺院慢走約一小時。', '18:30 後｜Ăn Thôi 越南菜正選；若更想吃海鮮 buffet，改訂回程順路的 Poseidon。'], fallback: '山區雨大就取消寺院；4SEAs 與 Galina 都在飯店旁，可臨時改成近距離晚餐。', map: 'An Thoi Restaurant 114 Bach Dang Da Nang', tag: '晚餐二選一' },
   { date: '10/8（四）', place: '峴港南線＋河岸', title: '五行山是唯一大景點，晚上吃 Gang Yu', image: 'https://danangfantasticity.com/wp-content/uploads/2025/08/danh-thang-ngu-hanh-son-da-nang-002.jpg', alt: '五行山玄空洞', focus: '五行山 + 飯店午休 + APEC 公園／龍橋 + ★ Gang Yu', plan: ['09:00 - 10:30｜早餐、看雨勢與地面狀況；10:45 左右搭車南下。', '11:05 - 13:30｜五行山只走水山、玄空洞與一處觀景台；可搭電梯上山。', '13:45 - 17:00｜簡單午餐後回 M Hotel，午睡、下午茶或泳池。', '17:30 - 20:30｜APEC 公園與龍橋短走，19:00 到 87 Yên Bái 吃 Gang Yu Hot Pot。'], fallback: '下雨改占婆博物館；Gang Yu 照常保留，景點縮短後回飯店休息再出門。', map: 'Gang Yu Hot Pot 87 Yen Bai Da Nang', tag: '★ 19:00 建議訂位' },
@@ -29,8 +29,8 @@ const hoiAnPlan = [
     ['21:15 後', '回飯店', '今晚不再加河船或宵夜行程。']
   ]},
   { day: '10/5 · 離開會安', title: '照平常節奏退房，不補塞購物', steps: [
-    ['09:00–10:15', '起床、早餐、退房', '確認山頂天氣、車輛與 Mercure 房客入口。'],
-    ['10:30', '出發前往巴拿山', '不再安排絲綢村或補買；晚出發的代價是少一個上午天氣窗口，但住宿仍保有當日下午與翌日上午兩次機會。']
+    ['09:00–10:15', '起床、早餐、退房', '確認山頂天氣、預約車輛，以及 Thác Tóc Tiên 山下櫃檯與上山纜車狀態。'],
+    ['10:30', '準時出發前往巴拿山', '由會安直達 Thác Tóc Tiên Station；不再安排絲綢村或補買，也不把出發延到中午之後。']
   ]}
 ];
 
@@ -42,12 +42,12 @@ const hoiAnPlaces = [
 ];
 
 const banaPlan = [
-  { day: '10/5 · 第一天', title: '午間上山，午後依雲況選區', steps: [
-    ['09:00–10:15', '會安慢早餐、退房', '出門前看巴拿山山頂即時雲況；把外套、雨具與防水袋放隨身包。'],
-    ['10:30–12:00', '包車到山腳', '車程抓 75–90 分鐘並留緩衝；房客入口與一般遊客入口不同，照 Mercure 指示報到。'],
-    ['12:00–12:30', '辦票、交接行李、問末班車', '確認票券是否含纜車／園區、7 號線及跨區路線；拍下最新地圖和當日表演時刻。'],
-    ['12:30–14:15', '上山與午餐', '先抵達法國村或飯店端，不把午餐與金橋綁在一起；找有座位的餐廳即可。'],
-    ['14:15–15:00', '寄放行李／入住休息', '房間準備好就休息 30–45 分鐘，保留體力與乾衣服。'],
+  { day: '10/5 · 第一天', title: '10:30 離開會安，先完成房客報到再上山', steps: [
+    ['09:00–10:15', '會安慢早餐、最後收拾與退房', '邊吃早餐邊向 Mercure 確認當日纜車狀態與合適抵達時間；把證件、藥品、電子用品、外套與雨具放隨身包。'],
+    ['10:30–12:00', '預約包車直達 Thác Tóc Tiên Station', '官方估會安古城到山腳約 75–90 分鐘；車輛無法直達山上飯店，因此請司機以 Mercure 的 Downhill Front Desk 為下車目標。'],
+    ['12:00–13:00', '山下櫃檯報到、辦票與交接行李', '出示訂房確認，在 Thác Tóc Tiên Station 的飯店櫃檯確認房客優惠票、當日上山路線與跨區班次；bellman 會協助把大件行李送往纜車登車區。'],
+    ['13:00–14:00', '依工作人員指示搭纜車到法國村', '纜車線會隨天候與營運調整，不預設固定 7 號線；抵達山頂後再由 bellman 協助把行李送往飯店報到區。'],
+    ['14:00–15:00', '入住、簡單午餐與休息', '官方列 14:00 起入住；若提早抵達或房間未好，就先寄放行李、吃簡單午餐，不先繞去金橋。'],
     ['15:15–17:15', '法國村 → 月亮城堡', '晴天散步看教堂、日蝕廣場；下雨改 Fantasy Park 或月亮城堡 4D 室內體驗。'],
     ['17:15–18:15', '第二個天氣判斷點', '若雲開且跨區纜車仍運行，可去金橋看晚光；務必先問回程末班。否則留在法國村看入夜。'],
     ['18:30 後', '晚餐與飯店夜色', '日遊團退去後慢慢拍法國村。冷、濕或累就提早回房，今晚不安排硬性表演。']
