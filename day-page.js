@@ -26,11 +26,29 @@ document.querySelector('#timeline').innerHTML = day.timeline.map((item, index) =
     <div class="timeline-copy"><p class="timeline-place">${place.name}</p><h3>${item.title}</h3><p>${item.text}</p>
       <div class="detail-grid"><div><strong>值得留意</strong><ul>${item.highlights.map(text => `<li>${text}</li>`).join('')}</ul></div><div class="caution"><strong>注意事項</strong><ul>${item.warnings.map(text => `<li>${text}</li>`).join('')}</ul></div></div>
       <a class="map-link" href="${maps(place)}" target="_blank" rel="noopener">Google Maps ↗</a>
+      ${item.source ? `<a class="map-link" href="${item.source}" target="_blank" rel="noopener">${item.sourceText} ↗</a>` : ''}
     </div>
   </article>`;
 }).join('');
 
 document.querySelector('#alternative-list').innerHTML = day.alternatives.map((route, index) => `<article><span>A${index + 1}</span><p>${route.label}</p></article>`).join('');
+
+if (day.choices?.length) {
+  const choiceSection = document.createElement('section');
+  choiceSection.className = 'day-choices-section';
+  choiceSection.innerHTML = `<div class="wrap">
+    <div class="day-detail-heading"><p class="eyebrow">CHOICES, NOT EXTRA STOPS</p><h2>當天可以怎麼選</h2><p>主行程不變；只有碰到天氣、體力或興趣差異時，再用這些條件切換。</p></div>
+    <div class="choice-grid">${day.choices.map(choice => {
+      const place = choice.mapId ? day.places[choice.mapId] : null;
+      return `<article class="choice-card">
+        <span>${choice.label}</span><h3>${choice.title}</h3><p>${choice.text}</p>
+        <div class="choice-when"><strong>什麼時候選</strong><p>${choice.when}</p></div>
+        ${(place || choice.source) ? `<div class="choice-links">${place ? `<a href="${maps(place)}" target="_blank" rel="noopener">Google Maps ↗</a>` : ''}${choice.source ? `<a href="${choice.source}" target="_blank" rel="noopener">${choice.sourceText} ↗</a>` : ''}</div>` : ''}
+      </article>`;
+    }).join('')}</div>
+  </div>`;
+  document.querySelector('.day-detail').before(choiceSection);
+}
 
 const map = L.map('route-map', { scrollWheelZoom: false });
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {

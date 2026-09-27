@@ -2,8 +2,8 @@ const tripDayData = {
   '2026-10-03': {
     date: '10/3（六）', place: '峴港機場 → 會安', eyebrow: 'ARRIVAL DAY · KEEP IT LIGHT',
     title: '抵達後，只試探性地看一眼燈籠',
-    summary: '18:10 抵達峴港後直接去會安。今晚的任務只有順利入住、吃到晚餐與恢復體力；班機準時且精神還好，才到安會橋附近短走 20–30 分鐘。',
-    decision: '抵達夜不訂需要準時報到的餐廳，也不把河船或夜市列為必做。',
+    summary: '18:10 抵達峴港後，搭乘已確認的 Klook 7 人座接機前往會安。司機會追蹤 IT551 航班，從實際抵達時間起免費等候 120 分鐘；今晚只求順利入住、吃到晚餐與恢復體力。',
+    decision: '第 2 航廈入境出口找手持 KLOOK 標誌與主要旅客姓名牌的人員；完成入住後，精神還好才到安會橋附近短走 20–30 分鐘。',
     places: {
       dad: { name: '峴港國際機場', coords: [16.0439, 108.1993], note: '入境、行李與接送集合點' },
       royal: { name: 'Hotel Royal Hoi An Danang', coords: [15.8817, 108.3266], note: '兩晚住宿基地' },
@@ -11,9 +11,13 @@ const tripDayData = {
     },
     mainRoute: ['dad', 'royal'],
     alternatives: [{ label: '精神尚可：飯店 → 安會橋短走 → 飯店', ids: ['royal', 'anhoi', 'royal'] }],
+    choices: [
+      { label: '已確認接送', title: 'Klook 7 人座接機', text: 'KPN_Airport Transfer 已確認 Toyota Fortuner／Innova 或同級，2 位乘客，司機追蹤 IT551，於入境出口舉牌接人並從實際抵達起免費等候 120 分鐘。', when: '出發前在 Klook App 再確認兩件大型行李與供應商聯絡方式；私人訂單編號不放在公開網站。' },
+      { label: '有體力才啟動', title: '安會橋與河岸短走', text: '完成入住、吃到東西，而且沒有大雨時才去；只看燈籠與河岸 20–30 分鐘，不搭船。', when: '若 21:15 後才安頓好或已疲累，直接取消。', mapId: 'anhoi' }
+    ],
     timeline: [
-      { time: '18:10–19:30', title: '落地、入境、提領行李', placeId: 'dad', text: '落地後先完成入境與行李，不在機場安排換景點或購物。', highlights: ['確認叫車上車點或接機人員姓名', '出航廈前處理網路與少量現金'], warnings: ['雨季入境與車流都有延誤可能，保留至少 80 分鐘'] },
-      { time: '約 19:40–21:00', title: '直接前往會安飯店', placeId: 'royal', text: '包車或 Grab 由機場直達 Hotel Royal，中途不繞峴港市區。', highlights: ['車程可休息，不需要沿路追加景點'], warnings: ['上車前再次核對 Hotel Royal Hoi An Danang，避免名稱相近飯店'] },
+      { time: '18:10–19:30', title: '落地、入境、提領行李與會合', placeId: 'dad', text: '完成入境與提領行李後，到第 2 航廈入境出口找 KLOOK 標誌與主要旅客姓名牌。', highlights: ['司機會追蹤 IT551 航班動態', '免費等候時間從實際抵達起算 120 分鐘', '出航廈前可處理網路與少量現金'], warnings: ['航班明顯延誤時仍用 Klook App 聯絡供應商確認接送'] },
+      { time: '約 19:40–21:00', title: '搭 Klook 接送前往會安飯店', placeId: 'royal', text: '搭乘已確認的 7 人座車直達 Hotel Royal Hoi An Danang，中途不繞峴港市區。', highlights: ['KPN_Airport Transfer；Toyota Fortuner／Innova 或同級', '上車前核對司機、車牌、目的地與行李件數'], warnings: ['訂單規則最多 2 件 28 吋特大行李；若最後帶 29 吋箱，行前先在 App 向供應商確認'] },
       { time: '21:00 後', title: '入住、近距離晚餐', placeId: 'royal', text: '先辦入住、放好證件與行李；餐食以飯店或步行可達地點為主。', highlights: ['詢問隔日早餐時間、退房規定與叫車方式'], warnings: ['不把 Red Bean 排在今晚，班機與入境變數太大'] },
       { time: '21:15–21:45', title: '選配：安會橋與河岸', placeId: 'anhoi', optional: true, text: '只有班機準時、沒有下大雨而且精神仍好才出發，最晚走半小時。', highlights: ['看燈籠倒影與古城夜色即可，不排河船'], warnings: ['潮濕石板與橋面可能滑；累了直接取消'] }
     ]
@@ -35,6 +39,11 @@ const tripDayData = {
     },
     mainRoute: ['royal', 'bridge', 'canton', 'fujian', 'metiseko', 'royal', 'redbean', 'memories', 'royal'],
     alternatives: [{ label: '不看秀：Red Bean → 河岸散步 → 飯店', ids: ['redbean', 'river', 'royal'] }],
+    choices: [
+      { label: '晚間方案 A', title: 'Red Bean ＋ Memories Show', text: '16:45 提早晚餐，18:35 左右前往園區，20:00 看主秀。適合想把會安夜晚變成完整表演體驗。', when: '願意配合表演時間，且已確認當日演出與座位。', mapId: 'memories', source: 'https://hoianmemoriesland.com/en/performance-schedule', sourceText: '官方表演時刻' },
+      { label: '晚間方案 B', title: 'Red Bean ＋ 河岸自由散步', text: '18:30 左右正常吃晚餐，餐後依體力走河岸，不被票券與進場時間綁住。', when: '下雨、想更慢，或不想連續看表演時選這個。', mapId: 'river' },
+      { label: '購物補充', title: 'Metiseko 主攻；Silk Village 不硬加', text: 'Metiseko 直接看 100% mulberry silk 絲巾並確認尺寸、收邊與洗滌方式。Silk Village 只有想多花約一小時了解工藝時才加。', when: '購物後仍保留回飯店休息，不用為了比較店家折返。', mapId: 'metiseko', source: 'https://metiseko.com/collections/the-scarf-collection', sourceText: '先看官方絲巾款式' }
+    ],
     timeline: [
       { time: '09:00–10:15', title: '飯店早餐與準備', placeId: 'royal', text: '照平常作息慢慢吃，不設任何早場預約。', highlights: ['隨身帶雨具、防水袋和可裝絲巾的乾燥袋'], warnings: ['午後可能陣雨，鞋子以防滑好走為優先'] },
       { time: '10:45–12:15', title: '日本橋 → 古城西段', placeId: 'bridge', text: '由飯店步行進古城，從日本橋沿陳富街向東慢走。', highlights: ['日本橋看木構、屋頂與橋寺一體的空間', '廣肇會館看入口石雕、天井與會館格局'], warnings: ['古城票券與開放房舍依現場公告；不用每間會館都進'] },
@@ -49,7 +58,7 @@ const tripDayData = {
   '2026-10-05': {
     date: '10/5（一）', place: '會安 → 巴拿山', eyebrow: 'BÀ NÀ · WEATHER WINDOW 1',
     title: '10:30 準時離開會安，先到房客櫃檯再上山',
-    summary: '09:00 早餐、10:15 前完成退房，10:30 預約包車直達 Thác Tóc Tiên Station。車子只能到山腳；先在 Mercure 的 Downhill Front Desk 核對訂房、處理房客纜車票與大件行李，再依工作人員指定路線上山。',
+    summary: '09:00 早餐、10:15 前完成退房，10:30 搭預約的 Grab 6 人座前往 Thác Tóc Tiên Station。車子只能到山腳；先在 Mercure 的 Downhill Front Desk 核對訂房、處理房客纜車票與大件行李，再依工作人員指定路線上山。',
     decision: '飯店目前列上山纜車 08:00–16:30；10:30 出發仍從容，但不把出發拖到中午，也不在途中加景點。',
     places: {
       royal: { name: 'Hotel Royal Hoi An Danang', coords: [15.8817, 108.3266], note: '早餐與退房' },
@@ -65,9 +74,15 @@ const tripDayData = {
       { label: '雲開支線：法國村 → 金橋 → 法國村', ids: ['village', 'golden', 'village'] },
       { label: '霧雨備案：飯店／法國村 → Fantasy Park', ids: ['mercure', 'fantasy', 'mercure'] }
     ],
+    choices: [
+      { label: '交通已決定', title: '預約 Grab 6 人座', text: '這條路線目前在 App 可正常估價與預約，10:30 日間通常不算難叫；兩人帶兩件 26–29 吋行李仍要選 6 人座，不選一般 4 人座。Grab 可提前最多 90 天預約。', when: '設定 10/5 10:30；上車點選 Hotel Royal Hoi An Danang，下車點選 Toc Tien Station。前一晚確認訂單，當天 10:00 再檢查車況通知。', source: 'https://www.grab.com/vn/en/transport/advance-booking/', sourceText: 'Grab 官方預約說明' },
+      { label: '能見度佳', title: '雲開就先去金橋', text: '不用等待更好的光；先確認跨區纜車與回法國村末班，再完成金橋支線。', when: '17:15 前雲開、風雨不強且路線仍正常。', mapId: 'golden' },
+      { label: '霧雨方案', title: '法國村與室內設施', text: '留在法國村核心，月亮城堡或 Fantasy Park 選一項即可；每 60–90 分鐘再看一次雲況。', when: '金橋沒有視野，或濕滑與風勢不適合跨區。', mapId: 'fantasy' },
+      { label: '上山必要流程', title: '山下櫃檯先辦票、再交行李', text: '車輛只能到 Thác Tóc Tiên Station。先到 Mercure Downhill Front Desk 核對訂房、票券與當日路線，大件行李交由 bellman。', when: '這是固定流程，不把車輛目的地直接設成山頂飯店。', mapId: 'gate', source: 'https://www.mercure-danang-banahills-french-village.com/hotel/getting-here/', sourceText: 'Mercure 抵達說明' }
+    ],
     timeline: [
       { time: '09:00–10:15', title: '早餐、最後收拾與退房', placeId: 'royal', text: '邊吃早餐邊向 Mercure 確認當日上山纜車狀態與合適抵達時間；10:15 前完成退房。', highlights: ['訂房憑證、護照、藥品、電子用品、薄外套、雨衣與防水袋放隨身包'], warnings: ['山下天氣不能代表山頂；若遇強風大雨，先直接問飯店纜車是否正常'] },
-      { time: '10:30–12:00', title: '預約包車直達 Thác Tóc Tiên Station', placeId: 'gate', text: '官方估會安古城到山腳約 75–90 分鐘；途中不加景點。車輛不能上山，請以 Mercure 的 Downhill Front Desk 為下車目標。', highlights: ['出發前把訂房人姓名、電話與飯店站點傳給司機', '包車比固定班次接駁更適合兩人帶過夜行李'], warnings: ['不要只輸入 Mercure 飯店本體後讓司機自行猜下車點'] },
+      { time: '10:30–12:00', title: 'Grab 6 人座前往 Thác Tóc Tiên Station', placeId: 'gate', text: '由 Hotel Royal 出發，途中不加景點。Mercure 官網明確說車輛不能直達山頂飯店，Grab 目的地必須選 Toc Tien Station，並請司機停在 Mercure Downhill Front Desk。', highlights: ['預約資料：10/5 10:30、2 人、2 件大型行李、6 人座', '可傳給司機：Please drop us at Mercure Downhill Front Desk, Thac Toc Tien Station (Ga Thác Tóc Tiên), not the mountaintop hotel.', 'Grab 預約行程的司機聊天室最早可在出發前 45 分鐘使用'], warnings: ['不要只輸入 Mercure 飯店本體後讓司機自行猜下車點', '若 App 顯示取消或無法派車，立即請 Hotel Royal 櫃檯協助叫 7 人座計程車／包車，不要改搭 4 人座'], source: 'https://www.mercure-danang-banahills-french-village.com/hotel/getting-here/', sourceText: 'Mercure 官方抵達與車輛說明' },
       { time: '12:00–13:00', title: '山下櫃檯報到、辦票與交接行李', placeId: 'gate', text: '到 Thác Tóc Tiên Station 的飯店櫃檯出示訂房確認，處理房客優惠纜車票並詢問當日指定路線；bellman 會協助把大件行李送到登車區。', highlights: ['確認票券是否已含在房價；目前訂房憑證只列早餐與 Wi-Fi', '拍下園區圖、跨區纜車與回法國村的末班時間'], warnings: ['飯店目前列上山纜車 08:00–16:30、山下櫃檯 08:00–17:00；出發前仍要重查'] },
       { time: '13:00–14:00', title: '依工作人員指示搭纜車上山', placeId: 'mercure', text: '纜車線會因天候、維修與營運調整，不預設一定搭 7 號線；抵達山頂後由 bellman 接手，把行李送往飯店報到區。', highlights: ['把證件與貴重物品留在身上', '上山後先認清飯店與回程纜車方向'], warnings: ['輕雨可能照常運行；強風或大雨時可能調整或暫停，照現場指示'] },
       { time: '14:00–15:00', title: '入住、簡單午餐與休息', placeId: 'mercure', text: '官方建議 14:00 起辦理入住；若房間未好就先寄放行李、吃簡單午餐，不把第一站硬排成金橋。', highlights: ['房間準備好就休息 30–45 分鐘', '確認晚餐、隔日 10:30 前退房與行李寄放安排'], warnings: ['午餐保持簡單，避免排隊名店吃掉午後能見度窗口'] },
@@ -96,6 +111,11 @@ const tripDayData = {
     alternatives: [
       { label: '霧雨：飯店 → Fantasy Park → 飯店', ids: ['mercure', 'fantasy', 'mercure'] },
       { label: '下山延誤：M Hotel → 4SEAs', ids: ['mhotel', 'fourseas', 'mhotel'] }
+    ],
+    choices: [
+      { label: '天氣好', title: '金橋與花園精華', text: '先退房並寄放行李，再利用上午能見度走金橋；花園只選一小段，不逐區收集。', when: '跨區纜車正常、視野可用且石階不濕滑。', mapId: 'golden' },
+      { label: '霧雨替代', title: 'Fantasy Park 後提早下山', text: '不為金橋來回等待，選一項室內體驗後回法國村午餐、取行李並下山。', when: '霧濃、強風或雨勢影響戶外安全。', mapId: 'fantasy' },
+      { label: '晚餐備案', title: '下山延誤就吃 4SEAs', text: '保護纜車與接車緩衝；若無法準時到 Đông Lâm，改吃 M Hotel 旁的 4SEAs，東林再與隔日晚餐對調。', when: '16:30 後才抵達 M Hotel，或不想再叫車。', mapId: 'fourseas' }
     ],
     timeline: [
       { time: '09:00–10:30', title: '早餐、退房、確認能見度', placeId: 'mercure', text: '照平常時間起床，先退房寄放行李，再決定戶外或室內。', highlights: ['向櫃檯確認跨區纜車與下山路線'], warnings: ['先完成退房，避免回房收拾壓縮下山時間'] },
@@ -131,6 +151,13 @@ const tripDayData = {
       { label: '雨天文化：博物館 → 17:00 Heritage Show → 晚餐', ids: ['mhotel', 'museum', 'heritage', 'anthoi', 'mhotel'] },
       { label: '無聊救援：M Hotel → AEON Timezone → 飯店', ids: ['mhotel', 'aeon', 'mhotel'] }
     ],
+    choices: [
+      { label: '正選', title: '飯店上午＋山茶靈應寺', text: '早餐後留在房間、泳池或海灘，15:30 才出發；下午只看靈應寺與一段海岸景色。', when: '天氣可接受，而且仍想維持渡假節奏。', mapId: 'linhung', source: 'https://danangfantasticity.com/en/linh-ung-pagoda-must-see-destination-for-tourists-to-da-nang', sourceText: '峴港官方介紹' },
+      { label: '想玩水', title: 'Mikazuki 半日取代整段北線', text: '11:00 左右出發，以室內漂漂河與溫和設施為主；不再疊加靈應寺。', when: '前一晚確認票價與戶外區營運，而且早上真的想離開飯店。', mapId: 'mikazuki', source: 'https://www.mikazukiwaterpark.com/service-information', sourceText: '官方設施資訊' },
+      { label: '下雨文化版', title: '峴港博物館＋選配 Heritage Show', text: '下午先看博物館，若 10/4 沒看 Memories Show，再接 17:00 表演；看過秀就保留博物館與咖啡即可。', when: '戶外不適合、但不想整天待飯店。', mapId: 'museum', source: 'https://theheritageshow.com.vn/', sourceText: 'Heritage Show 官方資訊' },
+      { label: '即刻救援', title: 'AEON Timezone', text: '保齡球、街機、VR 或電影任選，玩多久算多久；這是臨時無聊或大雨時最省心的方案。', when: '想現在就出門，又不想預約或看古蹟。', mapId: 'aeon' },
+      { label: '晚餐選擇', title: 'Ăn Thôi／Poseidon 二選一', text: '想吃越南菜選 Ăn Thôi；想吃完整海鮮 buffet 選回程順路的 Poseidon，不再加第二間海鮮店。', when: '最晚當天下午決定，Poseidon 建議先訂位。', mapId: 'anthoi' }
+    ],
     timeline: [
       { time: '09:00–15:15', title: '早餐＋完整飯店上午', placeId: 'mhotel', text: '房間、泳池、海灘、午餐與午睡自由組合，不為半日遊提早起床。', highlights: ['優先用已含的飯店權益', '午餐保持適量，晚餐才有胃口'], warnings: ['先確認泳池與下午茶的實際時段'] },
       { time: '15:30–16:00', title: '沿海岸北上', placeId: 'linhung', text: '建議包車往返並請司機等候，不騎機車挑戰濕滑山路。', highlights: ['沿途安全位置看峴港海岸線即可'], warnings: ['不追猴、不餵食，也不把棋盤頂加進今天'] },
@@ -158,6 +185,11 @@ const tripDayData = {
     },
     mainRoute: ['mhotel', 'marble', 'mhotel', 'apec', 'dragon', 'gangyu', 'mhotel'],
     alternatives: [{ label: '雨天：M Hotel → 占婆博物館 → 漢市場 → M Hotel', ids: ['mhotel', 'cham', 'han', 'mhotel'] }],
+    choices: [
+      { label: '晴天正選', title: '五行山精華版', text: '搭電梯上山後只走水山、玄空洞、寺院與一處觀景台，13:30 左右離開，保住午後休息。', when: '地面乾、雨勢小，而且願意走濕滑石階。', mapId: 'marble', source: 'https://danangfantasticity.com/en/the-marble-mountains', sourceText: '峴港官方資訊' },
+      { label: '雨天替代', title: '占婆博物館＋漢市場', text: '五行山整段取消，不挪到回程日補課；先看博物館，再視體力採買，完成後回飯店午休。', when: '持續下雨、石階濕滑或今天不想爬。', mapId: 'cham' },
+      { label: '傍晚保留', title: 'APEC、龍橋與 Gang Yu', text: '公園與橋只短走，19:00 準時吃火鍋；週四沒有例行噴火，不為表演延長行程。', when: '下雨可刪除散步，但保留晚餐。', mapId: 'gangyu' }
+    ],
     timeline: [
       { time: '09:00–10:30', title: '早餐與天氣決定', placeId: 'mhotel', text: '看即時雨勢與地面狀況；地乾、雨小才選五行山。', highlights: ['準備防滑鞋、飲水與輕便雨具'], warnings: ['不要因為已排進行程就勉強走濕滑石階'] },
       { time: '10:45–13:30', title: '五行山・水山精華', placeId: 'marble', text: '搭電梯上山後走玄空洞、寺院與一處觀景台，不蒐集全部洞窟。', highlights: ['玄空洞看天然採光、岩壁與佛像空間', '觀景台看海岸、市區與石灰岩山群'], warnings: ['洞內與石階潮濕；扶手不足處放慢，不穿拖鞋'] },
@@ -182,6 +214,11 @@ const tripDayData = {
     },
     mainRoute: ['mhotel', 'han', 'luklak', 'river', 'mhotel', 'dad'],
     alternatives: [{ label: '若前日已買伴手禮：M Hotel → LUK LAK → M Hotel → 機場', ids: ['mhotel', 'luklak', 'mhotel', 'dad'] }],
+    choices: [
+      { label: '正常版本', title: '漢市場＋LUK LAK', text: '11:15 到漢市場集中買咖啡、腰果與包裝乾貨，12:40 收尾後步行去吃午餐。', when: '伴手禮尚未買齊，且 13:00 能準時入座。', mapId: 'han' },
+      { label: '更慢版本', title: '上午留飯店，午餐照常', text: '若 10/8 已去漢市場，就取消重複採買；睡飽、整理行李後直接前往 LUK LAK。', when: '前一天已買完，或回程日想降低移動量。', mapId: 'luklak' },
+      { label: '不可壓縮', title: '16:30 左右前往機場', text: '餐後只選咖啡或短河岸散步，不安排按摩與跨區景點；15:30 回飯店取行李。', when: 'IT552 19:45 起飛，回程緩衝優先於最後加行程。', mapId: 'dad' }
+    ],
     timeline: [
       { time: '09:00–10:45', title: '早餐、收拾、寄放行李', placeId: 'mhotel', text: '照平常時間起床，退房後把大件行李交給飯店保管。', highlights: ['護照、票券、藥品、行動電源與易碎品留隨身'], warnings: ['向飯店確認取行李憑證與叫車上車點'] },
       { time: '11:15–12:40', title: '漢市場伴手禮', placeId: 'han', text: '主攻咖啡、腰果、餅乾與包裝乾貨，不逛服飾樓層。', highlights: ['先列清單，確認保存期限、密封與價格', '易碎或怕壓商品另外裝袋'], warnings: ['12:40 必須收尾，不能犧牲 LUK LAK 最後點餐時間'] },
