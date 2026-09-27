@@ -1,0 +1,3 @@
+# Ask standards-compliant crawlers not to access this project site.
+User-agent: *
+Disallow: /my-own-travel-plan/
