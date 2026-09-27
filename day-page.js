@@ -2,6 +2,11 @@ const dayId = document.body.dataset.day;
 const day = tripDayData[dayId];
 const dayIds = Object.keys(tripDayData);
 const maps = place => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(place.name)}`;
+const mapsQuery = query => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+const supplyKeyByDay = {
+  '2026-10-03': 'royal', '2026-10-04': 'royal', '2026-10-05': 'mercure',
+  '2026-10-06': 'mhotel', '2026-10-07': 'mhotel', '2026-10-08': 'mhotel', '2026-10-09': 'mhotel'
+};
 
 if (!day) throw new Error(`Unknown itinerary day: ${dayId}`);
 
@@ -50,6 +55,29 @@ if (day.choices?.length) {
   document.querySelector('.day-detail').before(choiceSection);
 }
 
+const supply = hotelSupplyData[supplyKeyByDay[dayId]];
+const supplySection = document.createElement('section');
+supplySection.className = 'supply-section';
+supplySection.innerHTML = `<div class="wrap">
+  <div class="supply-heading">
+    <div><p class="eyebrow">NEARBY DRINKS & SNACKS</p><h2>飯店附近補給</h2></div>
+    <p>${supply.summary}</p>
+  </div>
+  <div class="supply-map-frame">
+    <div id="supply-map" aria-label="飯店與附近補給店地圖"></div>
+    <div class="supply-map-key"><span><i class="hotel-dot"></i>住宿飯店</span><span><i class="store-dot"></i>飲料／零食補給</span></div>
+  </div>
+  <div class="supply-grid">${supply.stores.map((store, index) => `<article class="supply-card">
+    <div class="supply-card-top"><span>S${index + 1}</span><p>${store.type}</p></div>
+    <h3>${store.name}</h3>
+    <dl><div><dt>距離</dt><dd>${store.distance}</dd></div><div><dt>營業時間</dt><dd>${store.hours}</dd></div></dl>
+    <p>${store.description}</p>
+    <div class="supply-links"><a href="${mapsQuery(store.mapQuery)}" target="_blank" rel="noopener">Google Maps ↗</a><a href="${store.source}" target="_blank" rel="noopener">${store.sourceText} ↗</a></div>
+  </article>`).join('')}</div>
+  <p class="supply-checked">${supply.checked}</p>
+</div>`;
+document.querySelector('.day-detail').after(supplySection);
+
 const map = L.map('route-map', { scrollWheelZoom: false });
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   maxZoom: 19,
@@ -90,3 +118,30 @@ day.alternatives.forEach((route, index) => {
 map.fitBounds(bounds, { padding: [34, 34], maxZoom: 15 });
 
 setTimeout(() => map.invalidateSize(), 100);
+
+const supplyMap = L.map('supply-map', { scrollWheelZoom: false });
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  maxZoom: 19,
+  attribution: '&copy; OpenStreetMap contributors'
+}).addTo(supplyMap);
+
+const supplyBounds = [supply.hotel.coords, ...supply.stores.map(store => store.coords)];
+const supplyIcon = (label, kind) => L.divIcon({
+  className: 'supply-marker-shell',
+  html: `<span class="${kind}">${label}</span>`,
+  iconSize: [38, 38],
+  iconAnchor: [19, 19],
+  popupAnchor: [0, -20]
+});
+
+L.marker(supply.hotel.coords, { icon: supplyIcon('H', 'hotel') }).addTo(supplyMap)
+  .bindPopup(`<strong>${supply.hotel.name}</strong><br>${supply.hotel.note}<br><a href="${maps(supply.hotel)}" target="_blank" rel="noopener">Google Maps</a>`);
+
+supply.stores.forEach((store, index) => {
+  L.marker(store.coords, { icon: supplyIcon(`S${index + 1}`, 'store') }).addTo(supplyMap)
+    .bindPopup(`<strong>${store.name}</strong><br>${store.distance}<br>${store.hours}<br><a href="${mapsQuery(store.mapQuery)}" target="_blank" rel="noopener">Google Maps</a>`);
+  L.polyline([supply.hotel.coords, store.coords], { color: '#d66b4b', weight: 2, opacity: 0.72, dashArray: '6 7' }).addTo(supplyMap);
+});
+
+supplyMap.fitBounds(supplyBounds, { padding: [48, 48], maxZoom: 17 });
+setTimeout(() => supplyMap.invalidateSize(), 100);

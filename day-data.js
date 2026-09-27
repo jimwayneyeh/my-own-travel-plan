@@ -1,25 +1,90 @@
+const hotelSupplyData = {
+  royal: {
+    hotel: { name: 'Hotel Royal Hoi An Danang', coords: [15.8766713, 108.3198424], note: '39 Đào Duy Từ；10/3–10/5 住宿' },
+    summary: '最近的 King Minimart 就在同一條 Đào Duy Từ 街上，適合臨時補水、飲料與包裝零食；不用為了採買繞進古城。',
+    checked: '店家與營業時間於 2026/09/27 依 Google Maps 核對；出發前仍建議再點連結確認。',
+    stores: [
+      {
+        name: 'Tạp Hóa King Minimart', type: '最近的便利店', coords: [15.8767773, 108.320855],
+        distance: '約 110 公尺・步行 1–2 分鐘', hours: '每日 06:00–23:00',
+        description: '小型街坊便利店，可買瓶裝水、汽水、啤酒、泡麵、餅乾與簡單日用品。距離最有優勢；結帳前看清標價並保留收據即可。',
+        mapQuery: 'Tạp Hóa King Minimart, 33 Đào Duy Từ, Hội An',
+        source: 'https://www.tripadvisor.co.nz/Attraction_Review-g298082-d19085776-Reviews-Mini_Mart_King-Hoi_An_Quang_Nam_Province.html',
+        sourceText: '地址與店家介紹'
+      }
+    ]
+  },
+  mercure: {
+    hotel: { name: 'Mercure Danang French Village Bana Hills', coords: [15.997428, 107.988292], note: '法國村山頂住宿；10/5–10/6' },
+    summary: '山頂查不到可可靠定位的一般超商；以下是飯店建築群內最實用的飲料／點心補給點。想買平價包裝零食，最好在離開會安前先買好，並於現場確認攜入規定。',
+    checked: 'Café Postal 採飯店官網 2026/09/27 公布時間；Starbucks 採同日 Google Maps 時間。山區營運可能隨纜車、天候或活動調整。',
+    stores: [
+      {
+        name: 'Café Postal', type: '飯店內咖啡與點心', coords: [15.9974291, 107.9878834],
+        distance: '飯店建築群內・步行約 1–2 分鐘', hours: '06:30–21:30；正餐菜單 11:00–21:00',
+        description: '位於 Hôtel de Paris，可外帶咖啡，也有每日蛋糕、烘焙點心與甜點；比一般超商貴，但晚上想補飲料或甜食最方便。',
+        mapQuery: 'Cafe Postal Ba Na Hills',
+        source: 'https://www.mercure-danang-banahills-french-village.com/restaurant-bars/cafe-postal/',
+        sourceText: 'Mercure 官方營業資訊'
+      },
+      {
+        name: 'Starbucks Ba Na Hills', type: '日間外帶飲料', coords: [15.9974352, 107.9882701],
+        distance: 'Morin Hotel 1 樓・步行約 1–2 分鐘', hours: '每日 08:30–16:30',
+        description: '提供外帶咖啡、冷飲與糕點，適合白天順手補給；16:30 後不要把它當晚間備案。',
+        mapQuery: 'Starbucks Ba Na Hills',
+        source: 'https://www.starbucks.vn/', sourceText: '品牌官網'
+      }
+    ]
+  },
+  mhotel: {
+    hotel: { name: 'M Hotel Danang', coords: [16.05165, 108.248034], note: '286 Võ Nguyên Giáp；10/6–10/9 住宿' },
+    summary: '臨時補水或宵夜零食首選 24 小時的 TD MART；想買咖啡、果乾、糖果等在地伴手禮，Quà Đà Nẵng 更近。',
+    checked: '店家位置與營業時間於 2026/09/27 核對；節慶或臨時調整仍以當日 Google Maps／店門公告為準。',
+    stores: [
+      {
+        name: 'Quà Đà Nẵng', type: '最近的特產零食店', coords: [16.0520849, 108.2478592],
+        distance: '約 50 公尺・步行不到 1 分鐘', hours: '每日 06:30–23:00',
+        description: '以峴港伴手禮為主，可找咖啡、茶、果乾、糖果與包裝零食；不是日常型超商，但非常適合回程前補買可帶走的零嘴。',
+        mapQuery: 'Quà Đà Nẵng, Đỗ Bá, Đà Nẵng',
+        source: 'https://evendo.com/locations/vietnam/da-nang/ngu-hanh-son-district/shop/qua-da-nang',
+        sourceText: '營業時間與商品概況'
+      },
+      {
+        name: 'Cửa Hàng Tiện Lợi TD MART', type: '24 小時便利店', coords: [16.0540323, 108.2470521],
+        distance: '約 300 公尺・步行 4–5 分鐘', hours: '每日 24 小時',
+        description: '位於 Nesta Danang Hotel，商品比伴手禮店更接近日常超商，可買水、飲料、泡麵、巧克力、餅乾與簡單生活用品。',
+        mapQuery: 'Cửa Hàng Tiện Lợi TD MART, 268 Võ Nguyên Giáp, Đà Nẵng',
+        source: 'https://www.google.com/maps/search/?api=1&query=C%E1%BB%ADa%20H%C3%A0ng%20Ti%E1%BB%87n%20L%E1%BB%A3i%20TD%20MART%20268%20V%C3%B5%20Nguy%C3%AAn%20Gi%C3%A1p',
+        sourceText: 'Google Maps 店家資訊'
+      }
+    ]
+  }
+};
+
 const tripDayData = {
   '2026-10-03': {
     date: '10/3（六）', place: '峴港機場 → 會安', eyebrow: 'ARRIVAL DAY · KEEP IT LIGHT',
     title: '抵達後，只試探性地看一眼燈籠',
     summary: '18:10 抵達峴港後，搭乘已確認的 Klook 7 人座接機前往會安。司機會追蹤 IT551 航班，從實際抵達時間起免費等候 120 分鐘；今晚只求順利入住、吃到晚餐與恢復體力。',
-    decision: '第 2 航廈入境出口找手持 KLOOK 標誌與主要旅客姓名牌的人員；完成入住後，精神還好才到安會橋附近短走 20–30 分鐘。',
+    decision: '第 2 航廈入境出口找手持 KLOOK 標誌與主要旅客姓名牌的人員；入住後先解決晚餐，主選飯店同條路上營業至 23:00 的 Bới Cơm，不想出門再改問館內 The Deck 當晚還能否點熱食。',
     places: {
       dad: { name: '峴港國際機場', coords: [16.0439, 108.1993], note: '入境、行李與接送集合點' },
-      royal: { name: 'Hotel Royal Hoi An Danang', coords: [15.8817, 108.3266], note: '兩晚住宿基地' },
+      royal: { name: 'Hotel Royal Hoi An Danang', coords: [15.8766713, 108.3198424], note: '兩晚住宿基地' },
       anhoi: { name: '安會橋／河岸', coords: [15.8775, 108.3268], note: '有體力才去的短散步' }
     },
     mainRoute: ['dad', 'royal'],
     alternatives: [{ label: '精神尚可：飯店 → 安會橋短走 → 飯店', ids: ['royal', 'anhoi', 'royal'] }],
     choices: [
       { label: '已確認接送', title: 'Klook 7 人座接機', text: 'KPN_Airport Transfer 已確認 Toyota Fortuner／Innova 或同級，2 位乘客，司機追蹤 IT551，於入境出口舉牌接人並從實際抵達起免費等候 120 分鐘。', when: '出發前在 Klook App 再確認兩件大型行李與供應商聯絡方式；私人訂單編號不放在公開網站。' },
-      { label: '有體力才啟動', title: '安會橋與河岸短走', text: '完成入住、吃到東西，而且沒有大雨時才去；只看燈籠與河岸 20–30 分鐘，不搭船。', when: '若 21:15 後才安頓好或已疲累，直接取消。', mapId: 'anhoi' }
+      { label: '晚餐主方案', title: 'Bới Cơm：同條路上的越南家常菜', text: '飯店在 39 Dao Duy Tu，餐廳在 20 Dao Duy Tu；官網標示每日 07:30–23:00。辦好入住後直接步行前往，吃飯、青菜與一道主菜即可，不用再叫車。', when: '預計 21:15–21:30 入座；當天下午用電話或訂位表單再確認廚房最後點餐時間。', source: 'https://boicomhoianrestaurant.com/contact/', sourceText: '餐廳官方地址與營業時間' },
+      { label: '不出飯店的備案', title: 'The Deck：塔帕斯與飲料，不當作保證有正餐', text: '館內頂樓 The Deck 官方標示飲料服務到午夜，菜色定位是 tapas 搭酒。入住時先請櫃檯確認當晚廚房最後點餐與還有哪些熱食，有接單才上樓。', when: '下大雨、已很累，或只想簡單吃一點時選；Wakaku 雖營業到 22:00，但 21:00 後才抵達太趕，不列主方案。', source: 'https://hotelroyalhoian.vn/restaurants-bars/the-deck/', sourceText: 'Hotel Royal 官方餐飲資訊' },
+      { label: '有體力才啟動', title: '安會橋與河岸短走', text: '完成入住、吃到東西，而且沒有大雨時才去；只看燈籠與河岸 20–30 分鐘，不搭船。', when: '若晚餐後已超過 22:15 或感到疲累，直接取消。', mapId: 'anhoi' }
     ],
     timeline: [
       { time: '18:10–19:30', title: '落地、入境、提領行李與會合', placeId: 'dad', text: '完成入境與提領行李後，到第 2 航廈入境出口找 KLOOK 標誌與主要旅客姓名牌。', highlights: ['司機會追蹤 IT551 航班動態', '免費等候時間從實際抵達起算 120 分鐘', '出航廈前可處理網路與少量現金'], warnings: ['航班明顯延誤時仍用 Klook App 聯絡供應商確認接送'] },
       { time: '約 19:40–21:00', title: '搭 Klook 接送前往會安飯店', placeId: 'royal', text: '搭乘已確認的 7 人座車直達 Hotel Royal Hoi An Danang，中途不繞峴港市區。', highlights: ['KPN_Airport Transfer；Toyota Fortuner／Innova 或同級', '上車前核對司機、車牌、目的地與行李件數'], warnings: ['訂單規則最多 2 件 28 吋特大行李；若最後帶 29 吋箱，行前先在 App 向供應商確認'] },
-      { time: '21:00 後', title: '入住、近距離晚餐', placeId: 'royal', text: '先辦入住、放好證件與行李；餐食以飯店或步行可達地點為主。', highlights: ['詢問隔日早餐時間、退房規定與叫車方式'], warnings: ['不把 Red Bean 排在今晚，班機與入境變數太大'] },
-      { time: '21:15–21:45', title: '選配：安會橋與河岸', placeId: 'anhoi', optional: true, text: '只有班機準時、沒有下大雨而且精神仍好才出發，最晚走半小時。', highlights: ['看燈籠倒影與古城夜色即可，不排河船'], warnings: ['潮濕石板與橋面可能滑；累了直接取消'] }
+      { time: '21:00–22:15', title: '入住、步行去吃 Bới Cơm', placeId: 'royal', text: '先辦入住、放好證件與行李；主方案是步行到同條 Dao Duy Tu 街上的 Bới Cơm。若大雨或已非常疲累，就在入住時先問 The Deck 還能否點熱食。', highlights: ['Bới Cơm 官方營業至 23:00', 'The Deck 飲料服務到午夜，但熱食截單時間需現場確認', '順便詢問隔日早餐時間、退房規定與叫車方式'], warnings: ['不把 Red Bean 排在今晚，班機與入境變數太大', '飯店官網說明不允許外帶熟食進入，不規劃買外食回房吃'] },
+      { time: '22:15 後', title: '選配：安會橋與河岸', placeId: 'anhoi', optional: true, text: '只有吃完晚餐、沒有下大雨而且精神仍好才出發，最多走 20–30 分鐘。', highlights: ['看燈籠倒影與古城夜色即可，不排河船'], warnings: ['已經很晚，吃飽或潮濕地滑就直接回房'] }
     ]
   },
   '2026-10-04': {
@@ -28,7 +93,7 @@ const tripDayData = {
     summary: '09:00 起床吃早餐，約 10:45 才離開飯店。白天沿古城由日本橋往福建會館與 Metiseko 前進；購物後先回房休息。晚上留在會安，在 Memories Show 與 Red Bean 後的河岸散步之間二選一。',
     decision: '今晚只留在會安，在演出與自由散步之間二選一，保住晚餐、古城夜色與休息品質。',
     places: {
-      royal: { name: 'Hotel Royal Hoi An Danang', coords: [15.8817, 108.3266], note: '早餐、午休與住宿' },
+      royal: { name: 'Hotel Royal Hoi An Danang', coords: [15.8766713, 108.3198424], note: '早餐、午休與住宿' },
       bridge: { name: '日本橋', coords: [15.8772, 108.3262], note: '古城西側起點' },
       canton: { name: '廣肇會館', coords: [15.8770, 108.3281], note: '沿陳富街順路停靠' },
       fujian: { name: '福建會館', coords: [15.8764, 108.3323], note: '主殿、天井與華人建築' },
@@ -61,7 +126,7 @@ const tripDayData = {
     summary: '09:00 早餐、10:15 前完成退房，10:30 搭預約的 Grab 6 人座前往 Thác Tóc Tiên Station。車子只能到山腳；先在 Mercure 的 Downhill Front Desk 核對訂房、處理房客纜車票與大件行李，再依工作人員指定路線上山。',
     decision: '飯店目前列上山纜車 08:00–16:30；10:30 出發仍從容，但不把出發拖到中午，也不在途中加景點。',
     places: {
-      royal: { name: 'Hotel Royal Hoi An Danang', coords: [15.8817, 108.3266], note: '早餐與退房' },
+      royal: { name: 'Hotel Royal Hoi An Danang', coords: [15.8766713, 108.3198424], note: '早餐與退房' },
       gate: { name: 'Thác Tóc Tiên Station・Mercure 山下櫃檯', coords: [16.02695, 108.03105], note: '訂房核對、房客纜車票與行李交接' },
       mercure: { name: 'Mercure French Village', coords: [15.9976, 107.9880], note: '住宿與山頂基地' },
       village: { name: '法國村', coords: [15.9972, 107.9874], note: '教堂、廣場與夜景' },
@@ -102,7 +167,7 @@ const tripDayData = {
       garden: { name: "Le Jardin d'Amour", coords: [15.9952, 107.9954], note: '金橋旁選走一小段' },
       fantasy: { name: 'Fantasy Park', coords: [15.9975, 107.9890], note: '霧雨室內替代' },
       gate: { name: '巴拿山山腳', coords: [15.9981, 107.9960], note: '與司機會合' },
-      mhotel: { name: 'M Hotel Danang', coords: [16.0534, 108.2466], note: '峴港三晚住宿基地' },
+      mhotel: { name: 'M Hotel Danang', coords: [16.05165, 108.248034], note: '峴港三晚住宿基地' },
       beach: { name: '美溪沙灘', coords: [16.0543, 108.2478], note: '有餘裕才短走' },
       donglam: { name: 'Đông Lâm Restaurant', coords: [16.0509, 108.2448], note: '★ 19:00 晚餐' },
       fourseas: { name: 'Buffet Hải Sản 4SEAs', coords: [16.0519, 108.2472], note: '巴拿山延誤備案' }
@@ -132,7 +197,7 @@ const tripDayData = {
     summary: '正選仍是早餐後留在 M Hotel，15:30 才沿海岸北上靈應寺；但若上午已開始無聊，可以整段換成 Mikazuki、博物館＋表演，或 AEON Timezone，不需要勉強躺到下午。',
     decision: '先保留飯店版，不預購選配；10/6 晚上或 10/7 早餐時，再依天氣與「今天想動多少」決定是否替換。',
     places: {
-      mhotel: { name: 'M Hotel Danang', coords: [16.0534, 108.2466], note: '完整渡假上午' },
+      mhotel: { name: 'M Hotel Danang', coords: [16.05165, 108.248034], note: '完整渡假上午' },
       linhung: { name: '山茶靈應寺', coords: [16.1004, 108.2775], note: '今日唯一主景點' },
       anthoi: { name: 'Ăn Thôi', coords: [16.0680, 108.2242], note: '18:30 越南菜正選' },
       poseidon: { name: 'Poseidon Premium・Vincom', coords: [16.0712, 108.2292], note: '海鮮 buffet 替代' },
@@ -175,7 +240,7 @@ const tripDayData = {
     summary: '10:45 左右出發去五行山，只走水山、玄空洞與一處觀景台；午後回 M Hotel 完整休息。傍晚再到 APEC 公園與龍橋短走，19:00 吃特別想去的 Gang Yu Hot Pot。',
     decision: '若持續下雨或石階濕滑，整段五行山直接換成占婆雕刻博物館＋漢市場，不挪到隔天補課。',
     places: {
-      mhotel: { name: 'M Hotel Danang', coords: [16.0534, 108.2466], note: '早餐、午休與住宿' },
+      mhotel: { name: 'M Hotel Danang', coords: [16.05165, 108.248034], note: '早餐、午休與住宿' },
       marble: { name: '五行山・水山', coords: [16.0034, 108.2636], note: '晴天唯一大景點' },
       cham: { name: '占婆雕刻博物館', coords: [16.0604, 108.2236], note: '雨天室內替代' },
       han: { name: '漢市場', coords: [16.0683, 108.2241], note: '雨天替代，可提前買伴手禮' },
@@ -206,7 +271,7 @@ const tripDayData = {
     summary: '早餐後整理行李並寄放，11:15 去漢市場做最後採買，13:00 步行到 LUK LAK 午餐。下午只留咖啡或短河岸散步，15:30 回飯店取行李，最晚 16:30–16:45 前往機場。',
     decision: 'LUK LAK 午餐最後點餐 13:45，是今天唯一不能拖延的節點；不再安排按摩，以免影響取行李與機場緩衝。',
     places: {
-      mhotel: { name: 'M Hotel Danang', coords: [16.0534, 108.2466], note: '早餐、退房與寄放行李' },
+      mhotel: { name: 'M Hotel Danang', coords: [16.05165, 108.248034], note: '早餐、退房與寄放行李' },
       han: { name: '漢市場', coords: [16.0683, 108.2241], note: '最後採買' },
       luklak: { name: 'LUK LAK Danang', coords: [16.0754, 108.2238], note: '★ 13:00 午餐' },
       river: { name: '白藤街河岸', coords: [16.0718, 108.2240], note: '餐後短走／咖啡' },
