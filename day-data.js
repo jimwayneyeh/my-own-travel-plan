@@ -65,9 +65,10 @@ const tripDayData = {
   '2026-10-03': {
     date: '10/3（六）', place: '峴港機場 → 會安', eyebrow: 'ARRIVAL DAY · KEEP IT LIGHT',
     title: '抵達後，只試探性地看一眼燈籠',
-    summary: '18:10 抵達峴港後，搭乘已確認的 Klook 7 人座接機前往會安。司機會追蹤 IT551 航班，從實際抵達時間起免費等候 120 分鐘；今晚只求順利入住、吃到晚餐與恢復體力。',
-    decision: '第 2 航廈入境出口找手持 KLOOK 標誌與主要旅客姓名牌的人員；入住後先解決晚餐，主選飯店同條路上營業至 23:00 的 Bới Cơm，不想出門再改問館內 The Deck 當晚還能否點熱食。',
+    summary: 'IT551 表定 16:30 由桃園起飛，預計 15:50–16:00 左右開始登機，實際以登機證為準。在桃園 T1 報到前買少量密封包裝零嘴並放進託運箱，通關後再吃完整正餐；零嘴不帶進客艙，留到峴港領到行李、完成海關後才取出。',
+    decision: '去程是桃園直飛峴港，不經香港。機上不吃、不攜帶非虎航販售外食進客艙；在峴港出關後從託運箱取出零嘴，先與司機會合再於上車前吃，到 Hotel Royal 辦好入住後仍去 Bới Cơm 吃熱食晚餐。',
     places: {
+      tpe: { name: '桃園國際機場第一航廈', coords: [25.0797, 121.2342], note: '報到、通關與登機前正餐' },
       dad: { name: '峴港國際機場', coords: [16.0439, 108.1993], note: '入境、行李與接送集合點' },
       royal: { name: 'Hotel Royal Hoi An Danang', coords: [15.8766713, 108.3198424], note: '兩晚住宿基地' },
       anhoi: { name: '安會橋／河岸', coords: [15.8775, 108.3268], note: '有體力才去的短散步' }
@@ -75,14 +76,21 @@ const tripDayData = {
     mainRoute: ['dad', 'royal'],
     alternatives: [{ label: '精神尚可：飯店 → 安會橋短走 → 飯店', ids: ['royal', 'anhoi', 'royal'] }],
     choices: [
+      { label: '時間已校正', title: '16:30 是起飛，約 15:50–16:00 登機', text: '10/3 IT551 為桃園 T1 16:30 起飛、18:10 抵達峴港 T2。台灣比越南快一小時，實際飛行約 2 小時 40 分；16:00 左右應已在登機門或機上，不是到機場的時間。', when: '建議 13:30 前抵達桃園第一航廈；當天以航空公司通知、機場看板與登機證時間為準。', source: 'https://legacy-www.tigerairtw.com/zh-tw/useful-link/conditions-carriage', sourceText: '台灣虎航官方報到與登機規定' },
+      { label: '虎航外食規定', title: '可在桃園買，但要報到前放進託運箱', text: '虎航 FAQ 明文寫著「請勿攜帶非本機販售之外食上機」，因此落地零嘴不放手提包。在 T1 非管制區購買後，先放入託運箱再到虎航櫃檯辦理託運。', when: '只買少量、常溫耐放、密封原包裝的餅乾、能量棒或堅果；避開鮮果、蔬菜、散裝食物與含肉製品。', source: 'https://www.tigerairtw.com/zh-TW/support/faq/about-baggages', sourceText: '台灣虎航官方外食 FAQ' },
+      { label: '不買機上餐的吃法', title: '桃園完整正餐＋峴港託運箱零嘴＋會安晚餐', text: '先把落地零嘴放進託運箱，14:30–15:15 再於 T1 通關後吃由主食、蛋白質與青菜組成的完整正餐。機上不吃外食；落地領箱、完成海關後才取出零嘴。', when: '桃園正餐不吃過量油炸、辛辣或高鹽食物，但要有足夠主食與蛋白質，才能支撐到峴港落地。', source: 'https://map.taoyuan-airport.com/', sourceText: '桃園機場官方室內地圖' },
       { label: '已確認接送', title: 'Klook 7 人座接機', text: 'KPN_Airport Transfer 已確認 Toyota Fortuner／Innova 或同級，2 位乘客，司機追蹤 IT551，於入境出口舉牌接人並從實際抵達起免費等候 120 分鐘。', when: '出發前在 Klook App 再確認兩件大型行李與供應商聯絡方式；私人訂單編號不放在公開網站。' },
+      { label: '峴港機場只留快速備案', title: '出關後先找司機，不坐下吃正餐', text: '峴港 T2 官方列出的多數餐飲在出境管制區，入境旅客出關後不能回去使用。公開到達區若當時有咖啡、麵包或便利店，只做 5–10 分鐘快速採買。', when: '必須先與舉牌司機會合，並請司機同意等待；不臨時點餐、不讓已會合的司機無消息久等。', source: 'https://explore.danangairportterminal.vn/facility/burger-king/', sourceText: '峴港 T2 官方餐飲位置範例' },
       { label: '晚餐主方案', title: 'Bới Cơm：同條路上的越南家常菜', text: '飯店在 39 Dao Duy Tu，餐廳在 20 Dao Duy Tu；官網標示每日 07:30–23:00。辦好入住後直接步行前往，吃飯、青菜與一道主菜即可，不用再叫車。', when: '預計 21:15–21:30 入座；當天下午用電話或訂位表單再確認廚房最後點餐時間。', source: 'https://boicomhoianrestaurant.com/contact/', sourceText: '餐廳官方地址與營業時間' },
       { label: '不出飯店的備案', title: 'The Deck：塔帕斯與飲料，不當作保證有正餐', text: '館內頂樓 The Deck 官方標示飲料服務到午夜，菜色定位是 tapas 搭酒。入住時先請櫃檯確認當晚廚房最後點餐與還有哪些熱食，有接單才上樓。', when: '下大雨、已很累，或只想簡單吃一點時選；Wakaku 雖營業到 22:00，但 21:00 後才抵達太趕，不列主方案。', source: 'https://hotelroyalhoian.vn/restaurants-bars/the-deck/', sourceText: 'Hotel Royal 官方餐飲資訊' },
       { label: '有體力才啟動', title: '安會橋與河岸短走', text: '完成入住、吃到東西，而且沒有大雨時才去；只看燈籠與河岸 20–30 分鐘，不搭船。', when: '若晚餐後已超過 22:15 或感到疲累，直接取消。', mapId: 'anhoi' }
     ],
     timeline: [
+      { time: '13:30–14:30（台灣）', title: '買落地零嘴、報到與通關', placeId: 'tpe', text: '在 T1 非管制區先買少量密封包裝零嘴，放進託運箱後才到台灣虎航當日指定櫃檯辦報到與行李託運；接著通過安檢與證照查驗。', highlights: ['台灣虎航由桃園第一航廈出發', '零嘴不放手提包、不帶進客艙', '選餅乾、能量棒或堅果，不選鮮果與含肉食品'], warnings: ['報到截止為表定起飛前 45 分鐘，但不以截止時間倒推到場', '當天若排隊較長，不為了買零嘴拖延報到'] },
+      { time: '14:30–15:15（台灣）', title: '桃園 T1 管制區內完整正餐', placeId: 'tpe', text: '選有米飯或麵食、蛋白質與適量青菜的簡單套餐，吃到足以支撐下機、但不會腹脹的程度，不用追名店或跨區找餐廳。', highlights: ['用餐時同時補充水分', '登機前不再購買準備帶上飛機的外食', '15:35–15:40 前抵達登機門'], warnings: ['不吃過量油炸、辛辣或高鹽食物，減少機上口渴與腸胃不適'] },
+      { time: '約 15:50（台灣）–18:10（越南）', title: '登機與 IT551 飛行', placeId: 'tpe', text: '16:30 是桃園表定起飛；登機時間尚未能事先確定，實際以登機證為準。台灣與越南有一小時時差，18:10 為越南當地時間。', highlights: ['不預購機上餐點', '不攜帶、不食用非虎航販售的外食', '若機上需要飲料或食物，只使用機上販售品'], warnings: ['除沖泡牛奶與服藥等人道考量外，虎航機上不提供冷、熱水', '登機程序會在起飛前 10 分鐘結束，不要在最後時間離開登機門'] },
       { time: '18:10–19:30', title: '落地、入境、提領行李與會合', placeId: 'dad', text: '完成入境與提領行李後，到第 2 航廈入境出口找 KLOOK 標誌與主要旅客姓名牌。', highlights: ['司機會追蹤 IT551 航班動態', '免費等候時間從實際抵達起算 120 分鐘', '出航廈前可處理網路與少量現金'], warnings: ['航班明顯延誤時仍用 Klook App 聯絡供應商確認接送'] },
-      { time: '約 19:40–21:00', title: '搭 Klook 接送前往會安飯店', placeId: 'royal', text: '搭乘已確認的 7 人座車直達 Hotel Royal Hoi An Danang，中途不繞峴港市區。', highlights: ['KPN_Airport Transfer；Toyota Fortuner／Innova 或同級', '上車前核對司機、車牌、目的地與行李件數'], warnings: ['訂單規則最多 2 件 28 吋特大行李；若最後帶 29 吋箱，行前先在 App 向供應商確認'] },
+      { time: '約 19:40–21:00', title: '取出託運箱零嘴、搭接送前往會安', placeId: 'royal', text: '領到行李、完成海關並進入公開到達區後，才從託運箱取出桃園購買的零嘴。先與舉牌司機會合；若已明顯飢餓，告知司機後於上車前吃少量，然後搭車直達 Hotel Royal。', highlights: ['KPN_Airport Transfer；Toyota Fortuner／Innova 或同級', '上車前核對司機、車牌、目的地與行李件數', '落地零嘴只是擔保、不是代替會安晚餐'], warnings: ['不在車內吃湯汁、掉屑或強烈氣味食物', '訂單規則最多 2 件 28 吋特大行李；若最後帶 29 吋箱，行前先在 App 向供應商確認'] },
       { time: '21:00–22:15', title: '入住、步行去吃 Bới Cơm', placeId: 'royal', text: '先辦入住、放好證件與行李；主方案是步行到同條 Dao Duy Tu 街上的 Bới Cơm。若大雨或已非常疲累，就在入住時先問 The Deck 還能否點熱食。', highlights: ['Bới Cơm 官方營業至 23:00', 'The Deck 飲料服務到午夜，但熱食截單時間需現場確認', '順便詢問隔日早餐時間、退房規定與叫車方式'], warnings: ['不把 Red Bean 排在今晚，班機與入境變數太大', '飯店官網說明不允許外帶熟食進入，不規劃買外食回房吃'] },
       { time: '22:15 後', title: '選配：安會橋與河岸', placeId: 'anhoi', optional: true, text: '只有吃完晚餐、沒有下大雨而且精神仍好才出發，最多走 20–30 分鐘。', highlights: ['看燈籠倒影與古城夜色即可，不排河船'], warnings: ['已經很晚，吃飽或潮濕地滑就直接回房'] }
     ]
