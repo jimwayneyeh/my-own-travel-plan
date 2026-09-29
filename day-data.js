@@ -178,10 +178,9 @@ const tripDayData = {
       gate: { name: '巴拿山山腳', coords: [15.9981, 107.9960], note: '與司機會合' },
       mhotel: { name: 'M Hotel Danang', coords: [16.05165, 108.248034], note: '峴港三晚住宿基地' },
       beach: { name: '美溪沙灘', coords: [16.0543, 108.2478], note: '有餘裕才短走' },
-      donglam: { name: 'Đông Lâm Restaurant', coords: [16.0509, 108.2448], note: '★ 19:00 晚餐' },
-      fourseas: { name: 'Buffet Hải Sản 4SEAs', coords: [16.0519, 108.2472], note: '巴拿山延誤備案' }
+      fourseas: { name: 'Buffet Hải Sản 4SEAs', coords: [16.0519, 108.2472], note: '★ 19:00 晚餐；近飯店的海鮮 buffet' }
     },
-    mainRoute: ['mercure', 'golden', 'garden', 'mercure', 'gate', 'mhotel', 'beach', 'donglam', 'mhotel'],
+    mainRoute: ['mercure', 'golden', 'garden', 'mercure', 'gate', 'mhotel', 'beach', 'fourseas', 'mhotel'],
     alternatives: [
       { label: '霧雨：飯店 → Fantasy Park → 飯店', ids: ['mercure', 'fantasy', 'mercure'] },
       { label: '下山延誤：M Hotel → 4SEAs', ids: ['mhotel', 'fourseas', 'mhotel'] }
@@ -189,7 +188,7 @@ const tripDayData = {
     choices: [
       { label: '清晨正選', title: '住客早班金橋', text: '官方住宿方案列06:00、06:15、06:30，另有方案列06:15、06:45；實際以10/5晚櫃檯登記為準。由法國村Louvre到Bordeaux的纜車約5分鐘，連步行與候車抓15–25分鐘，票內含。', when: '沒有雷電、強風警報，住客班次照常。', mapId: 'golden', source: 'https://www.mercure-danang-banahills-french-village.com/offers/early-booking-special/', sourceText: 'Mercure清晨金橋班次' },
       { label: '霧雨替代', title: 'Fantasy Park 後提早下山', text: '早班取消或戶外不安全，就先吃早餐退房，10:40後進Fantasy Park；不用為完全沒有視野的金橋跨區等待。', when: '雷雨、強風、濃霧或纜車調整。', mapId: 'fantasy' },
-      { label: '晚餐備案', title: '下山延誤就吃 4SEAs', text: '保護纜車與接車緩衝；若無法準時到 Đông Lâm，改吃 M Hotel 旁的 4SEAs，東林再與隔日晚餐對調。', when: '16:30 後才抵達 M Hotel，或不想再叫車。', mapId: 'fourseas' }
+      { label: '晚餐已選定', title: '4SEAs：轉移日就近吃海鮮 buffet', text: '4SEAs 在 268 Võ Nguyên Giáp，從 M Hotel 沿海步行即可到。下山、入住與下午茶後再吃，不需要為晚餐多叫一次車。', when: '抵達 M Hotel 後仍有胃口吃完整 buffet；建議先訂 19:00。', mapId: 'fourseas', source: 'https://4seas.vn/', sourceText: '4SEAs 官方地址與時段' }
     ],
     timeline: [
       { time: '05:30–06:00', title: '起床、看窗外與住客班次', placeId: 'mercure', text: '帶房卡／住客憑證、票券QR、雨衣、薄外套與手機；不用先吃完整早餐。', highlights: ['若能看清對面建築或雲層正在移動，仍值得出發', '可先帶一點乾糧，回程再吃飯店早餐'], warnings: ['強風時不要撐大傘；雷電或飯店取消班次就留在室內'] },
@@ -199,50 +198,46 @@ const tripDayData = {
       { time: '10:40–12:30', title: '只補一區：晴走半山，雨進 Fantasy Park', placeId: 'garden', text: '清晨若只看金橋且現在轉晴，可補花園／心靈區；若雨霧持續，留在法國村一側玩Fantasy Park。基本票包含兩者大多數設施。', highlights: ['Fantasy Park開放08:30–19:00', '晴天也只選花園或心靈區一組，不逐點蒐集'], warnings: ['不要臨時再跨去Moon Castle與金橋兩頭跑', '攀岩、10D、幸運遊戲仍需另付費'] },
       { time: '12:30–15:30', title: '午餐、取行李、纜車下山並接車', placeId: 'gate', text: '12:30回法國村簡單午餐，13:30–14:00取行李後依現場指定線前往L’Indochine，搭Thác Tóc Tiên直達線下山。纜車估17–20分鐘，連步行、候車與領行李抓45–75分鐘；回程已含，不需買第二天基本票。', highlights: ['到山腳後再把實際抵達時間傳給司機', '接車點仍是Mercure Downhill Front Desk／Thác Tóc Tiên'], warnings: ['雷雨或強風可能延誤；寧可取消海邊短走，也不要壓縮安全緩衝'] },
       { time: '16:00–18:30', title: '入住、下午茶、選配海灘短走', placeId: 'mhotel', text: '先使用已含的下午茶與房間設施；有餘裕才去飯店正前方沙灘。', highlights: ['確認早餐、下午茶和泳池使用時段'], warnings: ['海況看警示旗；風浪大就留在飯店'] },
-      { time: '19:00–20:30', title: '★ Đông Lâm 晚餐', placeId: 'donglam', text: '短程叫車前往 55 Trần Bạch Đằng，用餐後直接回飯店。', highlights: ['訂位時詢問烤鴨是否必須預訂'], warnings: ['不同平台晚間結束時間有落差，出發前直接向餐廳確認'] }
+      { time: '19:00–20:30', title: '★ 4SEAs 海鮮 buffet 晚餐', placeId: 'fourseas', text: '從 M Hotel 沿 Võ Nguyên Giáp 短程步行到 268 號；這天只做入住後的近距離晚餐。', highlights: ['官方時段為 17:00–22:00；建議訂 19:00', '轉移日只選一間餐廳，不再加海邊夜間行程'], warnings: ['下午茶淺嚐即可，晚餐才有胃口', '海鮮與燒烤一次拿少量，覺得合口味再續'] }
     ]
   },
   '2026-10-07': {
-    date: '10/7（三）', place: '峴港北線', eyebrow: 'DA NANG · RESORT MORNING',
-    title: '把上午留給飯店，下午只看山茶半島',
-    summary: '正選仍是早餐後留在 M Hotel，15:30 才沿海岸北上靈應寺；但若上午已開始無聊，可以整段換成 Mikazuki、博物館＋表演，或 AEON Timezone，不需要勉強躺到下午。',
-    decision: '先保留飯店版，不預購選配；10/6 晚上或 10/7 早餐時，再依天氣與「今天想動多少」決定是否替換。',
+    date: '10/7（三）', place: '美溪海灘・慢日子', eyebrow: 'DA NANG · BEACH & REST',
+    title: '不去山茶半島：在飯店與海邊把一天放慢',
+    summary: '這天不再安排山茶半島。正選是睡飽後用飯店泳池、下午茶與房間，想換個場景才下樓到 Maia Beach Bar 喝椰子或咖啡、躺在沙灘座位看海滑手機；有購物興致才用一小段 Grab 時間去 AEON Mall Thanh Khê。',
+    decision: '不預約、不硬排時段。早餐後先看天氣與體力：晴而想放空就留飯店／Maia；下雨或想吹冷氣購物才去 AEON；海況有警示旗便不下水。',
     places: {
-      mhotel: { name: 'M Hotel Danang', coords: [16.05165, 108.248034], note: '完整渡假上午' },
-      linhung: { name: '山茶靈應寺', coords: [16.1004, 108.2775], note: '今日唯一主景點' },
-      anthoi: { name: 'Ăn Thôi', coords: [16.0680, 108.2242], note: '18:30 越南菜正選' },
-      poseidon: { name: 'Poseidon Premium・Vincom', coords: [16.0712, 108.2292], note: '海鮮 buffet 替代' },
-      fourseas: { name: 'Buffet Hải Sản 4SEAs', coords: [16.0519, 108.2472], note: '雨天近飯店備案' },
-      galina: { name: 'Galina Restaurant', coords: [16.0513, 108.2474], note: '需先確認散客供餐形式' },
-      mikazuki: { name: 'Mikazuki Water Park 365', coords: [16.0935, 108.1485], note: '想玩漂漂河時的半日替換' },
-      museum: { name: '峴港博物館', coords: [16.0709, 108.2242], note: '雨天文化選配' },
-      heritage: { name: 'The Heritage Show', coords: [16.0738, 108.2380], note: '17:00 場後再吃晚餐' },
-      aeon: { name: 'AEON Mall Thanh Khê・Timezone', coords: [16.0665, 108.2043], note: '保齡球、街機、VR 與電影' }
+      mhotel: { name: 'M Hotel Danang', coords: [16.05165, 108.248034], note: '無邊際泳池、下午茶、Mê Man Lounge 與午睡' },
+      maia: { name: 'Maia Beach Bar', coords: [16.05159, 108.24819], note: '飯店樓下的沙灘座位、椰子、咖啡與調酒' },
+      holiday: { name: 'The Holiday Beach Club & Dining', coords: [16.05214, 108.24824], note: '步行幾分鐘的海景躺椅備案' },
+      aeon: { name: 'AEON Mall Đà Nẵng Thanh Khê', coords: [16.0665, 108.2043], note: '約 15–20 分鐘 Grab 的冷氣購物選配' },
+      meman: { name: 'Mê Man Dining & Lounge', coords: [16.05165, 108.248034], note: '飯店 4 樓，雨天或不想曬太陽時喝飲料' },
+      donglam: { name: 'Đông Lâm Restaurant', coords: [16.0509, 108.2448], note: '★ 12:00 中式午餐' },
+      anthoiseafood: { name: 'Ăn Thôi Hải Sản', coords: [16.05165, 108.248034], note: '★ 18:30 海景海鮮晚餐；290 Võ Nguyên Giáp' },
+      galina: { name: 'Galina Restaurant', coords: [16.0513, 108.2474], note: '午餐臨時替換；先確認散客供餐形式' }
     },
-    mainRoute: ['mhotel', 'linhung', 'anthoi', 'mhotel'],
+    mainRoute: ['mhotel', 'donglam', 'mhotel', 'maia', 'anthoiseafood', 'mhotel'],
     alternatives: [
-      { label: '海鮮 buffet：靈應寺 → Poseidon → 飯店', ids: ['linhung', 'poseidon', 'mhotel'] },
-      { label: '大雨近距離：M Hotel → 4SEAs／Galina', ids: ['mhotel', 'fourseas', 'galina', 'mhotel'] },
-      { label: '想玩水：M Hotel → Mikazuki → 市區晚餐', ids: ['mhotel', 'mikazuki', 'anthoi', 'mhotel'] },
-      { label: '雨天文化：博物館 → 17:00 Heritage Show → 晚餐', ids: ['mhotel', 'museum', 'heritage', 'anthoi', 'mhotel'] },
-      { label: '無聊救援：M Hotel → AEON Timezone → 飯店', ids: ['mhotel', 'aeon', 'mhotel'] }
+      { label: '最懶正選：M Hotel → Maia Beach Bar → 飯店', ids: ['mhotel', 'maia', 'mhotel'] },
+      { label: '沙灘換場：M Hotel → The Holiday Beach Club → 飯店', ids: ['mhotel', 'holiday', 'mhotel'] },
+      { label: '下雨／想買東西：M Hotel → AEON Mall Thanh Khê → 飯店', ids: ['mhotel', 'aeon', 'mhotel'] },
+      { label: '午餐臨時替換：M Hotel → Galina → 飯店', ids: ['mhotel', 'galina', 'mhotel'] }
     ],
     choices: [
-      { label: '正選', title: '飯店上午＋山茶靈應寺', text: '早餐後留在房間、泳池或海灘，15:30 才出發；下午只看靈應寺與一段海岸景色。', when: '天氣可接受，而且仍想維持渡假節奏。', mapId: 'linhung', source: 'https://danangfantasticity.com/en/linh-ung-pagoda-must-see-destination-for-tourists-to-da-nang', sourceText: '峴港官方介紹' },
-      { label: '想玩水', title: 'Mikazuki 半日取代整段北線', text: '11:00 左右出發，以室內漂漂河與溫和設施為主；不再疊加靈應寺。', when: '前一晚確認票價與戶外區營運，而且早上真的想離開飯店。', mapId: 'mikazuki', source: 'https://www.mikazukiwaterpark.com/service-information', sourceText: '官方設施資訊' },
-      { label: '下雨文化版', title: '峴港博物館＋選配 Heritage Show', text: '下午先看博物館，若 10/4 沒看 Memories Show，再接 17:00 表演；看過秀就保留博物館與咖啡即可。', when: '戶外不適合、但不想整天待飯店。', mapId: 'museum', source: 'https://theheritageshow.com.vn/', sourceText: 'Heritage Show 官方資訊' },
-      { label: '即刻救援', title: 'AEON Timezone', text: '保齡球、街機、VR 或電影任選，玩多久算多久；這是臨時無聊或大雨時最省心的方案。', when: '想現在就出門，又不想預約或看古蹟。', mapId: 'aeon' },
-      { label: '晚餐選擇', title: 'Ăn Thôi／Poseidon 二選一', text: '想吃越南菜選 Ăn Thôi；想吃完整海鮮 buffet 選回程順路的 Poseidon，不再加第二間海鮮店。', when: '最晚當天下午決定，Poseidon 建議先訂位。', mapId: 'anthoi' }
+      { label: '正選', title: '飯店放空＋Maia Beach Bar', text: '早餐後不設鬧鐘；在房間、無邊際泳池與已含下午茶之間自由切換。真的想看海才下樓到 Maia，點椰子、咖啡或果汁，坐沙灘座位滑手機即可。', when: '天氣穩定、你們想把時間花在休息而非移動。', mapId: 'maia', source: 'https://mhotel.vn/property/m-hotel-da-nang/', sourceText: 'M Hotel 官方設施資訊' },
+      { label: '沙灘換景', title: 'The Holiday Beach Club', text: '若 Maia 當下太熱、太吵或客滿，就沿海步行幾分鐘到 The Holiday；可坐躺椅喝飲料看海，不必把它當成一場正式行程。', when: '想換座位，仍不想搭車；下午較舒服，晚間會比白天熱鬧。', mapId: 'holiday', source: 'https://danangfantasticity.com/en/discovery/the-holiday-beach-club-dining-the-ultimate-entertainment-hub-at-my-khe-beach-da-nang-2026', sourceText: '峴港旅遊局介紹' },
+      { label: '購物選配', title: 'AEON Mall Thanh Khê', text: '只有真的想購物才出發：搭 Grab 約 15–20 分鐘，集中逛服飾、鞋包、美妝、超市／熟食與餐飲，逛到累就直接回飯店，不再接景點。', when: '下雨、太曬，或想買衣物、伴手禮與日用品；平日商場 10:00–22:00。', mapId: 'aeon', source: 'https://danangthanhkhe.aeonmall-vietnam.com/vi/danh-muc-cua-hang', sourceText: 'AEON Mall 官方店鋪與營業資訊' },
+      { label: '午餐正選', title: '東林：近飯店的中式單點', text: '中午走到 55 Trần Bạch Đằng 吃中式料理；點兩、三道共享菜即可，避免影響下午茶與晚上吃海鮮的胃口。', when: '11:45–12:00 抵達最從容；預計 13:15 前回飯店。', mapId: 'donglam', source: 'https://restaurantguru.com/Dong-Lam-Restaurant-Da-Nang', sourceText: '東林地址與時段' },
+      { label: '晚餐正選', title: 'Ăn Thôi Hải Sản：海景海鮮晚餐', text: '18:30 到 290 Võ Nguyên Giáp，選現撈海鮮、蒜香蝦或一份熱湯即可；它與 M Hotel 同在海濱路段，不需要為晚餐進市中心。', when: '下午在飯店休息得夠、想吃一餐正式海鮮時；建議先訂位。', mapId: 'anthoiseafood', source: 'https://www.tripadvisor.com/Restaurant_Review-g298085-d34194756-Reviews-An_Thoi_Hai_San-Da_Nang.html', sourceText: 'An Thoi Seafood 地址、時段與訂位資訊' },
+      { label: '午餐備案', title: 'Galina Restaurant', text: '若東林當天休息或你們突然想改吃較多樣的餐點，就去 254 Võ Nguyên Giáp 的 Galina；出發前先電話確認兩人散客當日是單點還是 buffet。', when: '只用於午餐替換，不再和 An Thoi Seafood 疊成兩頓海鮮大餐。', mapId: 'galina', source: 'https://galinarestaurant.com/nha-hang', sourceText: 'Galina 官方地址與聯絡資訊' }
     ],
     timeline: [
-      { time: '09:00–15:15', title: '早餐＋完整飯店上午', placeId: 'mhotel', text: '房間、泳池、海灘、午餐與午睡自由組合，不為半日遊提早起床。', highlights: ['優先用已含的飯店權益', '午餐保持適量，晚餐才有胃口'], warnings: ['先確認泳池與下午茶的實際時段'] },
-      { time: '15:30–16:00', title: '沿海岸北上', placeId: 'linhung', text: '建議包車往返並請司機等候，不騎機車挑戰濕滑山路。', highlights: ['沿途安全位置看峴港海岸線即可'], warnings: ['不追猴、不餵食，也不把棋盤頂加進今天'] },
-      { time: '16:00–17:20', title: '山茶靈應寺', placeId: 'linhung', text: '寺院慢走約一小時，主看觀音像、寺院軸線與回望城市海岸。', highlights: ['看 67 公尺觀音像與殿前視野', '留意庭園羅漢像與海天背景'], warnings: ['衣著遮肩過膝、降低音量；地濕時避開邊坡與陡階'] },
-      { time: '17:20–18:10', title: '沿海返回', placeId: 'mhotel', text: '視天候停一處安全觀景點，不繞完整座半島。', highlights: ['把夕色當加分，不追固定拍照點'], warnings: ['雨勢或視線轉差就直接回市區'] },
-      { time: '18:30–20:00', title: 'Ăn Thôi 越南菜', placeId: 'anthoi', text: '正選是 114 Bạch Đằng 的越南餐廳；若更想吃 buffet，改去回程順路的 Poseidon。', highlights: ['這餐補充越南菜，避免連續大型 buffet'], warnings: ['兩間只選一間；Poseidon 建議事先訂位'] },
-      { time: '11:00–17:00', title: '選配：Mikazuki 漂漂河半日', placeId: 'mikazuki', optional: true, text: '若早上已覺得飯店太無聊，就把整段飯店上午與靈應寺換成水上樂園；抵達後先玩室內漂漂河、造浪池，再看天候決定戶外 Fuji River。', highlights: ['室內水溫較不受十月天氣影響', '只挑漂漂河與溫和設施，不必勉強玩高速滑道'], warnings: ['前一晚確認戶外區營運與票價；這是半日替換，不和靈應寺疊加'] },
-      { time: '13:30–18:00', title: '選配：博物館＋The Heritage Show', placeId: 'museum', optional: true, text: '雨天可先看峴港博物館，再選 45 分鐘三輪車短遊；16:30 左右前往 17:00 的 The Heritage Show，18:00 結束後吃晚餐。', highlights: ['文化內容、城市移動與舞台表演都有，不會只是一直逛展櫃'], warnings: ['若 10/4 已看 Memories Show，可刪除 Heritage Show，只保留博物館與咖啡體驗'] },
-      { time: '隨時 1–4 小時', title: '選配：AEON Timezone', placeId: 'aeon', optional: true, text: '最不需要計畫的救援方案：想走就去玩保齡球、街機或 VR，也可臨時看電影。', highlights: ['適合雨天與「現在就很無聊」的時刻'], warnings: ['電影語言與字幕看當日場次；不要為商場刪掉已訂的星號餐廳'] }
+      { time: '睡到自然醒–11:30', title: '早餐後繼續待在飯店', placeId: 'mhotel', text: '不設第二個目的地：回房補眠、慢慢整理照片、或到無邊際泳池發呆都可以。', highlights: ['優先使用已含早餐與下午茶', '今天的核心是少移動、少決策'], warnings: ['泳池與下午茶實際時段以入住時飯店公告為準'] },
+      { time: '12:00–13:15', title: '★ 東林中式午餐', placeId: 'donglam', text: '到 55 Trần Bạch Đằng 吃中式單點；點菜以蔬菜、豆腐或一道主菜為主，份量不要過多。', highlights: ['避開 buffet，讓午餐更可控', '13:15 前離席，完整保留下午茶與午休'], warnings: ['東林午餐常見時段為 11:00–14:00；當天仍以電話或地圖公告為準'] },
+      { time: '13:15–15:30', title: '回飯店下午茶、午睡或游泳', placeId: 'mhotel', text: '回房休息，下午茶淺嚐即可；精神好再游泳或做 SPA。', highlights: ['不為了夕陽硬撐到傍晚', '白天太曬就選室內 Mê Man Lounge'], warnings: ['十月海況與雷雨變化快，看到警示旗就不下水'] },
+      { time: '15:30–日落前', title: '想看海才下樓：Maia Beach Bar', placeId: 'maia', text: '從 M Hotel 直接走到沙灘座位，點一杯飲料看海、躺著聊天或滑手機；覺得不舒服隨時回房，不需要消費成一整餐。', highlights: ['椰子、果汁、咖啡比烈酒更適合下午放空', '選遮陽座位，海景仍然完整'], warnings: ['若風雨、浪大或座位太吵，改留飯店 4 樓 Lounge'] },
+      { time: '隨時 2–4 小時', title: '選配：AEON Mall Thanh Khê 購物', placeId: 'aeon', optional: true, text: '只有購物意願明確才搭 Grab 前往；先鎖定清單（衣物鞋包、美妝、超市／伴手禮），逛完就回 M Hotel 休息。', highlights: ['有冷氣、餐飲與超市，不受下雨影響', '平日 10:00–22:00，避免太晚才出發'], warnings: ['它不在飯店附近，約 15–20 分鐘 Grab；不要再加市區景點'] },
+      { time: '18:30–20:00', title: '★ An Thoi Seafood 晚餐', placeId: 'anthoiseafood', text: '到 290 Võ Nguyên Giáp 吃海鮮晚餐；照當天胃口從現撈區選兩樣海鮮，再配一份青菜或熱湯，不必追求大份量。', highlights: ['同在海濱路段，餐後可直接步行回 M Hotel', '晚餐提早入座，避開較晚時段的人潮'], warnings: ['海鮮依重量計價時，點餐前確認單價、重量與料理費', '若午餐吃得較多，改點熱湯和一、兩樣小份海鮮即可'] }
     ]
   },
   '2026-10-08': {
