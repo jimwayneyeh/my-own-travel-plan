@@ -104,13 +104,14 @@ const tripDayData = {
       royal: { name: 'Hotel Royal Hoi An Danang', coords: [15.8766713, 108.3198424], note: '早餐、午休與住宿' },
       bridge: { name: '日本橋', coords: [15.8772, 108.3262], note: '古城西側起點' },
       canton: { name: '廣肇會館', coords: [15.8770, 108.3281], note: '沿陳富街順路停靠' },
+      morningglory: { name: 'Morning Glory Original', coords: [15.8760, 108.3294], note: '★ 12:15 會安午餐；106 Nguyễn Thái Học' },
       fujian: { name: '福建會館', coords: [15.8764, 108.3323], note: '主殿、天井與華人建築' },
       metiseko: { name: 'Metiseko Hoi An', coords: [15.8765, 108.3336], note: '桑蠶絲絲巾購物' },
       redbean: { name: 'Red Bean Hoi An', coords: [15.8862, 108.3243], note: '指定餐廳' },
       memories: { name: 'Hoi An Memories Land', coords: [15.8724, 108.3425], note: '選配園區與 20:00 主秀' },
       river: { name: '會安河岸', coords: [15.8760, 108.3287], note: '不看秀時的輕鬆替代' }
     },
-    mainRoute: ['royal', 'bridge', 'canton', 'fujian', 'metiseko', 'royal', 'redbean', 'memories', 'royal'],
+    mainRoute: ['royal', 'bridge', 'canton', 'morningglory', 'fujian', 'metiseko', 'royal', 'redbean', 'memories', 'royal'],
     alternatives: [{ label: '不看秀：Red Bean → 河岸散步 → 飯店', ids: ['redbean', 'river', 'royal'] }],
     choices: [
       { label: '晚間方案 A', title: 'Red Bean ＋ Memories Show', text: '16:45 提早晚餐，18:35 左右前往園區，20:00 看主秀。適合想把會安夜晚變成完整表演體驗。', when: '願意配合表演時間，且已確認當日演出與座位。', mapId: 'memories', source: 'https://hoianmemoriesland.com/en/performance-schedule', sourceText: '官方表演時刻' },
@@ -120,7 +121,7 @@ const tripDayData = {
     timeline: [
       { time: '09:00–10:15', title: '飯店早餐與準備', placeId: 'royal', text: '照平常作息慢慢吃，不設任何早場預約。', highlights: ['隨身帶雨具、防水袋和可裝絲巾的乾燥袋'], warnings: ['午後可能陣雨，鞋子以防滑好走為優先'] },
       { time: '10:45–12:15', title: '日本橋 → 古城西段', placeId: 'bridge', text: '由飯店步行進古城，從日本橋沿陳富街向東慢走。', highlights: ['日本橋看木構、屋頂與橋寺一體的空間', '廣肇會館看入口石雕、天井與會館格局'], warnings: ['古城票券與開放房舍依現場公告；不用每間會館都進'] },
-      { time: '12:15–13:30', title: '古城午餐／咖啡', placeId: 'canton', text: '在動線中段找順眼的店，不為名店跨城。', highlights: ['午餐保持適量，晚上仍有 Red Bean'], warnings: ['室內冷氣和戶外濕熱切換大，薄外套可留包內'] },
+      { time: '12:15–13:30', title: '★ Morning Glory Original 午餐', placeId: 'morningglory', text: '從廣肇會館步行到 106 Nguyễn Thái Học；點一份高樓麵、白玫瑰或其他一主食一配菜即可。', highlights: ['午餐留七分飽，晚上仍有 Red Bean', '吃完直接接福建會館，不需要折返飯店'], warnings: ['古城午間熱門時段可能候位；若超過 20 分鐘，改附近同類越南菜並準時接下午行程'], source: 'https://www.premiergolftravel.vn/sites/default/files/Restaurant_Recommended_in_Danang_-_Hoi_An.pdf', sourceText: 'Morning Glory 地址資訊' },
       { time: '13:30–14:25', title: '福建會館', placeId: 'fujian', text: '下午只選一間代表性會館，保留購物和休息時間。', highlights: ['看三進空間、媽祖信仰、天井採光與屋脊裝飾'], warnings: ['尊重祭祀空間；香爐與供桌前避免久站拍攝'] },
       { time: '14:25–15:10', title: 'Metiseko 絲巾購物', placeId: 'metiseko', text: '直接說只看 mulberry silk scarves，不做衣服。', highlights: ['確認 100% mulberry silk、尺寸、印花正反面和收邊', '保留材質清楚的收據與洗滌方式'], warnings: ['不要只憑光澤判斷真絲；預留 30–45 分鐘就足夠'] },
       { time: '15:10–16:30', title: '回飯店休息', placeId: 'royal', text: '放好絲巾、午睡或換裝，至少保留 75 分鐘。', highlights: ['這段是整天不疲累的關鍵留白'], warnings: ['若午間已淋雨，先更換乾衣鞋再出門'] },
@@ -141,9 +142,11 @@ const tripDayData = {
       moon: { name: '月亮城堡', coords: [15.9990, 107.9896], note: '雨天較穩定的室內體驗' },
       golden: { name: '金橋', coords: [15.9950, 107.9963], note: '雲開才前往的選配支線' },
       fantasy: { name: 'Fantasy Park', coords: [15.9975, 107.9890], note: '濃霧或雨勢較大時的備案' },
-      coaster: { name: 'Alpine Coaster', coords: [15.9970, 107.9886], note: '晴乾才玩；另付費' }
+      coaster: { name: 'Alpine Coaster', coords: [15.9970, 107.9886], note: '晴乾才玩；另付費' },
+      maison: { name: 'Maison du Roi', coords: [15.9975, 107.9881], note: '★ 14:00 亞洲料理午餐' },
+      letable: { name: 'L’Étable', coords: [15.9974, 107.9878], note: '★ 18:30 法式晚餐' }
     },
-    mainRoute: ['royal', 'gate', 'mercure', 'village', 'moon', 'village', 'mercure'],
+    mainRoute: ['royal', 'gate', 'mercure', 'maison', 'village', 'moon', 'village', 'letable', 'mercure'],
     alternatives: [
       { label: '晴乾選配：法國村 → 高山滑車 → 法國村', ids: ['village', 'coaster', 'village'] },
       { label: '雷雨濃霧：飯店／法國村 → Fantasy Park', ids: ['mercure', 'fantasy', 'mercure'] }
@@ -152,6 +155,7 @@ const tripDayData = {
       { label: '交通已決定', title: '預約 Grab 6 人座', text: '這條路線目前在 App 可正常估價與預約，10:30 日間通常不算難叫；兩人帶兩件 26–29 吋行李仍要選 6 人座，不選一般 4 人座。Grab 可提前最多 90 天預約。', when: '設定 10/5 10:30；上車點選 Hotel Royal Hoi An Danang，下車點選 Toc Tien Station。前一晚確認訂單，當天 10:00 再檢查車況通知。', source: 'https://www.grab.com/vn/en/transport/advance-booking/', sourceText: 'Grab 官方預約說明' },
       { label: '晴乾方案', title: '法國村＋高山滑車', text: '高山滑車有3個入口，官方時段08:30–19:00；16:30–17:30單次參考價VND 70,000。它不含在基本票內，且只在天候允許時運轉。', when: '軌道乾、沒有強風雷雨，而且Moon Castle已玩完。', mapId: 'coaster', source: 'https://sunworld.vn/en/banahills/activities/tube-sliding-boards', sourceText: 'Sun World滑車時間' },
       { label: '霧雨方案', title: 'Moon Castle＋Fantasy Park', text: 'Moon Castle的4D與Flying Eyes官方列08:30–17:00，先玩；Fantasy Park開至19:00，可接住後段雨勢。', when: '濃霧、小雨或戶外設施暫停。', mapId: 'fantasy', source: 'https://sunworld.vn/banahills/tin-tuc-sunworld/sun-world-ba-na-hills-so-do-chi-tiet-huong-dan-tham-quan-tron-ven-2026-19250', sourceText: 'Sun World 2026設施圖解' },
+      { label: '用餐已選定', title: 'Maison du Roi 午餐＋L’Étable 晚餐', text: '第一天下午抵達後先在 Maison du Roi 吃亞洲料理，晚餐再用 L’Étable 的歐式單點收尾；兩間都在法國村，不增加移動。', when: '抵達山頂後依實際房間交付、天候與 Moon Castle 截止時間微調，但午餐不拖過 15:00。', mapId: 'maison', source: 'https://www.mercure-danang-banahills-french-village.com/restaurant-bars/maison-du-roi/', sourceText: 'Maison du Roi 官方資訊' },
       { label: '上山必要流程', title: '山下櫃檯先辦票、再交行李', text: '車輛只能到 Thác Tóc Tiên Station。先到 Mercure Downhill Front Desk 核對訂房、票券與當日路線，大件行李交由 bellman。', when: '這是固定流程，不把車輛目的地直接設成山頂飯店。', mapId: 'gate', source: 'https://www.mercure-danang-banahills-french-village.com/hotel/getting-here/', sourceText: 'Mercure 抵達說明' }
     ],
     timeline: [
@@ -159,10 +163,10 @@ const tripDayData = {
       { time: '10:30–12:00', title: 'Grab 6 人座前往 Thác Tóc Tiên Station', placeId: 'gate', text: '由 Hotel Royal 出發，途中不加景點。Mercure 官網明確說車輛不能直達山頂飯店，Grab 目的地必須選 Toc Tien Station，並請司機停在 Mercure Downhill Front Desk。', highlights: ['預約資料：10/5 10:30、2 人、2 件大型行李、6 人座', '可傳給司機：Please drop us at Mercure Downhill Front Desk, Thac Toc Tien Station (Ga Thác Tóc Tiên), not the mountaintop hotel.', 'Grab 預約行程的司機聊天室最早可在出發前 45 分鐘使用'], warnings: ['不要只輸入 Mercure 飯店本體後讓司機自行猜下車點', '若 App 顯示取消或無法派車，立即請 Hotel Royal 櫃檯協助叫 7 人座計程車／包車，不要改搭 4 人座'], source: 'https://www.mercure-danang-banahills-french-village.com/hotel/getting-here/', sourceText: 'Mercure 官方抵達與車輛說明' },
       { time: '12:00–13:15', title: '山下櫃檯報到、辦票、FaceID與交接行李', placeId: 'gate', text: '出示Agoda訂房確認；房價只有早餐與Wi‑Fi，所以在這裡詢價購買住客優惠基本票。確認同一張票可用到10/6下午；若住客票適用2026三日政策，必須在第一次刷票前於散客售票處完成FaceID。', highlights: ['直接問：Can we keep visiting after check-out tomorrow and take the cable car down in the afternoon?', '確認可否刷信用卡、拍下兩天開線表與翌日住客早班', '登記10/6清晨金橋班次並確認集合地點'], warnings: ['先確認完票種才刷QR；一般三日票權益需在首次入園前升級', '飯店公布住客抵達／上山窗口08:00–16:30'], source: 'https://www.mercure-danang-banahills-french-village.com/', sourceText: 'Mercure住客票與時間' },
       { time: '13:15–14:00', title: 'Thác Tóc Tiên → L’Indochine 上山', placeId: 'mercure', text: '住客通常由Thác Tóc Tiên搭直達L’Indochine的纜車到法國村；纜車本身估17–20分鐘，加候車、步行與行李交接共抓30–45分鐘。基本／住客票已含，不要另買單段票。', highlights: ['證件、貴重物品、薄外套與雨衣留在隨身包', '抵達後先認清L’Indochine站、巴黎館櫃檯與房間棟別'], warnings: ['實際開線由工作人員指定；雷電或強風可能延誤／暫停'] },
-      { time: '14:00–15:00', title: '入住、簡單午餐與休息', placeId: 'mercure', text: '官方建議 14:00 起辦理入住；若房間未好就先寄放行李、吃簡單午餐，不把第一站硬排成金橋。', highlights: ['房間準備好就休息 30–45 分鐘', '確認晚餐、隔日 10:30 前退房與行李寄放安排'], warnings: ['午餐保持簡單，避免排隊名店吃掉午後能見度窗口'] },
+      { time: '14:00–15:00', title: '入住、Maison du Roi 午餐與休息', placeId: 'maison', text: '房間未好就先寄放行李，步行到 Maison du Roi 吃湯麵、飯類或一份烤物共享；不把第一站硬排成金橋。', highlights: ['Maison du Roi 官方時段為 11:30–21:30', '吃完保留 30–45 分鐘回房休息'], warnings: ['午餐不要點大型套餐，15:10 要進 Moon Castle'] },
       { time: '15:10–16:50', title: '法國村 → 登山小火車2 → Moon Castle', placeId: 'moon', text: '由法國村步行到Giếng Thần站，搭登山小火車2到Hang Rồng；車程很短，但連步行與候車抓10–20分鐘。先玩17:00關閉的Moon Junction 4D與Flying Eyes，兩項都含在基本票內。', highlights: ['沿途順看Eclipse日蝕廣場與Moon Castle建築', '回程同樣搭小火車2，不需另買票'], warnings: ['小火車沒有公開固定日常班表；到站先看當日末班', '濕石板易滑，不為拍照跑動'] },
       { time: '17:00–18:15', title: '晴乾玩滑車；下雨改 Fantasy Park', placeId: 'village', text: '回法國村後依即時天氣切換：晴乾可玩一次高山滑車並逛教堂廣場；雨霧則進Fantasy Park挑2–3項室內設施。', highlights: ['Fantasy Park官方時間08:30–19:00，大多數設施含基本票', '滑車16:30–17:30單次參考價VND 70,000，需另付費'], warnings: ['滑車08:30–19:00但受天候限制；濕軌、強風、雷雨就不要等', '第一天下午不把金橋列正選；除非飯店通知隔日早班取消且此刻視野極佳'] },
-      { time: '18:30 後', title: '晚餐與法國村夜色', placeId: 'mercure', text: '日遊客退去後慢慢用餐、看廣場入夜。', highlights: ['這是住山上的優勢，不必再追表演'], warnings: ['冷、濕或累就提早回房，隔天仍有金橋窗口'] }
+      { time: '18:30–20:00', title: '★ L’Étable 法式晚餐與法國村夜色', placeId: 'letable', text: '到 Hôtel de Marseille 的 L’Étable，兩人點一份主菜搭配前菜或甜點即可；日遊客退去後再慢慢走回飯店。', highlights: ['官方列為歐式單點餐廳，時段 11:30–21:30', '這是山頂住宿晚最值得保留的正式晚餐'], warnings: ['建議抵達後或入住時訂 18:30；若天候與遊園延誤，先通知餐廳'] }
     ]
   },
   '2026-10-06': {
@@ -175,12 +179,13 @@ const tripDayData = {
       golden: { name: '金橋', coords: [15.9950, 107.9963], note: '第二個能見度窗口' },
       garden: { name: "Le Jardin d'Amour", coords: [15.9952, 107.9954], note: '金橋旁選走一小段' },
       fantasy: { name: 'Fantasy Park', coords: [15.9975, 107.9890], note: '霧雨室內替代' },
+      cafepostal: { name: 'Café Postal', coords: [15.9974291, 107.9878834], note: '★ 12:30 輕午餐；Hôtel de Paris' },
       gate: { name: '巴拿山山腳', coords: [15.9981, 107.9960], note: '與司機會合' },
       mhotel: { name: 'M Hotel Danang', coords: [16.05165, 108.248034], note: '峴港三晚住宿基地' },
       beach: { name: '美溪沙灘', coords: [16.0543, 108.2478], note: '有餘裕才短走' },
       fourseas: { name: 'Buffet Hải Sản 4SEAs', coords: [16.0519, 108.2472], note: '★ 19:00 晚餐；近飯店的海鮮 buffet' }
     },
-    mainRoute: ['mercure', 'golden', 'garden', 'mercure', 'gate', 'mhotel', 'beach', 'fourseas', 'mhotel'],
+    mainRoute: ['mercure', 'golden', 'garden', 'cafepostal', 'mercure', 'gate', 'mhotel', 'beach', 'fourseas', 'mhotel'],
     alternatives: [
       { label: '霧雨：飯店 → Fantasy Park → 飯店', ids: ['mercure', 'fantasy', 'mercure'] },
       { label: '下山延誤：M Hotel → 4SEAs', ids: ['mhotel', 'fourseas', 'mhotel'] }
@@ -196,7 +201,7 @@ const tripDayData = {
       { time: '08:00–09:20', title: '回法國村吃早餐', placeId: 'mercure', text: '沿原路回Bordeaux，搭約5分鐘纜車至Louvre後走回飯店；Mercure早餐06:30–09:30，建議09:20前入場。', highlights: ['早餐已含在訂房中', '回房前再次看天氣，決定退房後補戶外或室內'], warnings: ['不同住宿棟早餐地點可能不同，以入住時餐券／櫃檯說明為準'] },
       { time: '09:20–10:30', title: '收拾、退房並寄放行李', placeId: 'mercure', text: '退房截止10:30；寄放大件行李，確認14:00左右回來取件及下山指定車站。', highlights: ['證件、藥物、電子用品、防水層放隨身包', '通知山下接車司機：預估15:00–15:30到Thác Tóc Tiên，抵達再更新'], warnings: ['不要帶大型行李再次跨區'] },
       { time: '10:40–12:30', title: '只補一區：晴走半山，雨進 Fantasy Park', placeId: 'garden', text: '清晨若只看金橋且現在轉晴，可補花園／心靈區；若雨霧持續，留在法國村一側玩Fantasy Park。基本票包含兩者大多數設施。', highlights: ['Fantasy Park開放08:30–19:00', '晴天也只選花園或心靈區一組，不逐點蒐集'], warnings: ['不要臨時再跨去Moon Castle與金橋兩頭跑', '攀岩、10D、幸運遊戲仍需另付費'] },
-      { time: '12:30–15:30', title: '午餐、取行李、纜車下山並接車', placeId: 'gate', text: '12:30回法國村簡單午餐，13:30–14:00取行李後依現場指定線前往L’Indochine，搭Thác Tóc Tiên直達線下山。纜車估17–20分鐘，連步行、候車與領行李抓45–75分鐘；回程已含，不需買第二天基本票。', highlights: ['到山腳後再把實際抵達時間傳給司機', '接車點仍是Mercure Downhill Front Desk／Thác Tóc Tiên'], warnings: ['雷雨或強風可能延誤；寧可取消海邊短走，也不要壓縮安全緩衝'] },
+      { time: '12:30–15:30', title: 'Café Postal 輕午餐、取行李、纜車下山並接車', placeId: 'cafepostal', text: '12:30 回法國村到 Hôtel de Paris 的 Café Postal，點湯、三明治或一份輕食；13:30–14:00 取行李後依現場指定線前往 L’Indochine，搭 Thác Tóc Tiên 直達線下山。', highlights: ['午餐有餐廳但不佔用太多下山緩衝', '到山腳後再把實際抵達時間傳給司機', '接車點仍是 Mercure Downhill Front Desk／Thác Tóc Tiên'], warnings: ['雷雨或強風可能延誤；寧可取消海邊短走，也不要壓縮安全緩衝'] },
       { time: '16:00–18:30', title: '入住、下午茶、選配海灘短走', placeId: 'mhotel', text: '先使用已含的下午茶與房間設施；有餘裕才去飯店正前方沙灘。', highlights: ['確認早餐、下午茶和泳池使用時段'], warnings: ['海況看警示旗；風浪大就留在飯店'] },
       { time: '19:00–20:30', title: '★ 4SEAs 海鮮 buffet 晚餐', placeId: 'fourseas', text: '從 M Hotel 沿 Võ Nguyên Giáp 短程步行到 268 號；這天只做入住後的近距離晚餐。', highlights: ['官方時段為 17:00–22:00；建議訂 19:00', '轉移日只選一間餐廳，不再加海邊夜間行程'], warnings: ['下午茶淺嚐即可，晚餐才有胃口', '海鮮與燒烤一次拿少量，覺得合口味再續'] }
     ]
@@ -252,9 +257,10 @@ const tripDayData = {
       han: { name: '漢市場', coords: [16.0683, 108.2241], note: '雨天替代，可提前買伴手禮' },
       apec: { name: 'APEC 公園', coords: [16.0551, 108.2241], note: '傍晚短走' },
       dragon: { name: '龍橋', coords: [16.0610, 108.2270], note: '只看夜景，不等噴火' },
+      galina: { name: 'Galina Restaurant', coords: [16.0513, 108.2474], note: '★ 13:45 午餐；254 Võ Nguyên Giáp' },
       gangyu: { name: 'Gang Yu Hot Pot', coords: [16.0648, 108.2217], note: '★ 19:00 晚餐' }
     },
-    mainRoute: ['mhotel', 'marble', 'mhotel', 'apec', 'dragon', 'gangyu', 'mhotel'],
+    mainRoute: ['mhotel', 'marble', 'galina', 'mhotel', 'apec', 'dragon', 'gangyu', 'mhotel'],
     alternatives: [{ label: '雨天：M Hotel → 占婆博物館 → 漢市場 → M Hotel', ids: ['mhotel', 'cham', 'han', 'mhotel'] }],
     choices: [
       { label: '晴天正選', title: '五行山精華版', text: '搭電梯上山後只走水山、玄空洞、寺院與一處觀景台，13:30 左右離開，保住午後休息。', when: '地面乾、雨勢小，而且願意走濕滑石階。', mapId: 'marble', source: 'https://danangfantasticity.com/en/the-marble-mountains', sourceText: '峴港官方資訊' },
@@ -264,7 +270,7 @@ const tripDayData = {
     timeline: [
       { time: '09:00–10:30', title: '早餐與天氣決定', placeId: 'mhotel', text: '看即時雨勢與地面狀況；地乾、雨小才選五行山。', highlights: ['準備防滑鞋、飲水與輕便雨具'], warnings: ['不要因為已排進行程就勉強走濕滑石階'] },
       { time: '10:45–13:30', title: '五行山・水山精華', placeId: 'marble', text: '搭電梯上山後走玄空洞、寺院與一處觀景台，不蒐集全部洞窟。', highlights: ['玄空洞看天然採光、岩壁與佛像空間', '觀景台看海岸、市區與石灰岩山群'], warnings: ['洞內與石階潮濕；扶手不足處放慢，不穿拖鞋'] },
-      { time: '13:45–17:00', title: '簡單午餐＋飯店午休', placeId: 'mhotel', text: '回美溪一帶吃簡單午餐，午睡、下午茶或泳池自由選擇。', highlights: ['完整保留約三小時恢復體力'], warnings: ['不要趕 4SEAs 14:00 午餐收餐，會讓整段變得太急'] },
+      { time: '13:45–17:00', title: '★ Galina 午餐＋飯店午休', placeId: 'galina', text: '五行山下來後搭 Grab 到 254 Võ Nguyên Giáp 的 Galina；選單點或少量 buffet，13:45 左右開始用餐，吃完回 M Hotel 午睡、下午茶或游泳。', highlights: ['Galina 位在飯店附近，午餐後不需要繞進市中心', '完整保留約三小時恢復體力'], warnings: ['出發前確認當日兩人散客的單點／buffet 形式與價格；避免吃太飽，晚上仍有 Gang Yu 火鍋'] },
       { time: '17:30–18:15', title: 'APEC 公園', placeId: 'apec', text: '在韓江南岸看風箏造型建築與河岸城市景觀。', highlights: ['上層平台看建築曲線與龍橋同框'], warnings: ['下雨可直接略過，不影響晚餐'] },
       { time: '18:15–18:50', title: '龍橋短走', placeId: 'dragon', text: '把龍橋當城市夜景，不等待噴火表演。', highlights: ['由河岸側看龍身與韓江燈光'], warnings: ['10/8 是週四，官方例行時段沒有 21:00 噴火秀'] },
       { time: '19:00–20:30', title: '★ Gang Yu Hot Pot', placeId: 'gangyu', text: '前往 87 Yên Bái 吃火鍋，吃完直接回飯店。', highlights: ['建議事先訂 19:00；午餐保持簡單'], warnings: ['火鍋用餐時間較長，今晚不再加景點'] },
