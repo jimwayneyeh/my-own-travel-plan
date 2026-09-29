@@ -51,11 +51,80 @@
 .source-row { display: flex; flex-wrap: wrap; gap: 10px 18px; margin-top: 22px; font-size: 0.78rem; color: #c9d9d6; }
 .source-row a { color: white; text-underline-offset: 3px; }
 
+.guide-topbar { height: auto; min-height: 70px; padding: 12px 0; }
+.guide-topbar nav { flex-wrap: wrap; justify-content: flex-end; }
+.guide-hero { background: var(--deep); color: white; padding: 78px 0 64px; }
+.guide-hero-grid { display: grid; grid-template-columns: 1.25fr .75fr; gap: 56px; align-items: end; }
+.guide-hero h1 { font: 700 clamp(3.2rem, 7vw, 6rem)/.96 "Playfair Display", serif; letter-spacing: -.04em; margin: 0; }
+.guide-hero h1 em { color: #f1ca74; font-weight: 600; }
+.guide-hero .lead { max-width: 720px; }
+.guide-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+.guide-pills span { border: 1px solid rgba(255,255,255,.3); border-radius: 30px; padding: 5px 11px; font-size: .78rem; }
+.guide-verdict { border: 1px solid rgba(255,255,255,.24); padding: 28px; background: #173f47; }
+.guide-verdict > span, .ticket-banner span, .weather-rules span { color: #f1ca74; font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.guide-verdict strong { display: block; font-size: 1.35rem; line-height: 1.35; margin: 8px 0 12px; }
+.guide-verdict p { color: #d5e2dd; margin: 0; font-size: .9rem; }
+.guide-strip { display: grid; grid-template-columns: repeat(3, 1fr); background: var(--paper); border: 1px solid var(--line); margin-top: 34px; }
+.guide-strip > div { padding: 22px 25px; border-right: 1px solid var(--line); }
+.guide-strip > div:last-child { border: 0; }
+.guide-strip span { color: var(--coral); font-size: .72rem; font-weight: 700; }
+.guide-strip strong { display: block; margin-top: 2px; }
+.guide-strip p { color: #587077; font-size: .84rem; margin: 4px 0 0; }
+.guide-section { padding-top: 88px; }
+.ticket-banner { display: grid; grid-template-columns: repeat(3, 1fr); background: var(--ink); color: white; margin-bottom: 22px; }
+.ticket-banner > div { padding: 24px; border-right: 1px solid rgba(255,255,255,.18); }
+.ticket-banner > div:last-child { border: 0; }
+.ticket-banner strong { display: block; font-size: 1.35rem; margin: 4px 0; }
+.ticket-banner p { color: #cbdad5; margin: 0; font-size: .82rem; }
+.included-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+.included-grid article { background: var(--paper); border: 1px solid var(--line); padding: 23px; }
+.included-grid span { color: var(--coral); font-size: .72rem; font-weight: 700; letter-spacing: .08em; }
+.included-grid h3 { font-size: 1.08rem; margin: 7px 0; }
+.included-grid p { color: #536c70; font-size: .86rem; margin: 0; }
+.extra-section, .route-section { background: var(--deep); color: white; }
+.fee-table-wrap { overflow-x: auto; border: 1px solid rgba(255,255,255,.18); }
+.guide-table { width: 100%; border-collapse: collapse; min-width: 900px; background: var(--paper); color: var(--ink); }
+.guide-table th { background: #173f47; color: white; text-align: left; font-size: .78rem; letter-spacing: .06em; padding: 14px 16px; }
+.guide-table td { padding: 15px 16px; border-bottom: 1px solid var(--line); vertical-align: top; font-size: .84rem; }
+.guide-table tbody tr:last-child td { border-bottom: 0; }
+.guide-table strong { display: block; }
+.guide-table small { display: block; color: #6c7d7f; margin-top: 2px; }
+.status-key { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px; }
+.status-key span, .status-table td > span { display: inline-block; padding: 3px 8px; font-size: .72rem; font-weight: 700; border-radius: 20px; }
+.confirmed { color: #176047; background: #dcefe5; }
+.new { color: #6b4c00; background: #f5e7b9; }
+.daily { color: #965126; background: #f8e1d5; }
+.ended { color: #666; background: #e7e7e3; }
+.weather-rules { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 22px; }
+.weather-rules article { border: 1px solid rgba(255,255,255,.2); padding: 20px; }
+.weather-rules strong { display: block; margin: 4px 0; font-size: 1.05rem; }
+.weather-rules p { margin: 0; color: #d5e2dd; font-size: .84rem; }
+.route-days { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.route-day { background: var(--paper); color: var(--ink); padding: 27px; }
+.route-day > p { margin: 0; color: var(--coral); font-size: .74rem; font-weight: 700; letter-spacing: .1em; }
+.route-day > h3 { margin: 6px 0 17px; font-size: 1.45rem; }
+.route-day ol { list-style: none; padding: 0; margin: 0; }
+.route-day li { display: grid; grid-template-columns: 105px 1fr; gap: 13px; padding: 13px 0; border-top: 1px solid var(--line); }
+.route-day time { color: var(--coral); font-size: .78rem; font-weight: 700; }
+.route-day strong { font-size: .92rem; }
+.route-day p { margin: 3px 0; color: #587077; font-size: .82rem; }
+.route-day em { color: #176047; font-size: .76rem; font-style: normal; font-weight: 700; }
+.checklist-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+.checklist-grid article { background: var(--paper); border: 1px solid var(--line); padding: 22px; }
+.checklist-grid h3 { margin: 0 0 10px; }
+.checklist-grid ul { margin: 0; padding-left: 1.1em; color: #536c70; font-size: .85rem; }
+.checklist-grid li { margin: 7px 0; }
+.source-list a { color: var(--ink); text-underline-offset: 3px; }
+
 @media (max-width: 850px) {
   .bana-plan, .bana-practical { grid-template-columns: 1fr; }
   .bana-zones { grid-template-columns: 1fr 1fr; }
   .bana-decision { grid-template-columns: 1fr; }
   .bana-decision div { border-right: 0; border-bottom: 1px solid rgba(255, 255, 255, 0.16); }
+  .guide-hero-grid, .route-days { grid-template-columns: 1fr; }
+  .guide-strip, .ticket-banner, .included-grid, .weather-rules, .checklist-grid { grid-template-columns: 1fr; }
+  .guide-strip > div, .ticket-banner > div { border-right: 0; border-bottom: 1px solid var(--line); }
+  .ticket-banner > div { border-bottom-color: rgba(255,255,255,.18); }
 }
 
 @media (max-width: 560px) {
@@ -64,4 +133,9 @@
   .bana-day { padding: 20px; }
   .bana-day li { grid-template-columns: 76px 1fr; }
   .bana-zone img { height: 180px; }
+  .guide-hero { padding: 58px 0 48px; }
+  .guide-hero h1 { font-size: 3.3rem; }
+  .guide-topbar nav { gap: 9px; }
+  .route-day { padding: 20px; }
+  .route-day li { grid-template-columns: 82px 1fr; }
 }

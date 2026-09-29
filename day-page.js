@@ -18,6 +18,14 @@ document.querySelector('#day-place').textContent = day.place;
 document.querySelectorAll('#day-summary, .daily-summary-copy').forEach(element => { element.textContent = day.summary; });
 document.querySelector('#day-decision').textContent = day.decision;
 
+if (dayId === '2026-10-05' || dayId === '2026-10-06') {
+  const guideLink = document.createElement('a');
+  guideLink.className = 'bana-guide-link';
+  guideLink.href = '../bana.html';
+  guideLink.innerHTML = '<span>2026票券・營運・雨季動線</span><strong>開啟巴拿山住客完整指南 →</strong>';
+  document.querySelector('.day-summary-section').after(guideLink);
+}
+
 const currentIndex = dayIds.indexOf(dayId);
 const previous = dayIds[currentIndex - 1];
 const next = dayIds[currentIndex + 1];

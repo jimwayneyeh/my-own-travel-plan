@@ -130,9 +130,9 @@ const tripDayData = {
   },
   '2026-10-05': {
     date: '10/5（一）', place: '會安 → 巴拿山', eyebrow: 'BÀ NÀ · WEATHER WINDOW 1',
-    title: '10:30 準時離開會安，先到房客櫃檯再上山',
-    summary: '09:00 早餐、10:15 前完成退房，10:30 搭預約的 Grab 6 人座前往 Thác Tóc Tiên Station。車子只能到山腳；先在 Mercure 的 Downhill Front Desk 核對訂房、處理房客纜車票與大件行李，再依工作人員指定路線上山。',
-    decision: '飯店目前列上山纜車 08:00–16:30；10:30 出發仍從容，但不把出發拖到中午，也不在途中加景點。',
+    title: '10:30 離開會安，下午先收山頂核心與室內設施',
+    summary: '12:00 左右到 Thác Tóc Tiên 的 Mercure 山下櫃檯，先辦住客優惠票、跨夜／FaceID確認與行李交接；再搭直達法國村的住客線上山。下午先趕17:00關閉的 Moon Castle 影院，傍晚看天氣選法國村、高山滑車或 Fantasy Park，晚上留給住客才有的安靜街景。',
+    decision: '10月是雨季高峰：能見度一好立刻走戶外；雷雨、強風或濃霧就留在室內。金橋正選留給10/6住客早班，避免第一天下午跨區來回。',
     places: {
       royal: { name: 'Hotel Royal Hoi An Danang', coords: [15.8766713, 108.3198424], note: '早餐與退房' },
       gate: { name: 'Thác Tóc Tiên Station・Mercure 山下櫃檯', coords: [16.02695, 108.03105], note: '訂房核對、房客纜車票與行李交接' },
@@ -140,35 +140,36 @@ const tripDayData = {
       village: { name: '法國村', coords: [15.9972, 107.9874], note: '教堂、廣場與夜景' },
       moon: { name: '月亮城堡', coords: [15.9990, 107.9896], note: '雨天較穩定的室內體驗' },
       golden: { name: '金橋', coords: [15.9950, 107.9963], note: '雲開才前往的選配支線' },
-      fantasy: { name: 'Fantasy Park', coords: [15.9975, 107.9890], note: '濃霧或雨勢較大時的備案' }
+      fantasy: { name: 'Fantasy Park', coords: [15.9975, 107.9890], note: '濃霧或雨勢較大時的備案' },
+      coaster: { name: 'Alpine Coaster', coords: [15.9970, 107.9886], note: '晴乾才玩；另付費' }
     },
     mainRoute: ['royal', 'gate', 'mercure', 'village', 'moon', 'village', 'mercure'],
     alternatives: [
-      { label: '雲開支線：法國村 → 金橋 → 法國村', ids: ['village', 'golden', 'village'] },
-      { label: '霧雨備案：飯店／法國村 → Fantasy Park', ids: ['mercure', 'fantasy', 'mercure'] }
+      { label: '晴乾選配：法國村 → 高山滑車 → 法國村', ids: ['village', 'coaster', 'village'] },
+      { label: '雷雨濃霧：飯店／法國村 → Fantasy Park', ids: ['mercure', 'fantasy', 'mercure'] }
     ],
     choices: [
       { label: '交通已決定', title: '預約 Grab 6 人座', text: '這條路線目前在 App 可正常估價與預約，10:30 日間通常不算難叫；兩人帶兩件 26–29 吋行李仍要選 6 人座，不選一般 4 人座。Grab 可提前最多 90 天預約。', when: '設定 10/5 10:30；上車點選 Hotel Royal Hoi An Danang，下車點選 Toc Tien Station。前一晚確認訂單，當天 10:00 再檢查車況通知。', source: 'https://www.grab.com/vn/en/transport/advance-booking/', sourceText: 'Grab 官方預約說明' },
-      { label: '能見度佳', title: '雲開就先去金橋', text: '不用等待更好的光；先確認跨區纜車與回法國村末班，再完成金橋支線。', when: '17:15 前雲開、風雨不強且路線仍正常。', mapId: 'golden' },
-      { label: '霧雨方案', title: '法國村與室內設施', text: '留在法國村核心，月亮城堡或 Fantasy Park 選一項即可；每 60–90 分鐘再看一次雲況。', when: '金橋沒有視野，或濕滑與風勢不適合跨區。', mapId: 'fantasy' },
+      { label: '晴乾方案', title: '法國村＋高山滑車', text: '高山滑車有3個入口，官方時段08:30–19:00；16:30–17:30單次參考價VND 70,000。它不含在基本票內，且只在天候允許時運轉。', when: '軌道乾、沒有強風雷雨，而且Moon Castle已玩完。', mapId: 'coaster', source: 'https://sunworld.vn/en/banahills/activities/tube-sliding-boards', sourceText: 'Sun World滑車時間' },
+      { label: '霧雨方案', title: 'Moon Castle＋Fantasy Park', text: 'Moon Castle的4D與Flying Eyes官方列08:30–17:00，先玩；Fantasy Park開至19:00，可接住後段雨勢。', when: '濃霧、小雨或戶外設施暫停。', mapId: 'fantasy', source: 'https://sunworld.vn/banahills/tin-tuc-sunworld/sun-world-ba-na-hills-so-do-chi-tiet-huong-dan-tham-quan-tron-ven-2026-19250', sourceText: 'Sun World 2026設施圖解' },
       { label: '上山必要流程', title: '山下櫃檯先辦票、再交行李', text: '車輛只能到 Thác Tóc Tiên Station。先到 Mercure Downhill Front Desk 核對訂房、票券與當日路線，大件行李交由 bellman。', when: '這是固定流程，不把車輛目的地直接設成山頂飯店。', mapId: 'gate', source: 'https://www.mercure-danang-banahills-french-village.com/hotel/getting-here/', sourceText: 'Mercure 抵達說明' }
     ],
     timeline: [
       { time: '09:00–10:15', title: '早餐、最後收拾與退房', placeId: 'royal', text: '邊吃早餐邊向 Mercure 確認當日上山纜車狀態與合適抵達時間；10:15 前完成退房。', highlights: ['訂房憑證、護照、藥品、電子用品、薄外套、雨衣與防水袋放隨身包'], warnings: ['山下天氣不能代表山頂；若遇強風大雨，先直接問飯店纜車是否正常'] },
       { time: '10:30–12:00', title: 'Grab 6 人座前往 Thác Tóc Tiên Station', placeId: 'gate', text: '由 Hotel Royal 出發，途中不加景點。Mercure 官網明確說車輛不能直達山頂飯店，Grab 目的地必須選 Toc Tien Station，並請司機停在 Mercure Downhill Front Desk。', highlights: ['預約資料：10/5 10:30、2 人、2 件大型行李、6 人座', '可傳給司機：Please drop us at Mercure Downhill Front Desk, Thac Toc Tien Station (Ga Thác Tóc Tiên), not the mountaintop hotel.', 'Grab 預約行程的司機聊天室最早可在出發前 45 分鐘使用'], warnings: ['不要只輸入 Mercure 飯店本體後讓司機自行猜下車點', '若 App 顯示取消或無法派車，立即請 Hotel Royal 櫃檯協助叫 7 人座計程車／包車，不要改搭 4 人座'], source: 'https://www.mercure-danang-banahills-french-village.com/hotel/getting-here/', sourceText: 'Mercure 官方抵達與車輛說明' },
-      { time: '12:00–13:00', title: '山下櫃檯報到、辦票與交接行李', placeId: 'gate', text: '到 Thác Tóc Tiên Station 的飯店櫃檯出示訂房確認，處理房客優惠纜車票並詢問當日指定路線；bellman 會協助把大件行李送到登車區。', highlights: ['確認票券是否已含在房價；目前訂房憑證只列早餐與 Wi-Fi', '拍下園區圖、跨區纜車與回法國村的末班時間'], warnings: ['飯店目前列上山纜車 08:00–16:30、山下櫃檯 08:00–17:00；出發前仍要重查'] },
-      { time: '13:00–14:00', title: '依工作人員指示搭纜車上山', placeId: 'mercure', text: '纜車線會因天候、維修與營運調整，不預設一定搭 7 號線；抵達山頂後由 bellman 接手，把行李送往飯店報到區。', highlights: ['把證件與貴重物品留在身上', '上山後先認清飯店與回程纜車方向'], warnings: ['輕雨可能照常運行；強風或大雨時可能調整或暫停，照現場指示'] },
+      { time: '12:00–13:15', title: '山下櫃檯報到、辦票、FaceID與交接行李', placeId: 'gate', text: '出示Agoda訂房確認；房價只有早餐與Wi‑Fi，所以在這裡詢價購買住客優惠基本票。確認同一張票可用到10/6下午；若住客票適用2026三日政策，必須在第一次刷票前於散客售票處完成FaceID。', highlights: ['直接問：Can we keep visiting after check-out tomorrow and take the cable car down in the afternoon?', '確認可否刷信用卡、拍下兩天開線表與翌日住客早班', '登記10/6清晨金橋班次並確認集合地點'], warnings: ['先確認完票種才刷QR；一般三日票權益需在首次入園前升級', '飯店公布住客抵達／上山窗口08:00–16:30'], source: 'https://www.mercure-danang-banahills-french-village.com/', sourceText: 'Mercure住客票與時間' },
+      { time: '13:15–14:00', title: 'Thác Tóc Tiên → L’Indochine 上山', placeId: 'mercure', text: '住客通常由Thác Tóc Tiên搭直達L’Indochine的纜車到法國村；纜車本身估17–20分鐘，加候車、步行與行李交接共抓30–45分鐘。基本／住客票已含，不要另買單段票。', highlights: ['證件、貴重物品、薄外套與雨衣留在隨身包', '抵達後先認清L’Indochine站、巴黎館櫃檯與房間棟別'], warnings: ['實際開線由工作人員指定；雷電或強風可能延誤／暫停'] },
       { time: '14:00–15:00', title: '入住、簡單午餐與休息', placeId: 'mercure', text: '官方建議 14:00 起辦理入住；若房間未好就先寄放行李、吃簡單午餐，不把第一站硬排成金橋。', highlights: ['房間準備好就休息 30–45 分鐘', '確認晚餐、隔日 10:30 前退房與行李寄放安排'], warnings: ['午餐保持簡單，避免排隊名店吃掉午後能見度窗口'] },
-      { time: '15:15–17:15', title: '法國村 → 月亮城堡', placeId: 'village', text: '先走山頂核心；雨霧時也有室內空間可接住行程。', highlights: ['法國村看教堂、石砌街景與日蝕廣場', '月亮城堡挑一項 4D／室內體驗即可'], warnings: ['濕石板容易滑，不為拍照跑動或跨越封鎖線'] },
-      { time: '17:15–18:15', title: '第二次天氣判斷', placeId: 'golden', optional: true, text: '若雲開且跨區纜車仍運行，才去金橋看晚光；否則留在法國村。', highlights: ['一旦能見度好就先拍，不等「更完美」的光'], warnings: ['出發前先問清楚回法國村的末班與轉線時間'] },
+      { time: '15:10–16:50', title: '法國村 → 登山小火車2 → Moon Castle', placeId: 'moon', text: '由法國村步行到Giếng Thần站，搭登山小火車2到Hang Rồng；車程很短，但連步行與候車抓10–20分鐘。先玩17:00關閉的Moon Junction 4D與Flying Eyes，兩項都含在基本票內。', highlights: ['沿途順看Eclipse日蝕廣場與Moon Castle建築', '回程同樣搭小火車2，不需另買票'], warnings: ['小火車沒有公開固定日常班表；到站先看當日末班', '濕石板易滑，不為拍照跑動'] },
+      { time: '17:00–18:15', title: '晴乾玩滑車；下雨改 Fantasy Park', placeId: 'village', text: '回法國村後依即時天氣切換：晴乾可玩一次高山滑車並逛教堂廣場；雨霧則進Fantasy Park挑2–3項室內設施。', highlights: ['Fantasy Park官方時間08:30–19:00，大多數設施含基本票', '滑車16:30–17:30單次參考價VND 70,000，需另付費'], warnings: ['滑車08:30–19:00但受天候限制；濕軌、強風、雷雨就不要等', '第一天下午不把金橋列正選；除非飯店通知隔日早班取消且此刻視野極佳'] },
       { time: '18:30 後', title: '晚餐與法國村夜色', placeId: 'mercure', text: '日遊客退去後慢慢用餐、看廣場入夜。', highlights: ['這是住山上的優勢，不必再追表演'], warnings: ['冷、濕或累就提早回房，隔天仍有金橋窗口'] }
     ]
   },
   '2026-10-06': {
     date: '10/6（二）', place: '巴拿山 → 峴港', eyebrow: 'BÀ NÀ · WEATHER WINDOW 2',
-    title: '早餐後看雲，傍晚只和海與晚餐見面',
-    summary: '上午用第二次天氣窗口走金橋；中午回法國村取行李、下山後前往 M Hotel。入住後保留下午茶與休息，晚餐安排特別想去的 Đông Lâm。',
-    decision: '若纜車或山路延誤，取消海邊散步並改吃飯店旁 4SEAs；不要為了 Đông Lâm 壓縮下山安全緩衝。',
+    title: '清晨住客專車看金橋，中午補一區再從容下山',
+    summary: '05:30起床，搭飯店確認的06:00–06:45住客班次前往金橋；08:00左右回法國村吃早餐，10:30前退房寄放行李。之後依天氣只補一區：晴天走花園／心靈區，雨霧進Fantasy Park；約14:00開始下山。',
+    decision: '金橋以「人少」優先，不以「保證有遠景」為前提。若雷雨、強風導致早班取消，不硬闖；早餐後再用一次天氣窗口，最晚14:00左右開始回山腳。',
     places: {
       mercure: { name: 'Mercure French Village', coords: [15.9976, 107.9880], note: '早餐、退房與行李' },
       golden: { name: '金橋', coords: [15.9950, 107.9963], note: '第二個能見度窗口' },
@@ -186,15 +187,17 @@ const tripDayData = {
       { label: '下山延誤：M Hotel → 4SEAs', ids: ['mhotel', 'fourseas', 'mhotel'] }
     ],
     choices: [
-      { label: '天氣好', title: '金橋與花園精華', text: '先退房並寄放行李，再利用上午能見度走金橋；花園只選一小段，不逐區收集。', when: '跨區纜車正常、視野可用且石階不濕滑。', mapId: 'golden' },
-      { label: '霧雨替代', title: 'Fantasy Park 後提早下山', text: '不為金橋來回等待，選一項室內體驗後回法國村午餐、取行李並下山。', when: '霧濃、強風或雨勢影響戶外安全。', mapId: 'fantasy' },
+      { label: '清晨正選', title: '住客早班金橋', text: '官方住宿方案列06:00、06:15、06:30，另有方案列06:15、06:45；實際以10/5晚櫃檯登記為準。由法國村Louvre到Bordeaux的纜車約5分鐘，連步行與候車抓15–25分鐘，票內含。', when: '沒有雷電、強風警報，住客班次照常。', mapId: 'golden', source: 'https://www.mercure-danang-banahills-french-village.com/offers/early-booking-special/', sourceText: 'Mercure清晨金橋班次' },
+      { label: '霧雨替代', title: 'Fantasy Park 後提早下山', text: '早班取消或戶外不安全，就先吃早餐退房，10:40後進Fantasy Park；不用為完全沒有視野的金橋跨區等待。', when: '雷雨、強風、濃霧或纜車調整。', mapId: 'fantasy' },
       { label: '晚餐備案', title: '下山延誤就吃 4SEAs', text: '保護纜車與接車緩衝；若無法準時到 Đông Lâm，改吃 M Hotel 旁的 4SEAs，東林再與隔日晚餐對調。', when: '16:30 後才抵達 M Hotel，或不想再叫車。', mapId: 'fourseas' }
     ],
     timeline: [
-      { time: '09:00–10:30', title: '早餐、退房、確認能見度', placeId: 'mercure', text: '照平常時間起床，先退房寄放行李，再決定戶外或室內。', highlights: ['向櫃檯確認跨區纜車與下山路線'], warnings: ['先完成退房，避免回房收拾壓縮下山時間'] },
-      { time: '10:30–11:45', title: '金橋與花園精華', placeId: 'golden', text: '天晴才依現場路線前往；金橋先拍全景與合照，花園只選一小段。', highlights: ['金橋先找能同時拍到手掌與橋身的角度', '花園選一區即可，不逐園蒐集'], warnings: ['霧濃、強風或石階濕滑就改 Fantasy Park'] },
-      { time: '11:45–13:30', title: '回法國村、午餐、取行李', placeId: 'mercure', text: '不執著單一餐廳，保留纜車排隊與轉線時間。', highlights: ['離店前確認沒有證件、雨具與充電器遺漏'], warnings: ['下山纜車班次以 Mercure 與園區當日資訊為準'] },
-      { time: '13:30–16:00', title: '下山並前往 M Hotel', placeId: 'gate', text: '到山腳與司機會合，包車前往美溪海灘。', highlights: ['下山後立即通知司機實際抵達時間'], warnings: ['若纜車停駛或延誤，先處理安全與接車，不追後續景點'] },
+      { time: '05:30–06:00', title: '起床、看窗外與住客班次', placeId: 'mercure', text: '帶房卡／住客憑證、票券QR、雨衣、薄外套與手機；不用先吃完整早餐。', highlights: ['若能看清對面建築或雲層正在移動，仍值得出發', '可先帶一點乾糧，回程再吃飯店早餐'], warnings: ['強風時不要撐大傘；雷電或飯店取消班次就留在室內'] },
+      { time: '06:00–08:00', title: '住客早班：Louvre → Bordeaux → 金橋', placeId: 'golden', text: '依前晚登記搭06:00–06:45間住客班次。Louvre到Bordeaux纜車約5分鐘，連候車與步行估15–25分鐘；抵達先拍金橋，再視能見度與濕滑程度加Le Jardin一小段或靈應寺。有效住客／基本票已含，不另買單段纜車票。', highlights: ['先完成合照與橋身全景，再決定要不要延伸花園', '人少是住宿可控制的優勢；日出與遠景則受雲雨影響'], warnings: ['先問回法國村班次；不要為等雲散錯過09:30早餐截止'] },
+      { time: '08:00–09:20', title: '回法國村吃早餐', placeId: 'mercure', text: '沿原路回Bordeaux，搭約5分鐘纜車至Louvre後走回飯店；Mercure早餐06:30–09:30，建議09:20前入場。', highlights: ['早餐已含在訂房中', '回房前再次看天氣，決定退房後補戶外或室內'], warnings: ['不同住宿棟早餐地點可能不同，以入住時餐券／櫃檯說明為準'] },
+      { time: '09:20–10:30', title: '收拾、退房並寄放行李', placeId: 'mercure', text: '退房截止10:30；寄放大件行李，確認14:00左右回來取件及下山指定車站。', highlights: ['證件、藥物、電子用品、防水層放隨身包', '通知山下接車司機：預估15:00–15:30到Thác Tóc Tiên，抵達再更新'], warnings: ['不要帶大型行李再次跨區'] },
+      { time: '10:40–12:30', title: '只補一區：晴走半山，雨進 Fantasy Park', placeId: 'garden', text: '清晨若只看金橋且現在轉晴，可補花園／心靈區；若雨霧持續，留在法國村一側玩Fantasy Park。基本票包含兩者大多數設施。', highlights: ['Fantasy Park開放08:30–19:00', '晴天也只選花園或心靈區一組，不逐點蒐集'], warnings: ['不要臨時再跨去Moon Castle與金橋兩頭跑', '攀岩、10D、幸運遊戲仍需另付費'] },
+      { time: '12:30–15:30', title: '午餐、取行李、纜車下山並接車', placeId: 'gate', text: '12:30回法國村簡單午餐，13:30–14:00取行李後依現場指定線前往L’Indochine，搭Thác Tóc Tiên直達線下山。纜車估17–20分鐘，連步行、候車與領行李抓45–75分鐘；回程已含，不需買第二天基本票。', highlights: ['到山腳後再把實際抵達時間傳給司機', '接車點仍是Mercure Downhill Front Desk／Thác Tóc Tiên'], warnings: ['雷雨或強風可能延誤；寧可取消海邊短走，也不要壓縮安全緩衝'] },
       { time: '16:00–18:30', title: '入住、下午茶、選配海灘短走', placeId: 'mhotel', text: '先使用已含的下午茶與房間設施；有餘裕才去飯店正前方沙灘。', highlights: ['確認早餐、下午茶和泳池使用時段'], warnings: ['海況看警示旗；風浪大就留在飯店'] },
       { time: '19:00–20:30', title: '★ Đông Lâm 晚餐', placeId: 'donglam', text: '短程叫車前往 55 Trần Bạch Đằng，用餐後直接回飯店。', highlights: ['訂位時詢問烤鴨是否必須預訂'], warnings: ['不同平台晚間結束時間有落差，出發前直接向餐廳確認'] }
     ]
