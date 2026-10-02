@@ -104,7 +104,7 @@ const tripDayData = {
       royal: { name: 'Hotel Royal Hoi An Danang', coords: [15.8766713, 108.3198424], note: '早餐、午休與住宿' },
       bridge: { name: '日本橋', coords: [15.8772, 108.3262], note: '古城西側起點' },
       canton: { name: '廣肇會館', coords: [15.8770, 108.3281], note: '沿陳富街順路停靠' },
-      morningglory: { name: 'Morning Glory Original', coords: [15.8760, 108.3294], note: '★ 12:15 會安午餐；106 Nguyễn Thái Học' },
+      morningglory: { name: 'Morning Glory Signature', coords: [15.8754, 108.3271], note: '★ 12:15 會安午餐；41 Nguyễn Phúc Chu（安會河岸）' },
       fujian: { name: '福建會館', coords: [15.8764, 108.3323], note: '主殿、天井與華人建築' },
       metiseko: { name: 'Metiseko Hoi An', coords: [15.8765, 108.3336], note: '桑蠶絲絲巾購物' },
       redbean: { name: 'Red Bean Hoi An', coords: [15.8862, 108.3243], note: '指定餐廳' },
@@ -121,7 +121,7 @@ const tripDayData = {
     timeline: [
       { time: '09:00–10:15', title: '飯店早餐與準備', placeId: 'royal', text: '照平常作息慢慢吃，不設任何早場預約。', highlights: ['隨身帶雨具、防水袋和可裝絲巾的乾燥袋'], warnings: ['午後可能陣雨，鞋子以防滑好走為優先'] },
       { time: '10:45–12:15', title: '日本橋 → 古城西段', placeId: 'bridge', text: '由飯店步行進古城，從日本橋沿陳富街向東慢走。', highlights: ['日本橋看木構、屋頂與橋寺一體的空間', '廣肇會館看入口石雕、天井與會館格局'], warnings: ['古城票券與開放房舍依現場公告；不用每間會館都進'] },
-      { time: '12:15–13:30', title: '★ Morning Glory Original 午餐', placeId: 'morningglory', text: '從廣肇會館步行到 106 Nguyễn Thái Học；點一份高樓麵、白玫瑰或其他一主食一配菜即可。', highlights: ['午餐留七分飽，晚上仍有 Red Bean', '吃完直接接福建會館，不需要折返飯店'], warnings: ['古城午間熱門時段可能候位；若超過 20 分鐘，改附近同類越南菜並準時接下午行程'], source: 'https://www.premiergolftravel.vn/sites/default/files/Restaurant_Recommended_in_Danang_-_Hoi_An.pdf', sourceText: 'Morning Glory 地址資訊' },
+      { time: '12:15–13:30', title: '★ Morning Glory Signature 午餐', placeId: 'morningglory', text: '從廣肇會館步行至安會河岸的 41 Nguyễn Phúc Chu；以高樓麵或海鮮廣麵為主，兩人分一份白玫瑰即可。', highlights: ['這餐選 Signature 的較精緻越式菜，不另外增加越式餐次', '午餐留七分飽，晚上仍有 Red Bean', '吃完過橋接福建會館，不需要折返飯店'], warnings: ['建議先訂位；若超過 20 分鐘仍無位，改附近用餐並準時接下午行程', '露台座位可能較熱，訂位時可依天氣指定室內'], source: 'https://hoianlocal.com/business/morning-glory-signature/', sourceText: '餐廳位置與菜色資訊' },
       { time: '13:30–14:25', title: '福建會館', placeId: 'fujian', text: '下午只選一間代表性會館，保留購物和休息時間。', highlights: ['看三進空間、媽祖信仰、天井採光與屋脊裝飾'], warnings: ['尊重祭祀空間；香爐與供桌前避免久站拍攝'] },
       { time: '14:25–15:10', title: 'Metiseko 絲巾購物', placeId: 'metiseko', text: '直接說只看 mulberry silk scarves，不做衣服。', highlights: ['確認 100% mulberry silk、尺寸、印花正反面和收邊', '保留材質清楚的收據與洗滌方式'], warnings: ['不要只憑光澤判斷真絲；預留 30–45 分鐘就足夠'] },
       { time: '15:10–16:30', title: '回飯店休息', placeId: 'royal', text: '放好絲巾、午睡或換裝，至少保留 75 分鐘。', highlights: ['這段是整天不疲累的關鍵留白'], warnings: ['若午間已淋雨，先更換乾衣鞋再出門'] },
