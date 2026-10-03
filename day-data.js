@@ -121,36 +121,38 @@ const tripDayData = {
   },
   '2026-10-04': {
     date: '10/4（日）', place: '會安古城', eyebrow: 'HOI AN · ONE FULL DAY',
-    title: '由西向東慢走，下午順路挑絲巾',
-    summary: '09:00 起床吃早餐，約 10:45 才離開飯店。白天沿古城由日本橋往福建會館與 Metiseko 前進；購物後先回房休息。晚上留在會安，在 Memories Show 與 Red Bean 後的河岸散步之間二選一。',
-    decision: '今晚只留在會安，在演出與自由散步之間二選一，保住晚餐、古城夜色與休息品質。',
+    title: '古城挑絲巾與伴手禮；回飯店換裝後看印象秀',
+    summary: '09:00 起床吃早餐，約 10:45 才離開飯店。白天沿古城由日本橋往福建會館與 Metiseko、Sunday in Hoi An 前進；購物後提早回房休息、換裝。今晚以已購 HIGH／VIP 票的 Memories Show 為固定行程，Red Bean 提早晚餐後直接進園。',
+    decision: '10/4 會安預報為多雲、仍可能有短暫陣雨；戶外古城只走到下午，15:15 前回飯店。印象秀高級票優先保留：只有雷雨或園區公告才依官方指示調整。',
     places: {
       royal: { name: 'Hotel Royal Hoi An Danang', coords: [15.8766713, 108.3198424], note: '早餐、午休與住宿' },
       bridge: { name: '日本橋', coords: [15.8772, 108.3262], note: '古城西側起點' },
       canton: { name: '廣肇會館', coords: [15.8770, 108.3281], note: '沿陳富街順路停靠' },
       morningglory: { name: 'Morning Glory Signature', coords: [15.8754, 108.3271], note: '★ 12:15 會安午餐；41 Nguyễn Phúc Chu（安會河岸）' },
       fujian: { name: '福建會館', coords: [15.8764, 108.3323], note: '主殿、天井與華人建築' },
-      metiseko: { name: 'Metiseko Hoi An', coords: [15.8765, 108.3336], note: '桑蠶絲絲巾購物' },
+      metiseko: { name: 'Metiseko Hoi An・140 Trần Phú', coords: [15.8765, 108.3336], note: '桑蠶絲絲巾購物' },
+      sunday: { name: 'Sunday in Hoi An・184 Trần Phú', coords: [15.8756, 108.3349], note: '居家織品、香氛與設計伴手禮' },
+      reaching: { name: 'Reaching Out Arts & Crafts・103 Nguyễn Thái Học', coords: [15.8757, 108.3304], note: '公平貿易手作禮品；與 Metiseko 二選一的替代店' },
       redbean: { name: 'Red Bean Hoi An', coords: [15.8862, 108.3243], note: '指定餐廳' },
-      memories: { name: 'Hoi An Memories Land', coords: [15.8724, 108.3425], note: '選配園區與 20:00 主秀' },
+      memories: { name: 'Hoi An Memories Land', coords: [15.8724, 108.3425], note: 'HIGH／VIP 票・20:00 主秀' },
       river: { name: '會安河岸', coords: [15.8760, 108.3287], note: '不看秀時的輕鬆替代' }
     },
-    mainRoute: ['royal', 'bridge', 'canton', 'morningglory', 'fujian', 'metiseko', 'royal', 'redbean', 'memories', 'royal'],
-    alternatives: [{ label: '不看秀：Red Bean → 河岸散步 → 飯店', ids: ['redbean', 'river', 'royal'] }],
+    mainRoute: ['royal', 'bridge', 'canton', 'morningglory', 'fujian', 'metiseko', 'sunday', 'royal', 'redbean', 'memories', 'royal'],
+    alternatives: [{ label: '伴手禮替代：福建會館 → Reaching Out → 飯店', ids: ['fujian', 'reaching', 'royal'] }],
     choices: [
-      { label: '晚間方案 A', title: 'Red Bean ＋ Memories Show', text: '16:45 提早晚餐，18:35 左右前往園區，20:00 看主秀。適合想把會安夜晚變成完整表演體驗。', when: '願意配合表演時間，且已確認當日演出與座位。', mapId: 'memories', source: 'https://hoianmemoriesland.com/en/performance-schedule', sourceText: '官方表演時刻' },
-      { label: '晚間方案 B', title: 'Red Bean ＋ 河岸自由散步', text: '18:30 左右正常吃晚餐，餐後依體力走河岸，不被票券與進場時間綁住。', when: '下雨、想更慢，或不想連續看表演時選這個。', mapId: 'river' },
-      { label: '購物補充', title: 'Metiseko 主攻；Silk Village 不硬加', text: 'Metiseko 直接看 100% mulberry silk 絲巾並確認尺寸、收邊與洗滌方式。Silk Village 只有想多花約一小時了解工藝時才加。', when: '購物後仍保留回飯店休息，不用為了比較店家折返。', mapId: 'metiseko', source: 'https://metiseko.com/collections/the-scarf-collection', sourceText: '先看官方絲巾款式' }
+      { label: '晚間固定行程', title: 'Red Bean ＋ Memories Show', text: '已購 HIGH／VIP 票，16:45 提早晚餐，18:35 左右前往園區，19:40 前進主舞台，20:00 看主秀。', when: '除非雷雨或園區發布異動，今晚不另排河岸散步與其他表演。', mapId: 'memories', source: 'https://hoianmemoriesland.com/en/performance-schedule', sourceText: '官方表演時刻' },
+      { label: '購物主線', title: 'Metiseko 絲巾＋Sunday 設計伴手禮', text: 'Metiseko 挑 100% mulberry silk 絲巾，確認尺寸、收邊與洗滌方式；再步行到 Sunday in Hoi An 看居家織品、香氛和小型禮物。兩店都在 Trần Phú，不折返。', when: '只各留 20–30 分鐘；15:15 前離開古城回飯店，避免壓縮晚間換裝與休息。', mapId: 'sunday', source: 'https://www.sundayinhoian.com/pages/locations-hours', sourceText: 'Sunday in Hoi An 官方位置與時間' },
+      { label: '購物替代', title: 'Reaching Out 手作禮品', text: '若偏好杯具、飾品、文具或有故事性的手作，不必兩條購物線都跑：以 Reaching Out 取代 Sunday 即可。購買可直接支持不同能力的當地工藝者。', when: '星期日營業至 19:00；店在 103 Nguyễn Thái Học，安排在福建會館後，逛完便回飯店。', mapId: 'reaching', source: 'https://reachingoutvietnam.com/contact-us/faq/', sourceText: 'Reaching Out 官方店址與時間' }
     ],
     timeline: [
       { time: '09:00–10:15', title: '飯店早餐與準備', placeId: 'royal', text: '照平常作息慢慢吃，不設任何早場預約。', highlights: ['隨身帶雨具、防水袋和可裝絲巾的乾燥袋'], warnings: ['午後可能陣雨，鞋子以防滑好走為優先'] },
       { time: '10:45–12:15', title: '日本橋 → 古城西段', placeId: 'bridge', text: '由飯店步行進古城，從日本橋沿陳富街向東慢走。', highlights: ['日本橋看木構、屋頂與橋寺一體的空間', '廣肇會館看入口石雕、天井與會館格局'], warnings: ['古城票券與開放房舍依現場公告；不用每間會館都進'] },
       { time: '12:15–13:30', title: '★ Morning Glory Signature 午餐', placeId: 'morningglory', text: '從廣肇會館步行至安會河岸的 41 Nguyễn Phúc Chu；以高樓麵或海鮮廣麵為主，兩人分一份白玫瑰即可。', highlights: ['這餐選 Signature 的較精緻越式菜，不另外增加越式餐次', '午餐留七分飽，晚上仍有 Red Bean', '吃完過橋接福建會館，不需要折返飯店'], warnings: ['建議先訂位；若超過 20 分鐘仍無位，改附近用餐並準時接下午行程', '露台座位可能較熱，訂位時可依天氣指定室內'], source: 'https://hoianlocal.com/business/morning-glory-signature/', sourceText: '餐廳位置與菜色資訊' },
       { time: '13:30–14:25', title: '福建會館', placeId: 'fujian', text: '下午只選一間代表性會館，保留購物和休息時間。', highlights: ['看三進空間、媽祖信仰、天井採光與屋脊裝飾'], warnings: ['尊重祭祀空間；香爐與供桌前避免久站拍攝'] },
-      { time: '14:25–15:10', title: 'Metiseko 絲巾購物', placeId: 'metiseko', text: '直接說只看 mulberry silk scarves，不做衣服。', highlights: ['確認 100% mulberry silk、尺寸、印花正反面和收邊', '保留材質清楚的收據與洗滌方式'], warnings: ['不要只憑光澤判斷真絲；預留 30–45 分鐘就足夠'] },
-      { time: '15:10–16:30', title: '回飯店休息', placeId: 'royal', text: '放好絲巾、午睡或換裝，至少保留 75 分鐘。', highlights: ['這段是整天不疲累的關鍵留白'], warnings: ['若午間已淋雨，先更換乾衣鞋再出門'] },
-      { time: '16:45–18:10', title: 'Red Bean 提早晚餐', placeId: 'redbean', text: '選 Memories Show 建議 16:45 入座；不看表演可改 18:30 正常晚餐。', highlights: ['先決定夜間方案，再依離席時間訂位'], warnings: ['若用餐延誤，不要冒險趕秀；改成河岸散步即可'] },
-      { time: '18:35–21:00', title: '選配：Memories Land', placeId: 'memories', optional: true, text: '先看園區小型演出，19:40 前進主舞台，主秀預計 20:00–21:00。', highlights: ['主舞台看服裝、燈光與大型群舞，不需要再加河船'], warnings: ['戶外演出遇雨以官方當日公告為準；雨季優先 HIGH／VIP 遮蔽席'] }
+      { time: '14:25–15:15', title: 'Metiseko 絲巾＋Sunday 伴手禮', placeId: 'metiseko', text: '先在 Metiseko 直接說只看 mulberry silk scarves，不做衣服；再往東走到 Sunday in Hoi An 看居家織品、香氛和小禮物。若較想買手作，改去 Reaching Out，三店不要全跑。', highlights: ['Metiseko：確認 100% mulberry silk、尺寸、印花正反面和收邊', 'Sunday：只挑易帶的小件，避免增加行李負擔', 'Reaching Out：杯具、飾品、文具等手作禮品是替代選擇'], warnings: ['不要只憑光澤判斷真絲；每店停留 20–30 分鐘就足夠', '15:15 準時回飯店，不延後休息來換更多店'] },
+      { time: '15:15–16:30', title: '回飯店休息、換裝與雨備', placeId: 'royal', text: '放好購物袋、午睡或換乾爽衣物；將輕便雨衣與防水袋放入晚間隨身包。', highlights: ['這段是整天不疲累、也不趕印象秀的關鍵留白'], warnings: ['若午間已淋雨，先更換乾衣鞋；雨傘不建議帶進主秀座位區'] },
+      { time: '16:45–18:10', title: 'Red Bean 提早晚餐', placeId: 'redbean', text: '因已購 Memories Show 高級票，16:45 準時入座、18:10 前離席。', highlights: ['訂位或入座時告知 18:10 需離席，以免壓縮進園時間'], warnings: ['若出餐延誤，優先取消甜點或追加菜；不要為了等餐延後前往園區'] },
+      { time: '18:35–21:00', title: 'Hoi An Memories Land・HIGH／VIP 主秀', placeId: 'memories', text: '已購高級票，先看園區小型演出，19:40 前進主舞台，主秀預計 20:00–21:00。', highlights: ['主舞台看服裝、燈光與大型群舞，不需要再加河船', '帶輕便雨衣即可；HIGH／VIP 座位優先保留'], warnings: ['戶外演出遇雷雨或異動，以園區當日公告為準；不另排河岸散步，秀後直接回飯店休息'] }
     ]
   },
   '2026-10-05': {
