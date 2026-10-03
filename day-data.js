@@ -1,8 +1,8 @@
 const hotelSupplyData = {
   royal: {
     hotel: { name: 'Hotel Royal Hoi An Danang', coords: [15.8766713, 108.3198424], note: '39 Đào Duy Từ；10/3–10/5 住宿' },
-    summary: '最近的 King Minimart 就在同一條 Đào Duy Từ 街上，適合臨時補水、飲料與包裝零食；不用為了採買繞進古城。',
-    checked: '店家與營業時間於 2026/09/27 依 Google Maps 核對；出發前仍建議再點連結確認。',
+    summary: '飯店旁的 King 最適合臨時補水；若想找明碼標價、品項更完整或開得更晚的店，地圖上另列三家可比較。',
+    checked: '店家位置、評論摘要與營業時間於 2026/10/03 依 Google Maps／店家公開資料更新；營業時間與刷卡仍以抵達時店內公告為準。',
     stores: [
       {
         name: 'Tạp Hóa King Minimart', type: '最近的便利店', coords: [15.8767773, 108.320855],
@@ -11,6 +11,30 @@ const hotelSupplyData = {
         mapQuery: 'Tạp Hóa King Minimart, 33 Đào Duy Từ, Hội An',
         source: 'https://www.tripadvisor.co.nz/Attraction_Review-g298082-d19085776-Reviews-Mini_Mart_King-Hoi_An_Quang_Nam_Province.html',
         sourceText: '地址與店家介紹'
+      },
+      {
+        name: 'CÂY DA MART 24/7', type: '晚間優先備案', coords: [15.8803074, 108.3276937],
+        distance: '約 1.2 公里・步行約 17 分鐘／Grab 短程', hours: '地圖現列至 23:30（店名雖為 24/7，請當天再確認）',
+        description: 'Google Maps 約 4.5／5（45 則）。評論多說零食、冷飲與旅行用品齊，價格合理；也有人提醒價格略高，先看標價。業主公開資訊稱可收現金與信用卡，但小額消費仍建議帶現金備用。',
+        mapQuery: 'CÂY DA MART 24/7, 134 Đ. Trần Cao Vân, Hội An',
+        source: 'https://www.google.com/maps/search/?api=1&query=C%C3%82Y%20DA%20MART%2024%2F7%2C%20134%20%C4%90.%20Tr%E1%BA%A7n%20Cao%20V%C3%A2n%2C%20H%E1%BB%99i%20An',
+        sourceText: 'Google Maps 評論與當日營業時間'
+      },
+      {
+        name: 'Hạnh Nga Mart', type: '品項最完整的超市', coords: [15.8847183, 108.3300509],
+        distance: '約 1.6 公里・步行約 23 分鐘／Grab 短程', hours: '地圖現列每日至 22:00',
+        description: 'Google Maps 約 4.7／5（38 則）。評論提到明碼標價、貨品多，從啤酒、大叻酒到巧克力、椰子片與薑飲都有；近期評論稱是正規店、沒有觀光客加價。未找到可靠的信用卡證據，請以現金為主。',
+        mapQuery: 'Hạnh Nga Mart, 81 Nguyễn Đình Chiểu, Hội An',
+        source: 'https://hoiannow.com/supermarkets-hoi-an/',
+        sourceText: '品項與採買指南'
+      },
+      {
+        name: 'HOI AN ALCOHOL SHOP / An An Mart', type: '開最晚的酒類／進口品選擇', coords: [15.8836347, 108.3268243],
+        distance: '約 1.3 公里・步行約 19 分鐘／Grab 短程', hours: '公開指南列 08:00–24:00',
+        description: '適合要補啤酒、葡萄酒、烈酒、進口零食與日用品時一次買齊。公開資料與評論強調商品明碼標價、通常不會有觀光客抬價；少數人覺得部分品項較附近小店貴，仍可比較。未找到可靠的刷卡確認，請先問是否收 Visa／Mastercard 且有無手續費。',
+        mapQuery: 'HOI AN ALCOHOL SHOP - An An Mart, 191 Lý Thường Kiệt, Hội An',
+        source: 'https://hoianlocal.com/business/an-an-mart/',
+        sourceText: '價格與品項評論'
       }
     ]
   },
