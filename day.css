@@ -15,6 +15,7 @@
 #route-map{height:min(66vh,640px);min-height:470px;background:#dce7e3}
 .map-key{position:absolute;left:18px;bottom:18px;z-index:500;background:rgba(255,253,249,.94);padding:12px 14px;box-shadow:0 4px 18px rgba(13,39,44,.18);font-size:.76rem}
 .map-key span{display:flex;align-items:center;gap:8px;margin:4px 0}.map-key i{display:inline-block;width:30px;border-top:4px solid var(--coral)}.map-key i.alt{border-top:3px dashed #167a80}
+.map-key i.area{border-top:3px dashed #176047}.map-area-label{background:rgba(255,253,249,.92);border:1px solid #176047;border-radius:0;box-shadow:none;color:#114a37;font:700 .72rem/1.25 "Noto Sans TC",sans-serif;padding:4px 7px}.map-area-label:before{display:none}
 .numbered-marker-shell{background:transparent;border:0}.numbered-marker-shell span{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--coral);color:white;border:3px solid white;box-shadow:0 3px 10px rgba(0,0,0,.32);font-weight:800;font-size:.78rem}.leaflet-popup-content a{color:var(--ink);font-weight:700}
 .map-caption{margin:13px 0 0;color:#b9ccc7;font-size:.76rem}
 .day-summary-section{padding:65px 0 35px}.day-summary-card{display:grid;grid-template-columns:1fr 1fr;background:var(--paper);border:1px solid var(--line)}.day-summary-card>div{padding:28px}.day-summary-card>div+div{border-left:1px solid var(--line);background:#e1ebe7}.day-summary-card h2{font:700 1.55rem/1.2 "Playfair Display",serif;margin:0 0 10px}.day-summary-card p{margin:0;color:#50696b}.day-summary-card strong{display:block;color:#167a80;margin-bottom:8px}

@@ -96,6 +96,16 @@ const mainUnique = [...new Set(day.mainRoute)];
 const alternativeUnique = [...new Set(day.alternatives.flatMap(route => route.ids))].filter(id => !mainUnique.includes(id));
 const bounds = [];
 
+if (day.mapArea) {
+  bounds.push(...day.mapArea.coords);
+  L.polygon(day.mapArea.coords, {
+    color: '#176047', weight: 3, opacity: 0.96, dashArray: '9 8', fillColor: '#a9d2bd', fillOpacity: 0.16
+  }).addTo(map).bindTooltip(day.mapArea.label, {
+    permanent: true, direction: 'center', className: 'map-area-label'
+  }).bindPopup(`<strong>${day.mapArea.label}</strong><br>${day.mapArea.note}`);
+  document.querySelector('.map-key').insertAdjacentHTML('beforeend', '<span><i class="area"></i>會安老街核心範圍</span>');
+}
+
 const markerIcon = label => L.divIcon({
   className: 'numbered-marker-shell',
   html: `<span>${label}</span>`,
